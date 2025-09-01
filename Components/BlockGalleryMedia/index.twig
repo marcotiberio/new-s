@@ -10,6 +10,10 @@
           <div class="media-item--video w-full flex {{ item.alignY }}">
             {% include 'Components/BlockGalleryMedia/Partials/video.twig' %}
           </div>
+        {% elseif item.acf_fc_layout == 'video_embed' %}
+          <div class="media-item--video w-full flex {{ item.alignY }}">
+            {% include 'Components/BlockGalleryMedia/Partials/video_embed.twig' %}
+          </div>
         {% endif %}
       </div>
     {% endfor %}

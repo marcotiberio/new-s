@@ -101,8 +101,8 @@ function getACFLayout()
                         ]
                     ],
                     [
-                        'name' => 'video',
-                        'label' => __('Video', 'flynt'),
+                        'name' => 'video_upload',
+                        'label' => __('Video Upload', 'flynt'),
                         'display' => 'block',
                         'sub_fields' => [
                             [
@@ -175,6 +175,18 @@ function getACFLayout()
                                     'width' => 100
                                 ],
                             ],
+                        ]
+                    ],
+                    [
+                        'name' => 'video_embed',
+                        'label' => __('Video Embed', 'flynt'),
+                        'display' => 'block',
+                        'sub_fields' => [
+                            [
+                                'label' => __('Video Embed', 'flynt'),
+                                'name' => 'videoEmbed',
+                                'type' => 'oembed',
+                            ]
                         ]
                     ]
                 ]
