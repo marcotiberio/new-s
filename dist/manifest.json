@@ -22,7 +22,7 @@
   },
   "Components/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/BlockCta/Assets/logo.svg"
+    "src": "Components/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/BlockCta/Assets/twitter.svg": {
     "file": "assets/twitter-bc2ba69f.svg",
@@ -31,6 +31,14 @@
   "Components/BlockCta/Assets/youtube.svg": {
     "file": "assets/youtube-77f3f8fd.svg",
     "src": "Components/BlockCta/Assets/youtube.svg"
+  },
+  "Components/BlockGalleryMedia/script.js": {
+    "file": "assets/script-80eb5179.js",
+    "imports": [
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/BlockGalleryMedia/script.js"
   },
   "Components/BlockPostArchive/script.js": {
     "file": "assets/script-bc18cfd5.js",
@@ -47,7 +55,7 @@
     "src": "Components/BlockProductSpecs/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-9c1467d8.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -55,7 +63,7 @@
     "src": "Components/BlockVideoOembed/script.js"
   },
   "Components/BlockVideoText/script.js": {
-    "file": "assets/script-80eb5179.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -100,7 +108,7 @@
     "src": "Components/HeroSliderComposite/script.js"
   },
   "Components/HeroVideoBackground/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -131,10 +139,10 @@
   },
   "Components/NavigationMainLogo/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/BlockCta/Assets/logo.svg"
+    "src": "Components/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-b995002b.js",
+    "file": "assets/script-048b789c.js",
     "imports": [
       "assets/main.js"
     ],
@@ -267,6 +275,7 @@
       "node_modules/@webreflection/custom-elements-builtin/esm/index.js",
       "_script-db2e204d.js",
       "Components/AccordionSystems/script.js",
+      "Components/BlockGalleryMedia/script.js",
       "Components/BlockPostArchive/script.js",
       "Components/BlockProductSpecs/script.js",
       "_script-db2e204d.js",
@@ -289,7 +298,7 @@
       "Components/SliderLogos/script.js",
       "Components/SliderQuotes/script.js"
     ],
-    "file": "assets/main-4155c681.js",
+    "file": "assets/main-e58dc552.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
