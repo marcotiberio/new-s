@@ -1,9 +1,11 @@
 flynt-component[name='NavigationBurger'] {
-  // @apply h-[66px];
-  // @apply sm:h-[85px];
+  transition: all 0.3s ease-in-out;
 
-
-  // @apply lg:hidden;
+  &.scrolled {
+    transition: all 0.3s ease-in-out;
+    @apply translate-y-[-50px];
+    @apply bg-white;
+}
 
   .wrapper {
     align-items: center;

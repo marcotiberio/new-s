@@ -33,7 +33,7 @@
     "src": "Components/BlockCta/Assets/youtube.svg"
   },
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-80eb5179.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -55,7 +55,7 @@
     "src": "Components/BlockProductSpecs/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -63,7 +63,7 @@
     "src": "Components/BlockVideoOembed/script.js"
   },
   "Components/BlockVideoText/script.js": {
-    "file": "assets/script-9c1467d8.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -108,7 +108,7 @@
     "src": "Components/HeroSliderComposite/script.js"
   },
   "Components/HeroVideoBackground/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-80eb5179.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -142,7 +142,7 @@
     "src": "Components/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-61f7bddf.js",
+    "file": "assets/script-588d2fc4.js",
     "imports": [
       "assets/main.js"
     ],
@@ -298,12 +298,12 @@
       "Components/SliderLogos/script.js",
       "Components/SliderQuotes/script.js"
     ],
-    "file": "assets/main-0a1257db.js",
+    "file": "assets/main-ddcb93c1.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-7a5d9045.css",
+    "file": "assets/main-d49a92ca.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },

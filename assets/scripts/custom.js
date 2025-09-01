@@ -27,12 +27,19 @@ $(document).scroll(function () {
 });
 
 // Menu items color change
-// $(document).ready(function () {
-//   $(window).scroll(function () {
-//     if ($(this).scrollTop() >= 250) {
-//       $('.wrapper--menu').addClass('scrolled')
-//     } else {
-//       $('.wrapper--menu').removeClass('scrolled')
-//     }
-//   })
-// })
+$(document).ready(function () {
+  let lastScrollTop = 0;
+  $(window).scroll(function () {
+    let currentScrollTop = $(this).scrollTop();
+    
+    if (currentScrollTop > lastScrollTop) {
+      // Scrolling down
+      $('flynt-component[name="NavigationBurger"]').addClass('scrolled')
+    } else {
+      // Scrolling up
+      $('flynt-component[name="NavigationBurger"]').removeClass('scrolled')
+    }
+    
+    lastScrollTop = currentScrollTop;
+  })
+})
