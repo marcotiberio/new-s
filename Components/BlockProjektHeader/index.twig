@@ -1,0 +1,56 @@
+<flynt-component 
+  load:on="visible" name="BlockProjektHeader" 
+  class="w-full mx-auto flex flex-col justify-between items-center">
+  <div class="wrapper max-w-screen-max mx-auto">
+    <div class="flex flex-col h-full relative boxed">
+      <div class="w-full lg:w-full h-full flex flex-col justify-between pb-sm">
+        <div class="flex flex-col md:flex-row justify-start gap-xs">
+          <div class="w-full md:w-1/3 flex flex-col justify-start gap-xs h-fit md:sticky md:top-[91px]">
+            <div class="font-h2">{{ post.title }}</div>
+          </div>
+          <div class="w-full md:w-2/3" style="color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};">
+            <div class="wysiwyg">{{ post.postIntro }}</div>
+            <div class="mt-sm">
+              {% set postCategories = post.terms('category') %}
+              {% for term in postCategories %}
+                <span class="font-bodySmall">{{ term }}{% if not loop.last %},{% endif %}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full">
+        {% if post.projectOverviewImage %}
+          <img class="figure-image lazyload object-cover"
+            src="{{ post.projectOverviewImage.src | resize(2000) }}"
+            data-srcset="{{function('wp_get_attachment_image_srcset', post.projectOverviewImage.id)}}"
+            data-sizes="auto"
+            alt="{{ post.projectOverviewImage.alt|e }}">
+        {% elseif post.featVideo %}
+          <video class="figure-video object-cover"
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            preload="metadata"
+            src="{{ post.featVideo.url }}"
+            style="width:100%;height:auto;">
+            Your browser does not support the video tag.
+          </video>
+        {% elseif post.featImageAlt %}
+          <img class="figure-image lazyload object-cover"
+            src="{{ post.featImageAlt.src | resize(2000) }}"
+            data-srcset="{{function('wp_get_attachment_image_srcset', post.featImageAlt.id)}}"
+            data-sizes="auto"
+            alt="{{ post.featImageAlt.alt|e }}">
+        {% else %}
+          <img class="figure-image lazyload object-cover"
+            src="{{ post.thumbnail.src | resize(2000) }}"
+            data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+            data-sizes="auto"
+            alt="{{ post.thumbnail.alt|e }}">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</flynt-component>

@@ -1,0 +1,20 @@
+<flynt-component
+  load:on="visible" name="HeroHeaderHome"
+  class="w-full lg:w-screen lg:h-screen mx-auto relative">
+  {% if image %}
+    <img class="figure-image lazyload w-full h-full object-cover"
+      src="{{ image.src }}"
+      data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+      data-sizes="auto"
+      alt="{{ image.alt|e }}">
+  {% endif %}
+  <div class="absolute z-20 top-0 left-0 flex h-full w-full justify-center items-center">
+    {% if logoHeader %}
+      <img class="lazyload w-full mx-auto object-contain"
+        src="{{ logoHeader.src }}"
+        data-srcset="{{function('wp_get_attachment_image_srcset', logoHeader.id)}}"
+        data-sizes="auto"
+        alt="{{ logoHeader.alt|e }}">
+    {% endif %}
+  </div>
+</flynt-component>

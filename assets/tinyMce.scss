@@ -1,0 +1,104 @@
+@import
+  'styles/mixins',
+  'styles/variables',
+  'styles/base';
+
+html {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  text-size-adjust: none;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+// #tinymce {
+//   p,
+//   .p
+//   .paragraph {
+//     margin: 0;
+//     margin-block-end: 0;
+//     margin-block-start: 0;
+//   }
+
+//   li {
+//     font-size: 1.5rem;
+//   }
+// }
+
+.mce-content-body {
+  background-color: #cdcdcd;
+}
+
+/**
+* Lists & Tables
+*/
+
+.wysiwyg {
+  ul {
+    list-style-type: none;
+    margin: 0 0 1.2rem;
+    // padding-left: 1rem;
+  
+    ul {
+      margin-bottom: 0;
+  
+      li {
+        font-size: 1.25rem;
+        line-height: inherit;
+        margin-left: 1rem;
+        text-indent: -1rem;
+
+        @media (min-width: $breakpoint-desktop) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  
+    li {
+      font-size: 1.25rem;
+      line-height: inherit;
+      margin-left: 1rem;
+      text-indent: -1rem;
+
+      @media (min-width: $breakpoint-desktop) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+    margin: 0 0 1.2rem;
+    // padding-left: 1rem;
+  
+    ol {
+      margin-bottom: 0;
+  
+      li {
+        font-size: 1.25rem;
+        line-height: inherit;
+        margin-left: 1.65rem;
+        // text-indent: -1.65rem;
+
+        @media (min-width: $breakpoint-desktop) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  
+    li {
+      font-size: 1.25rem;
+      line-height: inherit;
+      margin-left: 1.65rem;
+      // text-indent: -1.65rem;
+
+      @media (min-width: $breakpoint-desktop) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

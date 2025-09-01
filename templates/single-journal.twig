@@ -1,0 +1,20 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="post mt-md">
+    <header class="post-header w-full mx-auto flex flex-col">
+      {{ renderComponent('BlockJournalHeader', { post: post }) }}
+    </header>
+    <section class="post-main">
+      {% for component in post.meta('journalComponents') %}
+        {{ renderComponent(component) }}
+      {% endfor %}
+    </section>
+    <section class="post-related">
+      {# {{ renderComponent('RelatedPosts', {'preContentTitle': '<h2>' ~ __('Related News') ~ '</h2>', 'taxonomies': post.categories(), 'options': {'maxPosts': 3}}) }} #}
+    </section>
+    <footer>
+      {{ renderComponent('BlockPostNav', { post: post }) }}
+    </footer>
+  </article>
+{% endblock %}

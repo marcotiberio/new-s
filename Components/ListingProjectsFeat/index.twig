@@ -1,0 +1,69 @@
+<flynt-component 
+  load:on="visible" 
+  name="ListingProjectsFeat" 
+  class=""
+  style="
+    color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
+    background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
+
+  <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+
+    <!-- Posts Grid -->
+    <div class="wrapper max-w-screen-max mx-auto">
+      <div class="grid grid-cols-12 gap-xs">
+        {% for item in projects %}
+          {% set project = item.project %}
+          {% set projektCategoryTerms = project.terms('category') %}
+          {% set postCategorySlugs = projektCategoryTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
+          <div 
+            class="post {{ item.colStart }} {{ item.colEnd }} w-full [&_h2]:hover:underline hover:cursor-pointer" 
+            x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => {{ postCategorySlugs|default([])|json_encode }}.includes(cat))) &&
+                   (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
+            x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-100"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+          >
+            <a class="flex flex-col gap-xs w-full" href="{{ project.link }}">
+              {% if project.featVideo %}
+                <video class="figure-video object-cover md:!h-[525px]"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  preload="metadata"
+                  src="{{ project.featVideo.url }}"
+                  style="width:100%;height:auto;">
+                  Your browser does not support the video tag.
+                </video>
+              {% elseif project.featImageAlt %}
+                <img class="figure-image lazyload object-cover md:h-[525px]"
+                  src="{{ project.featImageAlt.src }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', project.featImageAlt.id)}}"
+                  data-sizes="auto"
+                  alt="{{ project.featImageAlt.alt|e }}">
+              {% else %}
+                <img class="figure-image lazyload object-cover md:h-[525px]"
+                  src="{{ project.thumbnail.src }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', project.thumbnail.id)}}"
+                  data-sizes="auto"
+                  alt="{{ project.thumbnail.alt|e }}">
+              {% endif %}
+              {# <div class="flex flex-col">
+                <h2 class="font-body !mb-0">{{ project.title }}</h2>
+                <div class="flex flex-row gap-[5px]">
+                  {% set postCategories = project.terms('category') %}
+                  {% for term in postCategories %}
+                    <span class="font-bodySmall !mb-0">{{ term }}{% if not loop.last %},{% endif %}</span>
+                  {% endfor %}
+                </div>
+              </div> #}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</flynt-component>

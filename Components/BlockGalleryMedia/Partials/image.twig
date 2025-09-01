@@ -1,0 +1,6 @@
+<img
+    class="figure-image lazyload"
+    src="{{ item.image.src }}"
+    data-srcset="{{function('wp_get_attachment_image_srcset', item.image.id)}}"
+    data-sizes="auto"
+    alt="{{ item.image.alt|default('') }}">

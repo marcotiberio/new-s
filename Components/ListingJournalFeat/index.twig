@@ -1,0 +1,60 @@
+{% if posts|length > 0 %}
+  <flynt-component 
+    load:on="visible" 
+    name="ListingJournalFeat" 
+    class=""
+    style="
+      color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
+      background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
+    
+    <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+      
+      <!-- Posts Grid -->
+      <div class="flex flex-col md:flex-row gap-xs">
+        {% for post in posts %}
+          {% set journalCategoryTerms = post.terms('journal-category') %}
+          {% set allTerms = journalCategoryTerms %}
+          {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
+
+          <div 
+            class="post w-full md:w-1/4 [&_h2]:hover:underline hover:cursor-pointer" 
+            x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => ['{{ postCategorySlugs|join("','") }}'].includes(cat))) && 
+                     (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
+            x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-100"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+          >
+            <a href="{{ post.link }}">
+              <div class="w-full flex flex-col gap-xs w-full items-start">
+                {% if post.thumbnail %}
+                  <img 
+                    class="lazyload transition grid duration-200 ease-in-out object-cover h-[270px]" 
+                    src="{{ post.thumbnail.src }}"
+                    data-srcset="{{ function('wp_get_attachment_image_srcset', post.thumbnail.id) }}"
+                    data-sizes="auto"
+                    alt="{{ post.title }}">
+                {% endif %}
+
+                <div class="flex flex-row gap-xs items-center">
+                  <div class="font-bodySmall !mb-0">{{ post.date|date('d.m.y') }}</div>
+                  <div class="flex flex-row gap-xs">
+                    {% for term in allTerms %}
+                      <span class="font-label">{{ term.name }}</span>
+                    {% endfor %}
+                  </div>
+                </div>
+
+                <h2 class="w-full !mb-0">{{ post.title }}</h2>
+                
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </flynt-component>
+{% endif %}
