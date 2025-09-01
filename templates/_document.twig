@@ -15,16 +15,24 @@
         <header class="w-full">
           {% block header %}
             <div class="wrapper wrapper--menu">
-              <div class="mainMenu hidden lg:block w-full fixed top-0 left-0 z-[3000] bg-white">
-                <div class="w-full max-w-screen-max mx-auto !px-xs !py-xs flex flex-row justify-between gap-sm">
-                  {{ renderComponent('NavigationMain') }}
+              {% if fn('is_front_page') %}
+                <div class="mainMenu bottom hidden lg:block w-full h-[55px] z-[3000] bg-white">
+                  <div class="w-full max-w-screen-max mx-auto !px-xs !py-xs flex flex-row justify-between gap-sm">
+                    {{ renderComponent('NavigationMain') }}
+                  </div>
                 </div>
-              </div>
+              {% else %}
+                <div class="hidden lg:block w-full h-[55px] fixed top-0 left-0 z-[3000] bg-white">
+                  <div class="w-full max-w-screen-max mx-auto !px-xs !py-xs flex flex-row justify-between gap-sm">
+                    {{ renderComponent('NavigationMain') }}
+                  </div>
+                </div>
+              {% endif %}
               {{ renderComponent('NavigationBurger') }}
             </div>
           {% endblock %}
         </header>
-        <main id="mainContent" class="mainContent mt-[55px] bg-white" aria-label="{{ __('Content', 'flynt') }}">
+        <main id="mainContent" class="mainContent {% if fn('is_front_page') %}mt-0{% else %}mt-[55px]{% endif %} bg-white" aria-label="{{ __('Content', 'flynt') }}">
           {% if function('post_password_required') %}
             {{ function('get_the_password_form') }}
           {% else %}

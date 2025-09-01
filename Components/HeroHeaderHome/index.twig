@@ -8,7 +8,7 @@
       data-sizes="auto"
       alt="{{ image.alt|e }}">
   {% endif %}
-  <div class="absolute z-20 top-0 left-0 flex h-full w-full justify-center items-center">
+  <div class="absolute z-20 top-0 left-0 flex h-full w-full justify-center items-center px-xs">
     {% if logoHeader %}
       <img class="lazyload w-full mx-auto object-contain"
         src="{{ logoHeader.src }}"
@@ -17,4 +17,11 @@
         alt="{{ logoHeader.alt|e }}">
     {% endif %}
   </div>
+  {# <div class="wrapper wrapper--menu">
+    <div class="homeMenu hidden lg:block w-full z-[3000] bg-white">
+      <div class="w-full max-w-screen-max mx-auto !px-xs !py-xs flex flex-row justify-between gap-sm">
+        {{ renderComponent('NavigationMain') }}
+      </div>
+    </div>
+  </div> #}
 </flynt-component>

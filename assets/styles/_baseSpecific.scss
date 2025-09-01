@@ -1,6 +1,41 @@
 // Menu Home
 
-// .home {
+html:not(.home) {
+    .mainMenu {
+        transition: all 0.3s ease-in-out;
+
+        &.bottom {
+            position: fixed;
+            top: 0;
+        }
+
+        &.top {
+            position: fixed;
+            top: 0;
+        }
+    }
+}
+
+html.home {
+    .mainContent {
+        @apply mt-0;
+    }
+
+    .mainMenu {
+        transition: all 0.3s ease-in-out;
+
+        &.bottom {
+            position: absolute;
+            bottom: 0;
+        }
+
+        &.top {
+            position: fixed;
+            top: 0;
+        }
+    }
+}
+
 //   .mainMenu {
 //     position: fixed;
 //     bottom: 0;

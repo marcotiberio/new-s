@@ -15,6 +15,17 @@ $(document).ready(function () {
   })
 })
 
+var menu = $('.mainMenu');
+
+$(document).scroll(function () {
+    if ($(this).scrollTop() >= $(window).height() - menu.height()) {
+        menu.removeClass('bottom').addClass('top');
+    }
+    else {
+        menu.removeClass('top').addClass('bottom');
+    }
+});
+
 // Menu items color change
 // $(document).ready(function () {
 //   $(window).scroll(function () {
