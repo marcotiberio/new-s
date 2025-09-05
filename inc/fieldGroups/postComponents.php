@@ -30,6 +30,14 @@ add_action('Flynt/afterRegisterComponents', function () {
                 ]
             ],
             [
+                'label' => __('Custom Text', 'flynt'),
+                'name' => 'postCustomText',
+                'type' => 'text',
+                'wrapper' => [
+                    'width' => 100,
+                ]
+            ],
+            [
                 'label' => __('Media', 'flynt'),
                 'name' => 'mediaTab',
                 'type' => 'tab',

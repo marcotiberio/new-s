@@ -2,7 +2,7 @@
   load:on="visible" 
   name="BlockWysiwygColumns"
   style="background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}transparent{% endif %};">
-  <div class="boxed w-full">
+  <div class="boxed w-full" {% if options.topPadding or options.bottomPadding %}style="padding-top: {{ options.topPadding }}; padding-bottom: {{ options.bottomPadding }};"{% endif %}>
     <div class="grid md:grid-cols-12 gap-xs align-start justify-start md:justify-between {% if options.stickyTitle %}stickyTitle{% endif %}">
       {% for column in columns %}
         <div class="column flex {{ column.colStart }} {{ column.colEnd }} lg:row-start-1 lg:row-end-2">

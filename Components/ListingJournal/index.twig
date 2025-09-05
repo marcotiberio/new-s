@@ -7,20 +7,26 @@
       color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
       background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
     
-    <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+    <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategory: '', searchQuery: '', filtersOpen: false }">
       <div class="grid grid-cols-12 gap-xs">
         
         <div class="flex flex-col flex-wrap justify-start col-start-8 col-end-12">
+          
+          <!-- All Category Filter -->
+          <div 
+            class="font-body !mb-0 cursor-pointer hover:underline underline-offset-4 w-fit"
+            :class="selectedCategory === '' ? 'underline underline-offset-4' : ''"
+            @click="selectedCategory = ''">
+            All
+          </div>
           
           {% set journalCategories = function('get_terms', {'taxonomy': 'journal-category', 'hide_empty': true}) %}
           {% for journalCategory in journalCategories %}
             {% set slug = journalCategory.name|lower|replace({' ' : '-'}) %}
             <div 
-              class="font-body !mb-0 cursor-pointer hover:underline underline-offset-4"
-              :class="selectedCategories.includes('{{ slug }}') ? 'underline underline-offset-4' : ''"
-              @click="selectedCategories.includes('{{ slug }}') 
-                ? selectedCategories = selectedCategories.filter(c => c !== '{{ slug }}') 
-                : selectedCategories.push('{{ slug }}')">
+              class="font-body !mb-0 cursor-pointer hover:underline underline-offset-4 w-fit"
+              :class="selectedCategory === '{{ slug }}' ? 'underline underline-offset-4' : ''"
+              @click="selectedCategory = '{{ slug }}'">
               {{ journalCategory.name }}
             </div>
           {% endfor %}
@@ -37,7 +43,7 @@
 
           <div 
             class="post w-full py-sm [&_h2]:hover:underline border-t last:border-b hover:cursor-pointer" 
-            x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => ['{{ postCategorySlugs|join("','") }}'].includes(cat))) && 
+            x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                      (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
             x-transition:enter="transition ease-out duration-100"
             x-transition:enter-start="opacity-0 scale-95"

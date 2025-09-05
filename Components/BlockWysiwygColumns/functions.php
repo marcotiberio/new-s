@@ -119,6 +119,8 @@ function getACFLayout()
                 'layout' => 'row',
                 'sub_fields' => [
                     FieldVariables\getColorBackground(),
+                    FieldVariables\getBoxedTopPadding(),
+                    FieldVariables\getBoxedBottomPadding(),
                     [
                         'label' => __('Sticky title?', 'flynt'),
                         'name' => 'stickyTitle',

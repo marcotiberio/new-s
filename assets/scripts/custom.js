@@ -15,6 +15,13 @@ $(document).ready(function () {
   })
 })
 
+// Footer toggle functionality
+$(document).ready(function () {
+  $('.openFooter').click(function () {
+    $('.mainFooter').toggleClass('show')
+  })
+})
+
 var menu = $('.mainMenu');
 
 $(document).scroll(function () {

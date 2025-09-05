@@ -58,8 +58,8 @@ module.exports = {
       sm: '640px',
       md: '780px',
       lg: '1180px',
-      xl: '1440px',
-      max: '1680px'
+      xl: '1680px',
+      max: '1920px'
     },
     extend: {
       aspectRatio: {
@@ -83,9 +83,16 @@ module.exports = {
         md: '50px',
         lg: '75px',
         xl: '100px',
-        xxl: '150px'
+        xxl: '120px',
+        max: '230px'
       }
-    }
+    },
+    safelist: [
+      '!py-xs',
+      '!py-md',
+      '!py-xxl',
+      '!py-max',
+    ]
   },
   plugins: []
 }
