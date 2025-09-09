@@ -14,8 +14,8 @@ function initSlider (refs, data) {
   const config = {
     modules: [Navigation, A11y, Autoplay, Pagination],
     a11y: options.a11y,
-    slidesPerView: 2,
-    spaceBetween: 20,
+    slidesPerView: 'auto',
+    spaceBetween: 40,
     navigation: {
       nextEl: refs.next,
       prevEl: refs.prev
@@ -25,16 +25,16 @@ function initSlider (refs, data) {
       type: 'bullets',
       clickable: true
     },
-    breakpoints: {
-      640: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      },
-      1181: {
-        slidesPerView: 4,
-        spaceBetween: 20
-      }
-    }
+    // breakpoints: {
+    //   640: {
+    //     slidesPerView: 4,
+    //     spaceBetween: 60
+    //   },
+    //   1181: {
+    //     slidesPerView: 7,
+    //     spaceBetween: 60
+    //   }
+    // }
   }
   if (options.autoplay && options.autoplaySpeed) {
     config.autoplay = {

@@ -1,37 +1,39 @@
 <flynt-component 
   load:on="visible" 
   name="SliderLogos" 
-  style="
-    background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}transparent{% endif %};"
-  >
+  class="pb-xxl overflow-hidden">
   <script type="application/json">{{ jsonData|json_encode }}</script>
-   <div class="boxed !pb-md flex flex-col gap-md justify-center overflow-hidden">
-    {% if introLogosHtml %}
-      <div class="font-h3 [&_*]:mb-0 w-full md:w-1/2 mx-auto text-center">{{ introLogosHtml|e('wp_kses_post') }}</div>
+  <div class="w-full max-w-screen-xl mx-auto boxed">
+    {% if blockTitle %}
+      <h3 class="mb-xxl">{{ blockTitle }}</h3>
     {% endif %}
-    <div data-ref="slider" class="slider swiper-container">
-      {# <div class="hidden md:flex button-wrapper absolute bottom-[calc(50%_-_15px)] w-full align-middle justify-between z-[40]">
-        <button type="button" data-ref="prev" class="slider-button slider-button--prev">
-          <svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="fill-black" d="M42 15L3 15M3 15L17.3103 28M3 15L17.3103 2" stroke="#303030" stroke-width="4"/>
-          </svg> 
-        </button>
-        <button type="button" data-ref="next" class="slider-button slider-button--next">
-          <svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="fill-black" d="M0 15L39 15M39 15L24.6897 2M39 15L24.6897 28" stroke="#303030" stroke-width="4"/>
-          </svg>
-        </button>
+
+    <div data-ref="slider" class="slider swiper-container mt-xl lg:mt-0">
+      {# <div class="w-full button-wrapper absolute left-0 bottom-0 z-50 translate-y-sm xs:translate-y-sm lg:translate-y-sm">
+        <div class="w-full flex align-middle justify-center">
+          <button type="button" data-ref="prev" class="slider-button slider-button--prev">
+            <svg width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="fill-black xs:fill-black" d="M3.93801 13.9393C3.35222 14.5251 3.35222 15.4749 3.93801 16.0607L13.4839 25.6066C14.0697 26.1924 15.0195 26.1924 15.6053 25.6066C16.1911 25.0208 16.1911 24.0711 15.6053 23.4853L7.11999 15L15.6053 6.51472C16.1911 5.92893 16.1911 4.97918 15.6053 4.3934C15.0195 3.80761 14.0697 3.80761 13.484 4.3934L3.93801 13.9393ZM34.3438 13.5L4.99867 13.5L4.99867 16.5L34.3437 16.5L34.3438 13.5Z"/>
+            </svg>
+          </button>
+          <button type="button" data-ref="next" class="slider-button slider-button--next">
+            <svg class="transform scale-x-[-1]" width="40" height="30" viewbox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="fill-black xs:fill-black" d="M3.93801 13.9393C3.35222 14.5251 3.35222 15.4749 3.93801 16.0607L13.4839 25.6066C14.0697 26.1924 15.0195 26.1924 15.6053 25.6066C16.1911 25.0208 16.1911 24.0711 15.6053 23.4853L7.11999 15L15.6053 6.51472C16.1911 5.92893 16.1911 4.97918 15.6053 4.3934C15.0195 3.80761 14.0697 3.80761 13.484 4.3934L3.93801 13.9393ZM34.3438 13.5L4.99867 13.5L4.99867 16.5L34.3437 16.5L34.3438 13.5Z"/>
+            </svg>
+          </button>
+        </div>
       </div> #}
-      <div data-ref="dots" class="flex justify-center absolute !bottom-[-10px] lg:!bottom-[-20px] z-[40] slider-pagination swiper-pagination-fraction"></div>
-      <div class="swiper-wrapper flex flex-row items-center">
+      <div class="w-full button-wrapper absolute left-0 bottom-0 z-50 translate-y-xl xs:translate-y-xl lg:translate-y-sm">
+        <div data-ref="dots" class="flex justify-center slider-pagination swiper-pagination-fraction"></div>
+      </div>
+      <div class="swiper-wrapper w-full h-full items-center">
         {% for item in logos %}
           <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
-            <div class="item w-full flex justify-center">
-              <img class="figure-image lazyload w-full max-w-[200px] h-full object-contain"
-                src="{{ item.logo.src }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', item.logo.id)}}"
-                data-sizes="auto">
-            </div>
+            <img class="lazyload w-full max-w-[100px] h-full object-cover relative"
+              src="{{ item.logo.src | resize(32) }}"
+              data-srcset="{{function('wp_get_attachment_image_srcset', item.logo.id)}}"
+              data-sizes="auto"
+              alt="{{ item.logo.alt|e }}">
           </div>
         {% endfor %}
       </div>

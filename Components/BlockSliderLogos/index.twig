@@ -1,0 +1,40 @@
+<flynt-component
+  load:on="load" name="BlockSliderLogos"
+  class="overflow-hidden"
+  style="background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}transparent{% endif %};">
+  <script type="application/json">{{ jsonData|json_encode }}</script>
+  <div class="boxed px-0 w-full" {% if options.topPadding or options.bottomPadding %}style="padding-top: {{ options.topPadding }}; padding-bottom: {{ options.bottomPadding }};"{% endif %}>
+    {% if blockTitle %}
+      <h3 class="mb-xxl">{{ blockTitle }}</h3>
+    {% endif %}
+
+    <div data-ref="slider" class="slider relative max-w-full swiper-container border-t border-b">
+      
+      {# Pagination dots - matching SliderLogos structure #}
+      {# <div class="w-full button-wrapper absolute left-0 bottom-0 z-50 translate-y-xl xs:translate-y-xl lg:translate-y-sm">
+        <div data-ref="dots" class="flex justify-center slider-pagination swiper-pagination-fraction"></div>
+      </div> #}
+      
+      <div class="swiper-wrapper w-full h-full items-center py-sm">
+        {% for box in contentBoxes %}
+          <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
+            {% if box.panelLogo %}
+              {% if box.panelLink %}
+                <a href="{{ box.panelLink.url }}" class="" {% if box.panelLink.target %} target="{{ box.panelLink.target }}" rel="noreferrer noopener"{% endif %}>
+              {% endif %}
+                <img 
+                  class="logo lazyload w-full max-w-[100px] h-full object-contain aspect-square"
+                  src="{{ box.panelLogo.src }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', box.panelLogo.id)}}"
+                  data-sizes="auto"
+                  alt="{{ box.panelLogo.alt|e }}">
+              {% if box.panelLink %}
+                </a>
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</flynt-component>

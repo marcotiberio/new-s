@@ -1,8 +1,8 @@
 {
   "Components/AccordionSystems/script.js": {
-    "file": "assets/script-a38c3944.js",
+    "file": "assets/script-6e2b6d10.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
+      "_swiper-bundle.min-e382c7af.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -33,7 +33,7 @@
     "src": "Components/BlockCta/Assets/youtube.svg"
   },
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-80eb5179.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -46,16 +46,27 @@
     "src": "Components/BlockPostArchive/script.js"
   },
   "Components/BlockProductSpecs/script.js": {
-    "file": "assets/script-57dd4cf7.js",
+    "file": "assets/script-6dff4a67.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
+      "_swiper-bundle.min-e382c7af.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/BlockProductSpecs/script.js"
   },
+  "Components/BlockSliderLogos/script.js": {
+    "file": "assets/script-e1e86449.js",
+    "imports": [
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
+      "_helpers-0bb72b7a.js",
+      "assets/main.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/BlockSliderLogos/script.js"
+  },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-80eb5179.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -88,20 +99,20 @@
     "src": "Components/HeroImageText/script.js"
   },
   "Components/HeroSlider/script.js": {
-    "file": "assets/script-837837de.js",
+    "file": "assets/script-75ad5708.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
-      "_pagination-6df199f6.js",
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/HeroSlider/script.js"
   },
   "Components/HeroSliderComposite/script.js": {
-    "file": "assets/script-5f37f368.js",
+    "file": "assets/script-704da645.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
-      "_pagination-6df199f6.js",
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -142,7 +153,7 @@
     "src": "Components/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-7d4b6148.js",
+    "file": "assets/script-19385d00.js",
     "imports": [
       "assets/main.js"
     ],
@@ -150,69 +161,69 @@
     "src": "Components/ScrolltriggerComparison/script.js"
   },
   "Components/SliderBox/script.js": {
-    "file": "assets/script-55486f69.js",
+    "file": "assets/script-45af31c5.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
-      "_pagination-6df199f6.js",
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderBox/script.js"
   },
   "Components/SliderBoxText/script.js": {
-    "file": "assets/script-163fb96b.js",
+    "file": "assets/script-4b6703de.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
-      "_pagination-6df199f6.js",
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderBoxText/script.js"
   },
   "Components/SliderFeatProjects/script.js": {
-    "file": "assets/script-d89efc60.js",
+    "file": "assets/script-28ccfffb.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
+      "_swiper-bundle.min-e382c7af.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderFeatProjects/script.js"
   },
   "Components/SliderHorizontal/script.js": {
-    "file": "assets/script-15824d46.js",
+    "file": "assets/script-f7fa6434.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
-      "_pagination-6df199f6.js",
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderHorizontal/script.js"
   },
   "Components/SliderImages/script.js": {
-    "file": "assets/script-a3694eb9.js",
+    "file": "assets/script-f577a6f2.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
-      "_pagination-6df199f6.js",
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderImages/script.js"
   },
   "Components/SliderLogos/script.js": {
-    "file": "assets/script-56f211f7.js",
+    "file": "assets/script-a66cd641.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
-      "_pagination-6df199f6.js",
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderLogos/script.js"
   },
   "Components/SliderQuotes/script.js": {
-    "file": "assets/script-2991d86e.js",
+    "file": "assets/script-70b3bd66.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js",
-      "_pagination-6df199f6.js",
+      "_swiper-bundle.min-e382c7af.js",
+      "_pagination-50e1862f.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -224,21 +235,21 @@
   "_index-2a8ce3c2.js": {
     "file": "assets/index-2a8ce3c2.js"
   },
-  "_pagination-6df199f6.js": {
-    "file": "assets/pagination-6df199f6.js",
+  "_pagination-50e1862f.js": {
+    "file": "assets/pagination-50e1862f.js",
     "imports": [
-      "_swiper-bundle.min-4dcd02ab.js"
+      "_swiper-bundle.min-e382c7af.js"
     ]
   },
   "_script-db2e204d.js": {
     "file": "assets/script-db2e204d.js",
     "isDynamicEntry": true
   },
-  "_swiper-bundle.min-4dcd02ab.js": {
+  "_swiper-bundle.min-e382c7af.js": {
     "css": [
-      "assets/swiper-bundle-68b24500.css"
+      "assets/swiper-bundle-56853baa.css"
     ],
-    "file": "assets/swiper-bundle.min-4dcd02ab.js"
+    "file": "assets/swiper-bundle.min-e382c7af.js"
   },
   "assets/admin.js": {
     "file": "assets/admin-f04188a4.js",
@@ -279,6 +290,7 @@
       "Components/BlockPostArchive/script.js",
       "Components/BlockProductSpecs/script.js",
       "_script-db2e204d.js",
+      "Components/BlockSliderLogos/script.js",
       "Components/BlockVideoOembed/script.js",
       "Components/BlockVideoText/script.js",
       "Components/GridPostsArchive/script.js",
@@ -298,12 +310,12 @@
       "Components/SliderLogos/script.js",
       "Components/SliderQuotes/script.js"
     ],
-    "file": "assets/main-54757a66.js",
+    "file": "assets/main-8e544cb6.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-c96d7fe5.css",
+    "file": "assets/main-ff982f7b.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -313,17 +325,17 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-c050154a.css",
+    "file": "assets/tinyMce-bbbb6ad5.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },
   "node_modules/@webreflection/custom-elements-builtin/esm/index.js": {
-    "file": "assets/index-1b2afe3b.js",
+    "file": "assets/index-f66bc1a7.js",
     "isDynamicEntry": true,
     "src": "node_modules/@webreflection/custom-elements-builtin/esm/index.js"
   },
   "swiper-bundle.css": {
-    "file": "assets/swiper-bundle-68b24500.css",
+    "file": "assets/swiper-bundle-56853baa.css",
     "src": "swiper-bundle.css"
   }
 }
