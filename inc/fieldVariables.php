@@ -78,6 +78,7 @@ function getBoxedTopPadding()
         'name' => 'topPadding',
         'type' => 'select',
         'choices' => [
+            '0px' => 'None',
             '15px' => 'Default',
             '50px' => 'Small',
             '120px' => 'Medium',
@@ -101,6 +102,7 @@ function getBoxedBottomPadding()
         'name' => 'bottomPadding',
         'type' => 'select',
         'choices' => [
+            '0px' => 'None',
             '15px' => 'Default',
             '50px' => 'Small',
             '120px' => 'Medium',
