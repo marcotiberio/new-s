@@ -15,7 +15,7 @@
         <div data-ref="dots" class="flex justify-center slider-pagination swiper-pagination-fraction"></div>
       </div> #}
       
-      <div class="swiper-wrapper w-full h-full items-center py-sm">
+      <div class="swiper-wrapper w-full h-full items-center py-0">
         {% for box in contentBoxes %}
           <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
             {% if box.panelLogo %}
@@ -23,7 +23,7 @@
                 <a href="{{ box.panelLink.url }}" class="" {% if box.panelLink.target %} target="{{ box.panelLink.target }}" rel="noreferrer noopener"{% endif %}>
               {% endif %}
                 <img 
-                  class="logo lazyload w-full max-w-[100px] h-full object-contain aspect-square"
+                  class="logo lazyload w-full max-h-[100px] h-full object-contain aspect-square"
                   src="{{ box.panelLogo.src }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', box.panelLogo.id)}}"
                   data-sizes="auto"

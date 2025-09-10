@@ -53,7 +53,7 @@ function getACFLayout()
                         'preview_size' => 'small',
                         'instructions' => __('Accepted Image-Formats: SVG, PNG. Recommended Image-Format: SVG.', 'flynt'),
                         'required' => 0,
-                        'mime_types' => 'png,svg',
+                        'mime_types' => 'png,svg,jpg, jpeg',
                         'wrapper' => [
                             'width' => 50
                         ],
