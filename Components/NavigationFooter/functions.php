@@ -19,6 +19,7 @@ add_filter('Flynt/addComponentData?name=NavigationFooter', function ($data) {
     return $data;
 });
 
+
 Options::addTranslatable('NavigationFooter', [
     // [
     //     'label' => __('CTA', 'flynt'),

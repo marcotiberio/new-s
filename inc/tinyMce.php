@@ -134,35 +134,15 @@ function getConfig()
                 'icon' => '',
                 'items' => [
                     [
-                        'title' => 'Button Green Text / White Background',
-                        'classes' => 'button button--fullGreen',
-                        'selector' => 'a'
-                    ],
-                    [
-                        'title' => 'Button Blue Text / White Background',
-                        'classes' => 'button button--fullBlue',
-                        'selector' => 'a'
-                    ],
-                    [
-                        'title' => 'Button Orange Text / White Background',
-                        'classes' => 'button button--fullOrange',
-                        'selector' => 'a'
-                    ],
-                    [
-                        'title' => 'Button Black Text / White Background',
-                        'classes' => 'button button--fullBlack',
-                        'selector' => 'a'
-                    ],
-                    [
-                        'title' => 'Button White Text / Black Background',
-                        'classes' => 'button button--fullWhite',
-                        'selector' => 'a'
-                    ],
-                    [
-                        'title' => 'Button Black Text / White Background',
+                        'title' => 'Button Outline',
                         'classes' => 'button button--outline',
                         'selector' => 'a'
-                    ]
+                    ],
+                    [
+                        'title' => 'Button Link',
+                        'classes' => 'button button--link',
+                        'selector' => 'a'
+                    ],
                 ]
             ],
         ],

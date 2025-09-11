@@ -1,9 +1,9 @@
-<ul data-ref="menu" class="menu w-full h-full">
+<ul data-ref="menu" class="menu w-full h-full pb-xs border-b">
   <div class="w-full h-full mx-auto flex flex-row flex-wrap lg:grid lg:grid-cols-12 gap-xs items-center">
     {% for item in items %}
       {# regular menu item #}
       {% if not item.children %}
-        <li class="item  flex {{ item.classes|join(' ') }} {{- item.current ? ' current-menu-item' }}">
+        <li class="item flex {{ item.classes|join(' ') }} {{- item.current ? ' current-menu-item' }}">
           <a class="link font-menuFooter hover:underline" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
             {{ item.title }}
           </a>

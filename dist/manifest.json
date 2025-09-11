@@ -1,8 +1,9 @@
 {
   "Components/AccordionSystems/script.js": {
-    "file": "assets/script-6e2b6d10.js",
+    "file": "assets/script-3d69e1a7.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -33,7 +34,7 @@
     "src": "Components/BlockCta/Assets/youtube.svg"
   },
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-9c1467d8.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -46,19 +47,21 @@
     "src": "Components/BlockPostArchive/script.js"
   },
   "Components/BlockProductSpecs/script.js": {
-    "file": "assets/script-6dff4a67.js",
+    "file": "assets/script-bfd1d883.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/BlockProductSpecs/script.js"
   },
   "Components/BlockSliderLogos/script.js": {
-    "file": "assets/script-e1e86449.js",
+    "file": "assets/script-c914d7aa.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js",
       "assets/main.js"
     ],
@@ -66,7 +69,7 @@
     "src": "Components/BlockSliderLogos/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -74,7 +77,7 @@
     "src": "Components/BlockVideoOembed/script.js"
   },
   "Components/BlockVideoText/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -99,20 +102,22 @@
     "src": "Components/HeroImageText/script.js"
   },
   "Components/HeroSlider/script.js": {
-    "file": "assets/script-75ad5708.js",
+    "file": "assets/script-92c86da5.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/HeroSlider/script.js"
   },
   "Components/HeroSliderComposite/script.js": {
-    "file": "assets/script-704da645.js",
+    "file": "assets/script-5b32e3a0.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -148,12 +153,21 @@
     "isDynamicEntry": true,
     "src": "Components/NavigationBurger/script.js"
   },
+  "Components/NavigationFooter/script.js": {
+    "file": "assets/script-1f1391a7.js",
+    "imports": [
+      "_swiper-bundle.min-6558999d.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/NavigationFooter/script.js"
+  },
   "Components/NavigationMainLogo/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
     "src": "Components/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-19385d00.js",
+    "file": "assets/script-514e37f4.js",
     "imports": [
       "assets/main.js"
     ],
@@ -161,73 +175,86 @@
     "src": "Components/ScrolltriggerComparison/script.js"
   },
   "Components/SliderBox/script.js": {
-    "file": "assets/script-45af31c5.js",
+    "file": "assets/script-ecd2891d.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderBox/script.js"
   },
   "Components/SliderBoxText/script.js": {
-    "file": "assets/script-4b6703de.js",
+    "file": "assets/script-a1fdbb04.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderBoxText/script.js"
   },
   "Components/SliderFeatProjects/script.js": {
-    "file": "assets/script-28ccfffb.js",
+    "file": "assets/script-5c600d09.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderFeatProjects/script.js"
   },
   "Components/SliderHorizontal/script.js": {
-    "file": "assets/script-f7fa6434.js",
+    "file": "assets/script-5e5554fb.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderHorizontal/script.js"
   },
   "Components/SliderImages/script.js": {
-    "file": "assets/script-f577a6f2.js",
+    "file": "assets/script-a1c4949a.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderImages/script.js"
   },
   "Components/SliderLogos/script.js": {
-    "file": "assets/script-a66cd641.js",
+    "file": "assets/script-b6875bc4.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderLogos/script.js"
   },
   "Components/SliderQuotes/script.js": {
-    "file": "assets/script-70b3bd66.js",
+    "file": "assets/script-c860fb74.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js",
-      "_pagination-50e1862f.js",
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderQuotes/script.js"
+  },
+  "_a11y-d0e9ac2c.js": {
+    "file": "assets/a11y-d0e9ac2c.js",
+    "imports": [
+      "_swiper-bundle.min-6558999d.js"
+    ]
   },
   "_helpers-0bb72b7a.js": {
     "file": "assets/helpers-0bb72b7a.js"
@@ -235,21 +262,22 @@
   "_index-2a8ce3c2.js": {
     "file": "assets/index-2a8ce3c2.js"
   },
-  "_pagination-50e1862f.js": {
-    "file": "assets/pagination-50e1862f.js",
+  "_pagination-e92855f2.js": {
+    "file": "assets/pagination-e92855f2.js",
     "imports": [
-      "_swiper-bundle.min-e382c7af.js"
+      "_a11y-d0e9ac2c.js",
+      "_swiper-bundle.min-6558999d.js"
     ]
   },
   "_script-db2e204d.js": {
     "file": "assets/script-db2e204d.js",
     "isDynamicEntry": true
   },
-  "_swiper-bundle.min-e382c7af.js": {
+  "_swiper-bundle.min-6558999d.js": {
     "css": [
       "assets/swiper-bundle-56853baa.css"
     ],
-    "file": "assets/swiper-bundle.min-e382c7af.js"
+    "file": "assets/swiper-bundle.min-6558999d.js"
   },
   "assets/admin.js": {
     "file": "assets/admin-f04188a4.js",
@@ -301,6 +329,7 @@
       "Components/ListComponents/script.js",
       "Components/ListingHomepage/script.js",
       "Components/NavigationBurger/script.js",
+      "Components/NavigationFooter/script.js",
       "Components/ScrolltriggerComparison/script.js",
       "Components/SliderBox/script.js",
       "Components/SliderBoxText/script.js",
@@ -310,12 +339,12 @@
       "Components/SliderLogos/script.js",
       "Components/SliderQuotes/script.js"
     ],
-    "file": "assets/main-8e544cb6.js",
+    "file": "assets/main-2dfe2dcf.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-0120a5ff.css",
+    "file": "assets/main-3ec84437.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -325,7 +354,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-bbbb6ad5.css",
+    "file": "assets/tinyMce-d923224c.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

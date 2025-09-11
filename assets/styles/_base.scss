@@ -362,12 +362,30 @@ button {
   @apply cursor-pointer;
   @apply relative;
   @apply text-center;
-  @apply underline;
+  @apply no-underline;
 
   &:disabled {
     cursor: default;
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  &--outline {
+    @apply py-[10px];
+    @apply px-lg;
+    @apply text-black;
+    @apply uppercase;
+    @apply bg-transparent;
+    @apply justify-center;
+    @apply border;
+    @apply border-black;
+    @apply whitespace-nowrap;
+
+    &:hover,
+    &:focus {
+      color: var(--white) !important;
+      @apply bg-black;
+    }
   }
 
   &--link {
