@@ -63,13 +63,13 @@
                   Your browser does not support the video tag.
                 </video>
               {% elseif project.featImageAlt %}
-                <img class="figure-image lazyload object-cover md:h-[525px]"
+                <img class="figure-image lazyload object-cover md:h-[525px] aspect-8/5"
                   src="{{ project.featImageAlt.src }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', project.featImageAlt.id)}}"
                   data-sizes="auto"
                   alt="{{ project.featImageAlt.alt|e }}">
               {% else %}
-                <img class="figure-image lazyload object-cover md:h-[525px]"
+                <img class="figure-image lazyload object-cover md:h-[525px] aspect-8/5"
                   src="{{ project.thumbnail.src }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', project.thumbnail.id)}}"
                   data-sizes="auto"

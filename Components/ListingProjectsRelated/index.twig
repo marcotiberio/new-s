@@ -46,7 +46,7 @@
                   data-sizes="auto"
                   alt="{{ project.featImageAlt.alt|e }}">
               {% else %} #}
-                <img class="figure-image lazyload object-cover md:aspect-4/3"
+                <img class="figure-image lazyload object-cover aspect-8/5"
                   src="{{ project.thumbnail.src }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', project.thumbnail.id)}}"
                   data-sizes="auto"

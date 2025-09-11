@@ -31,7 +31,7 @@
               <div class="w-full flex flex-col gap-xs w-full items-start">
                 {% if post.thumbnail %}
                   <img 
-                    class="lazyload transition grid duration-200 ease-in-out object-cover h-[270px]" 
+                    class="lazyload transition grid duration-200 ease-in-out object-cover aspect-8/5" 
                     src="{{ post.thumbnail.src }}"
                     data-srcset="{{ function('wp_get_attachment_image_srcset', post.thumbnail.id) }}"
                     data-sizes="auto"

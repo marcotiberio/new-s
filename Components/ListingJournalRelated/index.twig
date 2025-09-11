@@ -28,7 +28,7 @@
               x-transition:leave-end="opacity-0 scale-95"
             >
               <a class="flex flex-col gap-xs w-full" href="{{ item.link }}" title="{{ item.title }}">
-                <img class="figure-image lazyload object-cover md:aspect-4/3"
+                <img class="figure-image lazyload object-cover aspect-8/5"
                   src="{{ item.thumbnail.src|resize(32) }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
                   data-sizes="auto"

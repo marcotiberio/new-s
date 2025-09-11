@@ -73,7 +73,7 @@ function getBoxedTopPadding()
     return [
         'label' => __('Custom Top Padding', 'flynt'),
         'instructions' => sprintf(
-            'Set custom top padding for component.'
+            'Set custom top padding for component. Set to "Top of the page" if this is the first component on the page.'
         ),
         'name' => 'topPadding',
         'type' => 'select',
@@ -83,6 +83,7 @@ function getBoxedTopPadding()
             '50px' => 'Small',
             '120px' => 'Medium',
             '230px' => 'Large',
+            '160px' => 'Top of the page',
         ],
         'return_format' => 'value',
         'default_value' => '15px',
@@ -112,6 +113,28 @@ function getBoxedBottomPadding()
         'default_value' => '15px',
         'wrapper' => [
             'width' => 50,
+        ],
+    ];
+}
+
+function getFirstComponent()
+{
+    return [
+        'label' => __('First Component', 'flynt'),
+        'instructions' => sprintf(  
+            'Set to "Yes" if this is the first component on the page.'
+        ),
+        'name' => 'firstComponent',
+        'type' => 'true_false',
+        'choices' => [
+        'default_value' => '',
+            '1' => 'True',
+            '0' => 'No',
+        ],
+        'return_format' => 'value',
+        'default_value' => '0',
+        'wrapper' => [
+            'width' => 100,
         ],
     ];
 }
