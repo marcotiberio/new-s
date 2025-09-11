@@ -53,7 +53,6 @@ function getACFLayout()
                         'name' => 'colEnd',
                         'type' => 'button_group',
                         'choices' => [
-                            'col-end-4 lg:col-end-1' => sprintf('<p>1</p>', __('1', 'flynt')),
                             'col-end-4 lg:col-end-2' => sprintf('<p>2</p>', __('2', 'flynt')),
                             'col-end-4 lg:col-end-3' => sprintf('<p>3</p>', __('3', 'flynt')),
                             'col-end-4 lg:col-end-4' => sprintf('<p>4</p>', __('4', 'flynt')),
@@ -64,7 +63,8 @@ function getACFLayout()
                             'col-end-4 lg:col-end-9' => sprintf('<p>9</p>', __('9', 'flynt')),
                             'col-end-4 lg:col-end-10' => sprintf('<p>10</p>', __('10', 'flynt')),
                             'col-end-4 lg:col-end-11' => sprintf('<p>11</p>', __('11', 'flynt')),
-                            'col-end-4 lg:col-end-13' => sprintf('<p>12</p>', __('12', 'flynt')),
+                            'col-end-4 lg:col-end-12' => sprintf('<p>12</p>', __('12', 'flynt')),
+                            'col-end-4 lg:col-end-13' => sprintf('<p>13</p>', __('13', 'flynt')),
                         ],
                         'wrapper' => [
                             'width' => 50
