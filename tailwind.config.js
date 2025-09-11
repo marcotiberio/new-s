@@ -85,8 +85,9 @@ module.exports = {
         lg: '75px',
         xl: '100px',
         xxl: '120px',
+        pageTop: '145px',
         max: '230px'
-      }
+      } 
     },
     safelist: [
       '!py-xs',

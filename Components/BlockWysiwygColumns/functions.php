@@ -26,6 +26,27 @@ function getACFLayout()
                 'max' => 4,
                 'button_label' => __('Add Column', 'flynt'),
                 'sub_fields' => [
+                    // [
+                    //     'label' => __('Column Width', 'flynt'),
+                    //     'name' => 'colSpan',
+                    //     'type' => 'button_group',
+                    //     'choices' => [
+                    //         'col-span-4 lg:col-span-2' => sprintf('<p>2</p>', __('2', 'flynt')),
+                    //         'col-span-4 lg:col-span-3' => sprintf('<p>3</p>', __('3', 'flynt')),
+                    //         'col-span-4 lg:col-span-4' => sprintf('<p>4</p>', __('4', 'flynt')),
+                    //         'col-span-4 lg:col-span-5' => sprintf('<p>5</p>', __('5', 'flynt')),
+                    //         'col-span-4 lg:col-span-6' => sprintf('<p>6</p>', __('6', 'flynt')),
+                    //         'col-span-4 lg:col-span-7' => sprintf('<p>7</p>', __('7', 'flynt')),
+                    //         'col-span-4 lg:col-span-8' => sprintf('<p>8</p>', __('8', 'flynt')),
+                    //         'col-span-4 lg:col-span-9' => sprintf('<p>9</p>', __('9', 'flynt')),
+                    //         'col-span-4 lg:col-span-10' => sprintf('<p>10</p>', __('10', 'flynt')),
+                    //         'col-span-4 lg:col-span-11' => sprintf('<p>11</p>', __('11', 'flynt')),
+                    //         'col-span-4 lg:col-span-12' => sprintf('<p>12</p>', __('12', 'flynt'))
+                    //     ],
+                    //     'wrapper' => [
+                    //         'width' => 100
+                    //     ],
+                    // ],
                     [
                         'label' => __('Text starts in column:', 'flynt'),
                         'name' => 'colStart',
