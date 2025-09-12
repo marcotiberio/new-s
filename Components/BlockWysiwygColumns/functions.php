@@ -142,6 +142,7 @@ function getACFLayout()
                     FieldVariables\getColorBackground(),
                     FieldVariables\getBoxedTopPadding(),
                     FieldVariables\getBoxedBottomPadding(),
+                    // FieldVariables\getFirstComponent(),
                     [
                         'label' => __('Sticky title?', 'flynt'),
                         'name' => 'stickyTitle',

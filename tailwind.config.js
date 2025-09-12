@@ -85,15 +85,38 @@ module.exports = {
         lg: '75px',
         xl: '100px',
         xxl: '120px',
-        pageTop: '145px',
-        max: '230px'
+        max: '160px'
       } 
     },
     safelist: [
-      '!py-xs',
-      '!py-md',
-      '!py-xxl',
-      '!py-max',
+      'py-xs',
+      'py-md',
+      'py-xxl',
+      'py-max',
+      'pt-pageTop',
+      // Predefined padding classes used in components
+      'pt-0',
+      'pt-xs',
+      'pt-md',
+      'pt-xxl',
+      'pt-max',
+      'pb-0',
+      'pb-xs',
+      'pb-md',
+      'pb-xxl',
+      '!pb-max',
+      // Specific padding values from field variables (arbitrary values)
+      'pt-[0px]',
+      'pt-[15px]',
+      'pt-[50px]',
+      'pt-[120px]',
+      'pt-[230px]',
+      'pt-[160px]',
+      'pb-[0px]',
+      'pb-[15px]',
+      'pb-[50px]',
+      'pb-[120px]',
+      'pb-[230px]',
     ]
   },
   plugins: []

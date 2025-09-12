@@ -1025,17 +1025,17 @@ flynt-component {
   @apply px-xs;
   @apply py-xs;
 
-  &--small {
-    @apply py-xs;
-    @apply sm:py-sm;
-  }
+  // &--small {
+  //   @apply py-xs;
+  //   @apply sm:py-sm;
+  // }
   
 
-  &--large {
-    @apply py-sm;
-    @apply sm:py-lg;
-    @apply md:py-xl;
-  }
+  // &--large {
+  //   @apply py-sm;
+  //   @apply sm:py-lg;
+  //   @apply md:py-xl;
+  // }
 }
 
 .contentMaxWidth {
