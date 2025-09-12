@@ -44,11 +44,22 @@ function getRawSvg()
 function getColorBackground()
 {
     return [
-        'label' => __('Color Background', 'flynt'),
-        'name' => 'colorBackground',
-        'type' => 'color_picker',
-        'wrapper' => [
-            'width' => 100,
+        // 'label' => __('Color Background', 'flynt'),
+        // 'name' => 'colorBackground',
+        // 'type' => 'color_picker',
+        // 'wrapper' => [
+        //     'width' => 100,
+        // ],
+        [
+            'label' => __('Color Background', 'flynt'),
+            'name' => 'colorBackground',
+            'type' => 'select',
+            'choices' => [
+                'bg-transparent' => 'Transparent',
+                'bg-orange' => 'Orange',
+            ],
+            'default_value' => 'transparent',
+            'required' => 0
         ],
     ];
 }

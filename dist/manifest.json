@@ -23,7 +23,7 @@
   },
   "Components/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/NavigationMainLogo/Assets/logo.svg"
+    "src": "Components/BlockCta/Assets/logo.svg"
   },
   "Components/BlockCta/Assets/twitter.svg": {
     "file": "assets/twitter-bc2ba69f.svg",
@@ -34,7 +34,7 @@
     "src": "Components/BlockCta/Assets/youtube.svg"
   },
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-80eb5179.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -69,7 +69,7 @@
     "src": "Components/BlockSliderLogos/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-9c1467d8.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -77,7 +77,7 @@
     "src": "Components/BlockVideoOembed/script.js"
   },
   "Components/BlockVideoText/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-80eb5179.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -124,7 +124,7 @@
     "src": "Components/HeroSliderComposite/script.js"
   },
   "Components/HeroVideoBackground/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -164,7 +164,7 @@
   },
   "Components/NavigationMainLogo/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/NavigationMainLogo/Assets/logo.svg"
+    "src": "Components/BlockCta/Assets/logo.svg"
   },
   "Components/ScrolltriggerComparison/script.js": {
     "file": "assets/script-6e7c1457.js",
@@ -344,7 +344,7 @@
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-ac3a45c9.css",
+    "file": "assets/main-6a27341c.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -354,7 +354,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-07145d35.css",
+    "file": "assets/tinyMce-871e737b.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

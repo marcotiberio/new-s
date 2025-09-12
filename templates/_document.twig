@@ -12,8 +12,7 @@
     </a>
     {% block layout %}
       <div 
-        class="pageWrapper"
-        style="background-color: {% if post.pageBackground %}{{ post.pageBackground }}{% else %}transparent{% endif %};">
+        class="pageWrapper {% if post.pageBackgroundCustom %}{{ post.pageBackgroundCustom }}{% endif %}">
         <header class="w-full">
           {% block header %}
             <div class="wrapper wrapper--menu">

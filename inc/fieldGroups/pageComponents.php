@@ -16,11 +16,22 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'placement' => 'top',
                 'endpoint' => 0
             ],
+            // [
+            //     'label' => __('Page Background', 'flynt'),
+            //     'name' => 'pageBackground',
+            //     'type' => 'color_picker',
+            //     'default' => '#000',
+            //     'required' => 0
+            // ],
             [
-                'label' => __('Page Background', 'flynt'),
-                'name' => 'pageBackground',
-                'type' => 'color_picker',
-                'default' => '#000',
+                'label' => __('Page Background Color', 'flynt'),
+                'name' => 'pageBackgroundCustom',
+                'type' => 'select',
+                'choices' => [
+                    'bg-white' => 'White',
+                    'bg-orange' => 'Orange',
+                ],
+                'default_value' => 'bg-white',
                 'required' => 0
             ],
             [
