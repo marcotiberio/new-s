@@ -14,8 +14,8 @@
           
           <!-- All Category Filter -->
           <div 
-            class="font-body !mb-0 cursor-pointer hover:underline underline-offset-4 w-fit"
-            :class="selectedCategory === '' ? 'underline underline-offset-4' : ''"
+            class="font-body !mb-0 cursor-pointer hover:text-orange w-fit"
+            :class="selectedCategory === '' ? 'text-orange' : ''"
             @click="selectedCategory = ''">
             All
           </div>
@@ -24,8 +24,8 @@
           {% for journalCategory in journalCategories %}
             {% set slug = journalCategory.name|lower|replace({' ' : '-'}) %}
             <div 
-              class="font-body !mb-0 cursor-pointer hover:underline underline-offset-4 w-fit"
-              :class="selectedCategory === '{{ slug }}' ? 'underline underline-offset-4' : ''"
+              class="font-body !mb-0 cursor-pointer hover:text-orange w-fit"
+              :class="selectedCategory === '{{ slug }}' ? 'text-orange' : ''"
               @click="selectedCategory = '{{ slug }}'">
               {{ journalCategory.name }}
             </div>

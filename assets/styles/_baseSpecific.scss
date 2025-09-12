@@ -56,35 +56,19 @@ html.home {
         }
     }
 
-    .wysiwyg {
-        a {
-            @apply text-black;
-            @apply underline;
-            @apply underline-offset-[5px];
-            @apply hover:text-white;
+    .mainContent {
+        .wysiwyg {
+            a {
+                @apply text-black;
+                @apply underline;
+                @apply underline-offset-[5px];
+                @apply hover:text-white;
+            }
         }
     }
 }
 
-// Footer toggle styles with subtle animation
-// .mainFooter {
-//     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
-//     // transform: translateY(100%);
-//     // opacity: 0;
-    
-//     &.show {
-//         position: fixed;
-//         bottom: 0;
-//         left: 0;
-//         right: 0;
-//         z-index: 1000;
-//         // transform: translateY(0);
-//         opacity: 1;
-//         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
-//     }
-// }
-
-// Page Load Animation - Similar to Justified Studio
+/* Prevent flash of content before page load animation */
 .page-load-animation {
     position: fixed;
     top: 0;
@@ -99,53 +83,32 @@ html.home {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    &.fade-out {
-        opacity: 0;
-        visibility: hidden;
-    }
-    
-    .animation-content {
-        text-align: center;
-        color: white;
-        
-        .logo {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            opacity: 0;
-            animation: logoFadeIn 0.3s ease-out 0.3s forwards;
-        }
-    }
 }
 
-@keyframes logoFadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.page-load-animation.fade-out {
+    opacity: 0;
+    visibility: hidden;
 }
 
-@keyframes textFadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes barFadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes progressFill {
-    to {
-        width: 100%;
-    }
-}
-
-// Prevent body scroll during animation
-body.animation-loading {
+/* Prevent body scroll during animation */
+body.page-loading {
     overflow: hidden;
+}
+
+// Footer toggle styles with subtle animation
+.mainFooter {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
+    // transform: translateY(100%);
+    // opacity: 0;
+    
+    &.show {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        // transform: translateY(0);
+        opacity: 1;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
+    }
 }

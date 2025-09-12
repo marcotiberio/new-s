@@ -1,63 +1,14 @@
 {
-  "Components/AccordionSystems/script.js": {
-    "file": "assets/script-3d69e1a7.js",
-    "imports": [
-      "_swiper-bundle.min-6558999d.js",
-      "_a11y-d0e9ac2c.js",
-      "_helpers-0bb72b7a.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "Components/AccordionSystems/script.js"
-  },
-  "Components/BlockCta/Assets/facebook.svg": {
-    "file": "assets/facebook-8975c208.svg",
-    "src": "Components/BlockCta/Assets/linkedin.svg"
-  },
-  "Components/BlockCta/Assets/instagram.svg": {
-    "file": "assets/instagram-5bab2c82.svg",
-    "src": "Components/BlockCta/Assets/instagram.svg"
-  },
-  "Components/BlockCta/Assets/linkedin.svg": {
-    "file": "assets/facebook-8975c208.svg",
-    "src": "Components/BlockCta/Assets/linkedin.svg"
-  },
-  "Components/BlockCta/Assets/logo.svg": {
-    "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/BlockCta/Assets/logo.svg"
-  },
-  "Components/BlockCta/Assets/twitter.svg": {
-    "file": "assets/twitter-bc2ba69f.svg",
-    "src": "Components/BlockCta/Assets/twitter.svg"
-  },
-  "Components/BlockCta/Assets/youtube.svg": {
-    "file": "assets/youtube-77f3f8fd.svg",
-    "src": "Components/BlockCta/Assets/youtube.svg"
-  },
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/BlockGalleryMedia/script.js"
   },
-  "Components/BlockPostArchive/script.js": {
-    "file": "assets/script-bc18cfd5.js",
-    "isDynamicEntry": true,
-    "src": "Components/BlockPostArchive/script.js"
-  },
-  "Components/BlockProductSpecs/script.js": {
-    "file": "assets/script-bfd1d883.js",
-    "imports": [
-      "_swiper-bundle.min-6558999d.js",
-      "_a11y-d0e9ac2c.js",
-      "_helpers-0bb72b7a.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "Components/BlockProductSpecs/script.js"
-  },
   "Components/BlockSliderLogos/script.js": {
-    "file": "assets/script-de411328.js",
+    "file": "assets/script-f6b66c4b.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_a11y-d0e9ac2c.js",
@@ -76,14 +27,6 @@
     "isDynamicEntry": true,
     "src": "Components/BlockVideoOembed/script.js"
   },
-  "Components/BlockVideoText/script.js": {
-    "file": "assets/script-80eb5179.js",
-    "imports": [
-      "_helpers-0bb72b7a.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "Components/BlockVideoText/script.js"
-  },
   "Components/GridPostsArchive/script.js": {
     "file": "assets/script-a317b759.js",
     "imports": [
@@ -93,43 +36,14 @@
     "isDynamicEntry": true,
     "src": "Components/GridPostsArchive/script.js"
   },
-  "Components/HeroImageText/script.js": {
-    "file": "assets/script-fdef6c29.js",
-    "imports": [
-      "_helpers-0bb72b7a.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "Components/HeroImageText/script.js"
-  },
-  "Components/HeroSlider/script.js": {
-    "file": "assets/script-92c86da5.js",
+  "Components/HeroHeaderHome/script.js": {
+    "file": "assets/script-1f1391a7.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
-      "_a11y-d0e9ac2c.js",
-      "_pagination-e92855f2.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
-    "src": "Components/HeroSlider/script.js"
-  },
-  "Components/HeroSliderComposite/script.js": {
-    "file": "assets/script-5b32e3a0.js",
-    "imports": [
-      "_swiper-bundle.min-6558999d.js",
-      "_a11y-d0e9ac2c.js",
-      "_pagination-e92855f2.js",
-      "_helpers-0bb72b7a.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "Components/HeroSliderComposite/script.js"
-  },
-  "Components/HeroVideoBackground/script.js": {
-    "file": "assets/script-9c1467d8.js",
-    "imports": [
-      "_helpers-0bb72b7a.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "Components/HeroVideoBackground/script.js"
+    "src": "Components/HeroHeaderHome/script.js"
   },
   "Components/ListComponents/script.js": {
     "file": "assets/script-6fca4744.js",
@@ -138,11 +52,6 @@
     ],
     "isDynamicEntry": true,
     "src": "Components/ListComponents/script.js"
-  },
-  "Components/ListingHomepage/script.js": {
-    "file": "assets/script-b235f984.js",
-    "isDynamicEntry": true,
-    "src": "Components/ListingHomepage/script.js"
   },
   "Components/NavigationBurger/script.js": {
     "file": "assets/script-e54e009e.js",
@@ -154,25 +63,13 @@
     "src": "Components/NavigationBurger/script.js"
   },
   "Components/NavigationFooter/script.js": {
-    "file": "assets/script-1f1391a7.js",
+    "file": "assets/script-5ff0b70b.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/NavigationFooter/script.js"
-  },
-  "Components/NavigationMainLogo/Assets/logo.svg": {
-    "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/BlockCta/Assets/logo.svg"
-  },
-  "Components/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-6e7c1457.js",
-    "imports": [
-      "assets/main.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "Components/ScrolltriggerComparison/script.js"
   },
   "Components/SliderBox/script.js": {
     "file": "assets/script-ecd2891d.js",
@@ -206,7 +103,119 @@
     "isDynamicEntry": true,
     "src": "Components/SliderFeatProjects/script.js"
   },
-  "Components/SliderHorizontal/script.js": {
+  "Components/ZZZ/AccordionSystems/script.js": {
+    "file": "assets/script-3d69e1a7.js",
+    "imports": [
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/AccordionSystems/script.js"
+  },
+  "Components/ZZZ/BlockCta/Assets/facebook.svg": {
+    "file": "assets/facebook-8975c208.svg",
+    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
+  },
+  "Components/ZZZ/BlockCta/Assets/instagram.svg": {
+    "file": "assets/instagram-5bab2c82.svg",
+    "src": "Components/ZZZ/BlockCta/Assets/instagram.svg"
+  },
+  "Components/ZZZ/BlockCta/Assets/linkedin.svg": {
+    "file": "assets/facebook-8975c208.svg",
+    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
+  },
+  "Components/ZZZ/BlockCta/Assets/logo.svg": {
+    "file": "assets/logo-eeb7436e.svg",
+    "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
+  },
+  "Components/ZZZ/BlockCta/Assets/twitter.svg": {
+    "file": "assets/twitter-bc2ba69f.svg",
+    "src": "Components/ZZZ/BlockCta/Assets/twitter.svg"
+  },
+  "Components/ZZZ/BlockCta/Assets/youtube.svg": {
+    "file": "assets/youtube-77f3f8fd.svg",
+    "src": "Components/ZZZ/BlockCta/Assets/youtube.svg"
+  },
+  "Components/ZZZ/BlockPostArchive/script.js": {
+    "file": "assets/script-bc18cfd5.js",
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/BlockPostArchive/script.js"
+  },
+  "Components/ZZZ/BlockProductSpecs/script.js": {
+    "file": "assets/script-bfd1d883.js",
+    "imports": [
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/BlockProductSpecs/script.js"
+  },
+  "Components/ZZZ/BlockVideoText/script.js": {
+    "file": "assets/script-80eb5179.js",
+    "imports": [
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/BlockVideoText/script.js"
+  },
+  "Components/ZZZ/HeroImageText/script.js": {
+    "file": "assets/script-fdef6c29.js",
+    "imports": [
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/HeroImageText/script.js"
+  },
+  "Components/ZZZ/HeroSlider/script.js": {
+    "file": "assets/script-92c86da5.js",
+    "imports": [
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/HeroSlider/script.js"
+  },
+  "Components/ZZZ/HeroSliderComposite/script.js": {
+    "file": "assets/script-5b32e3a0.js",
+    "imports": [
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/HeroSliderComposite/script.js"
+  },
+  "Components/ZZZ/HeroVideoBackground/script.js": {
+    "file": "assets/script-ecbf5980.js",
+    "imports": [
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/HeroVideoBackground/script.js"
+  },
+  "Components/ZZZ/ListingHomepage/script.js": {
+    "file": "assets/script-b235f984.js",
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/ListingHomepage/script.js"
+  },
+  "Components/ZZZ/NavigationMainLogo/Assets/logo.svg": {
+    "file": "assets/logo-eeb7436e.svg",
+    "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
+  },
+  "Components/ZZZ/ScrolltriggerComparison/script.js": {
+    "file": "assets/script-262e8756.js",
+    "imports": [
+      "assets/main.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/ScrolltriggerComparison/script.js"
+  },
+  "Components/ZZZ/SliderHorizontal/script.js": {
     "file": "assets/script-5e5554fb.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
@@ -215,9 +224,9 @@
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
-    "src": "Components/SliderHorizontal/script.js"
+    "src": "Components/ZZZ/SliderHorizontal/script.js"
   },
-  "Components/SliderImages/script.js": {
+  "Components/ZZZ/SliderImages/script.js": {
     "file": "assets/script-a1c4949a.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
@@ -226,9 +235,9 @@
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
-    "src": "Components/SliderImages/script.js"
+    "src": "Components/ZZZ/SliderImages/script.js"
   },
-  "Components/SliderLogos/script.js": {
+  "Components/ZZZ/SliderLogos/script.js": {
     "file": "assets/script-b6875bc4.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
@@ -237,9 +246,9 @@
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
-    "src": "Components/SliderLogos/script.js"
+    "src": "Components/ZZZ/SliderLogos/script.js"
   },
-  "Components/SliderQuotes/script.js": {
+  "Components/ZZZ/SliderQuotes/script.js": {
     "file": "assets/script-c860fb74.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
@@ -248,7 +257,7 @@
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
-    "src": "Components/SliderQuotes/script.js"
+    "src": "Components/ZZZ/SliderQuotes/script.js"
   },
   "_a11y-d0e9ac2c.js": {
     "file": "assets/a11y-d0e9ac2c.js",
@@ -280,7 +289,7 @@
     "file": "assets/swiper-bundle.min-6558999d.js"
   },
   "assets/admin.js": {
-    "file": "assets/admin-f04188a4.js",
+    "file": "assets/admin-c4afd7fc.js",
     "isEntry": true,
     "src": "assets/admin.js"
   },
@@ -312,39 +321,40 @@
   "assets/main.js": {
     "dynamicImports": [
       "node_modules/@webreflection/custom-elements-builtin/esm/index.js",
-      "_script-db2e204d.js",
-      "Components/AccordionSystems/script.js",
       "Components/BlockGalleryMedia/script.js",
-      "Components/BlockPostArchive/script.js",
-      "Components/BlockProductSpecs/script.js",
-      "_script-db2e204d.js",
       "Components/BlockSliderLogos/script.js",
       "Components/BlockVideoOembed/script.js",
-      "Components/BlockVideoText/script.js",
       "Components/GridPostsArchive/script.js",
-      "Components/HeroImageText/script.js",
-      "Components/HeroSlider/script.js",
-      "Components/HeroSliderComposite/script.js",
-      "Components/HeroVideoBackground/script.js",
+      "Components/HeroHeaderHome/script.js",
       "Components/ListComponents/script.js",
-      "Components/ListingHomepage/script.js",
       "Components/NavigationBurger/script.js",
       "Components/NavigationFooter/script.js",
-      "Components/ScrolltriggerComparison/script.js",
       "Components/SliderBox/script.js",
       "Components/SliderBoxText/script.js",
       "Components/SliderFeatProjects/script.js",
-      "Components/SliderHorizontal/script.js",
-      "Components/SliderImages/script.js",
-      "Components/SliderLogos/script.js",
-      "Components/SliderQuotes/script.js"
+      "_script-db2e204d.js",
+      "Components/ZZZ/AccordionSystems/script.js",
+      "Components/ZZZ/BlockPostArchive/script.js",
+      "Components/ZZZ/BlockProductSpecs/script.js",
+      "_script-db2e204d.js",
+      "Components/ZZZ/BlockVideoText/script.js",
+      "Components/ZZZ/HeroImageText/script.js",
+      "Components/ZZZ/HeroSlider/script.js",
+      "Components/ZZZ/HeroSliderComposite/script.js",
+      "Components/ZZZ/HeroVideoBackground/script.js",
+      "Components/ZZZ/ListingHomepage/script.js",
+      "Components/ZZZ/ScrolltriggerComparison/script.js",
+      "Components/ZZZ/SliderHorizontal/script.js",
+      "Components/ZZZ/SliderImages/script.js",
+      "Components/ZZZ/SliderLogos/script.js",
+      "Components/ZZZ/SliderQuotes/script.js"
     ],
-    "file": "assets/main-ce93a1b2.js",
+    "file": "assets/main-c6381941.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-6a27341c.css",
+    "file": "assets/main-0d27af4c.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },

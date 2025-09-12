@@ -13,8 +13,8 @@
         
         <!-- All Category Filter -->
         <div 
-          class="font-body !mb-0 cursor-pointer hover:underline underline-offset-4 w-fit"
-          :class="selectedCategory === '' ? 'underline underline-offset-4' : ''"
+          class="font-body !mb-0 cursor-pointer hover:text-orange w-fit"
+          :class="selectedCategory === '' ? 'text-orange' : ''"
           @click="selectedCategory = ''">
           All
         </div>
@@ -23,8 +23,8 @@
         {% for projektCategory in projektCategories %}
           {% set slug = projektCategory.name|lower|replace({' ' : '-'}) %}
           <div 
-            class="font-body !mb-0 cursor-pointer hover:underline underline-offset-4 w-fit"
-            :class="selectedCategory === '{{ slug }}' ? 'underline underline-offset-4' : ''"
+            class="font-body !mb-0 cursor-pointer hover:text-orange w-fit"
+            :class="selectedCategory === '{{ slug }}' ? 'text-orange' : ''"
             @click="selectedCategory = '{{ slug }}'">
             {{ projektCategory.name }}
           </div>
@@ -40,7 +40,7 @@
           {% set projektCategoryTerms = project.terms('category') %}
           {% set postCategorySlugs = projektCategoryTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
           <div 
-            class="post {{ item.colStart }} {{ item.colEnd }} w-full [&_h2]:hover:underline hover:cursor-pointer" 
+            class="post {{ item.colStart }} {{ item.colEnd }} w-full hover:cursor-pointer" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                      (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
             x-transition:enter="transition ease-out duration-100"
@@ -50,7 +50,7 @@
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95"
           >
-            <a class="flex flex-col gap-xs w-full" href="{{ project.link }}">
+            <a class="flex flex-col gap-xs w-full no-underline" href="{{ project.link }}">
               {% if project.featVideo %}
                 <video class="figure-video object-cover md:!h-[525px]"
                   autoplay 
@@ -62,6 +62,14 @@
                   style="width:100%;height:auto;">
                   Your browser does not support the video tag.
                 </video>
+              {% elseif project.featVideoEmbed %}
+                <div class="video-wrapper w-full h-full">
+                  <div data-ref="videoPlayer" class="video-player w-full mx-auto" data-state="isLoaded">
+                    {{ project.featVideoEmbed }}
+                    <div class="video-loader"></div>
+                    <button data-ref="playButton" class="video-playButton" type="button" aria-label="Play Video"></button>
+                  </div>
+                </div>
               {% elseif project.featImageAlt %}
                 <img class="figure-image lazyload object-cover md:h-[525px] aspect-8/5"
                   src="{{ project.featImageAlt.src }}"
@@ -75,7 +83,7 @@
                   data-sizes="auto"
                   alt="{{ project.thumbnail.alt|e }}">
               {% endif %}
-              <div class="flex flex-col">
+              <div class="info flex flex-col">
                 <h2 class="font-body !mb-0">{{ project.title }}</h2>
                 <div class="flex flex-row gap-[5px]">
                   <span class="font-bodySmall !mb-0">{{ project.postCustomText }}</span>

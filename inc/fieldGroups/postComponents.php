@@ -68,6 +68,11 @@ add_action('Flynt/afterRegisterComponents', function () {
                 ],
             ],
             [
+                'label' => __('Featured Video Embed', 'flynt'),
+                'name' => 'featVideoEmbed',
+                'type' => 'oembed',
+            ],
+            [
                 'label' => __('Project Overview Image', 'flynt'),
                 'instructions' => __('Image-Format: JPG, PNG.', 'flynt'),
                 'name' => 'projectOverviewImage',

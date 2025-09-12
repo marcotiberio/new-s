@@ -1,3 +1,13 @@
 flynt-component[name='ListingProjects'] {
-  
+  .info {
+    opacity: 0;
+  }
+
+  .post {
+    &:hover {
+      .info {
+        opacity: 1;
+      }
+    }
+  }
 }

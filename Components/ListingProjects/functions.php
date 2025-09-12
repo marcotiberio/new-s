@@ -4,18 +4,28 @@ namespace Flynt\Components\ListingProjects;
 
 use Flynt\FieldVariables;
 use Timber\Timber;
+use Flynt\Utils\Oembed;
 
-// add_filter('Flynt/addComponentData?name=ListingProjects', function (
-//     $data
-// ) {
-//     $data['projects'] = array_map(function ($item) {
-//         if (!empty($item['project'])) {
-//             $item['project'] = new \Timber\Post($item['project']->ID ?? $item['project']);
-//         }
-//         return $item;
-//     }, get_field('projects') ?: []);
-//     return $data;
-// });
+
+add_filter('Flynt/addComponentData?name=ListingProjects', function ($data) {
+    if (isset($data['mediaItems']) && is_array($data['mediaItems'])) {
+        foreach ($data['projects'] as &$project) {
+            if (isset($project['project']) && isset($project['project']->featVideoEmbed) && !empty($project['project']->featVideoEmbed)) {
+                $project['project']->featVideoEmbed = Oembed::setSrcAsDataAttribute(
+                    $item['oembed'],
+                    [
+                        'autoplay' => 'true',
+                        'loop' => 'true',
+                        'muted' => 'true',
+                        'controls' => 'false'
+                    ]
+                );
+            }
+        }
+    }
+
+    return $data;
+});
 
 function getACFLayout()
 {

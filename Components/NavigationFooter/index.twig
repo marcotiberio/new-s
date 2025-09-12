@@ -1,23 +1,31 @@
-<flynt-component load:on="visible" name="NavigationFooter" class="bg-orange flex flex-col justify-between items-end h-[400px] lg:h-[920px]">
-  <div class="w-full mx-auto boxed !py-xs">
-    <div class="w-full flex flex-col justify-between">
-      {# Top #}
-      <div class="flex flex-col justify-start gap-sm">
-        <div class="w-full h-full flex flex-col gap-sm justify-start">
-          {% if menu %}
-            <nav class="navigation w-full h-full flex justify-start md:justify-center items-end" aria-label="{{ labels.ariaLabel }}">
-              {% include 'Partials/_menu.twig' with { 'items': menu.get_items, 'level': '0', 'maxLevel': maxLevel } only %}
-            </nav>
-          {% endif %}
+<flynt-component load:on="visible" name="NavigationFooter" class="bg-orange flex flex-col justify-between items-end gap-xl">
+  <div class="w-full flex flex-col justify-between">
+    <div class="w-full mx-auto boxed !py-xs">
+      <div class="">
+        {# Top #}
+        <div class="flex flex-col justify-start gap-sm">
+          <div class="w-full h-full flex flex-col gap-sm justify-start">
+            {% if menu %}
+              <nav class="navigation w-full h-full flex justify-start md:justify-center items-end" aria-label="{{ labels.ariaLabel }}">
+                {% include 'Partials/_menu.twig' with { 'items': menu.get_items, 'level': '0', 'maxLevel': maxLevel } only %}
+              </nav>
+            {% endif %}
+          </div>
         </div>
+        {# {% include 'Partials/_backtotop.twig' %} #}
       </div>
-      
-      
-      {# {% include 'Partials/_backtotop.twig' %} #}
+    </div>
+    {# Center #}
+    <div class="boxed grid md:grid-cols-12 gap-xs align-start justify-start md:justify-between">
+      {% for column in columns %}
+        <div class="column flex {{ column.colStart }} {{ column.colEnd }} lg:row-start-1 lg:row-end-2">
+          <div class="wysiwyg">{{ column.contentHtml|e('wp_kses_post') }}</div>
+        </div>
+      {% endfor %}
     </div>
   </div>
   {# Bottom #}
-  <div class="flex flex-col justify-between gap-sm pb-xs">
+  <div class="flex flex-col justify-between gap-sm py-xs">
     {% if logoFooter %}
       <div data-ref="marquee" class="marquee-container relative max-w-full swiper-container overflow-hidden">
         <div class="swiper-wrapper w-full h-full items-center py-0">
