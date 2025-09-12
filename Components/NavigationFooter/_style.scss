@@ -1,1 +1,5 @@
- 
+flynt-component[name='NavigationFooter'] {
+.current-language-menu-item {
+    @apply text-white;
+  }
+}
