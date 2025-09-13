@@ -8,7 +8,7 @@ function getACFLayout()
 {
     return [
         'name' => 'BlockImageTest2',
-        'label' => __('Block: Image Test 2', 'flynt'),
+        'label' => __('Block: Image', 'flynt'),
         'sub_fields' => [
             [
                 'label' => __('Image', 'flynt'),

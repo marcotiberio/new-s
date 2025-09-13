@@ -55,12 +55,18 @@
             <a href="{{ post.link }}">
               <div class="w-full flex flex-col md:grid grid-cols-12 gap-xs items-start">
                 {% if post.thumbnail %}
-                  <img 
-                    class="lazyload transition grid duration-200 ease-in-out object-cover col-start-1 col-end-4 aspect-8/5" 
-                    src="{{ post.thumbnail.src }}"
-                    data-srcset="{{ function('wp_get_attachment_image_srcset', post.thumbnail.id) }}"
+                  <img class="lazyload transition grid duration-200 ease-in-out object-cover col-start-1 col-end-4 aspect-8/5"
+                    src="{{ post.thumbnail.src|resizeDynamic(32, 24) }}"
+                    data-srcset="
+                    {{ post.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,
+                    {{ post.thumbnail.src|resizeDynamic(2560, 1440) }} 2560w,
+                    {{ post.thumbnail.src|resizeDynamic(1920, 1080) }} 1920w,
+                    {{ post.thumbnail.src|resizeDynamic(1440, 810) }} 1440w,
+                    {{ post.thumbnail.src|resizeDynamic(1024, 576) }} 1024w,
+                    {{ post.thumbnail.src|resizeDynamic(768, 432) }} 768w,
+                    {{ post.thumbnail.src|resizeDynamic(375, 211) }} 375w"
                     data-sizes="auto"
-                    alt="{{ post.title }}">
+                    alt="{{ post.thumbnail.alt|e }}">
                 {% endif %}
 
                 <div class="font-bodySmall !mb-0 col-start-4 col-end-5">{{ post.date|date('d.m.y') }}</div>

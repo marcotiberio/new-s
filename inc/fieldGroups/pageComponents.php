@@ -72,7 +72,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     // Components\BlockContactForm\getACFLayout(),
                     // Components\BlockCta\getACFLayout(),
                     Components\BlockDivider\getACFLayout(),
-                    Components\BlockImage\getACFLayout(),
+                    Components\BlockImageTest2\getACFLayout(),
                     // Components\BlockImageText\getACFLayout(),
                     // Components\BlockImageTextMultiple\getACFLayout(),
                     // Components\BlockMultipleBoxesLink\getACFLayout(),

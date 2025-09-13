@@ -3,8 +3,15 @@
   class="w-full lg:w-screen lg:h-screen mx-auto relative">
   {% if image %}
     <img class="figure-image lazyload w-full h-full object-cover"
-      src="{{ image.src }}"
-      data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+      src="{{ image.src|resizeDynamic(32, 24) }}"
+      data-srcset="
+      {{ image.src|resizeDynamic(3840, 2160) }} 3840w,
+      {{ image.src|resizeDynamic(2560, 1440) }} 2560w,
+      {{ image.src|resizeDynamic(1920, 1080) }} 1920w,
+      {{ image.src|resizeDynamic(1440, 810) }} 1440w,
+      {{ image.src|resizeDynamic(1024, 576) }} 1024w,
+      {{ image.src|resizeDynamic(768, 432) }} 768w,
+      {{ image.src|resizeDynamic(375, 211) }} 375w"
       data-sizes="auto"
       alt="{{ image.alt|e }}">
   {% endif %}
