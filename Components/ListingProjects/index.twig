@@ -71,7 +71,7 @@
                   </div>
                 </div>
               {% elseif project.featImageAlt %}
-                <img class="figure-image lazyload object-cover md:h-[525px] aspect-8/5"
+                <img class="figure-image lazyload md:h-[525px] aspect-8/5"
                   src="{{ project.featImageAlt.src|resizeDynamic(32, 24) }}"
                   data-srcset="
                   {{ project.featImageAlt.src|resizeDynamic(3840, 2160) }} 3840w,
@@ -84,7 +84,7 @@
                   data-sizes="auto"
                   alt="{{ project.featImageAlt.alt|e }}">
               {% else %}
-                <img class="figure-image lazyload object-cover md:h-[525px] aspect-8/5"
+                <img class="figure-image lazyload md:h-[525px] aspect-8/5"
                   src="{{ project.thumbnail.src|resizeDynamic(32, 24) }}"
                   data-srcset="
                   {{ project.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,

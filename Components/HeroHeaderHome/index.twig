@@ -2,7 +2,7 @@
   load:on="visible" name="HeroHeaderHome"
   class="w-full lg:w-screen lg:h-screen mx-auto relative">
   {% if image %}
-    <img class="figure-image lazyload w-full h-full object-cover"
+    <img class="figure-image lazyload w-full h-full"
       src="{{ image.src|resizeDynamic(32, 24) }}"
       data-srcset="
       {{ image.src|resizeDynamic(3840, 2160) }} 3840w,

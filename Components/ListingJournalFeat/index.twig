@@ -2,12 +2,13 @@
   <flynt-component 
     load:on="visible" 
     name="ListingJournalFeat" 
-    class=""
+    class="boxed w-full"
     style="
       color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
-      background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
+      background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};
+      padding-top: {{ options.topPadding }}; padding-bottom: {{ options.bottomPadding }};">
     
-    <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+    <div class="wrapper flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
       
       <!-- Posts Grid -->
       <div class="flex flex-col md:flex-row gap-xs">
@@ -30,7 +31,7 @@
             <a href="{{ post.link }}">
               <div class="w-full flex flex-col gap-xs items-start">
                 {% if post.thumbnail %}
-                  <img class="lazyload transition grid duration-200 ease-in-out object-cover aspect-8/5"
+                  <img class="lazyload transition grid duration-200 ease-in-out aspect-8/5"
                     src="{{ post.thumbnail.src|resizeDynamic(32, 24) }}"
                     data-srcset="
                     {{ post.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,

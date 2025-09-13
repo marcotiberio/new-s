@@ -1,12 +1,13 @@
 <flynt-component 
   load:on="visible" 
   name="ListingProjectsFeat" 
-  class=""
+  class="boxed w-full"
   style="
-    color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
-    background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
+      color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
+      background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};
+      padding-top: {{ options.topPadding }}; padding-bottom: {{ options.bottomPadding }};">
 
-  <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+  <div class="wrapper flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
 
     <!-- Posts Grid -->
     <div class="wrapper max-w-screen-max mx-auto">
@@ -39,7 +40,7 @@
                   Your browser does not support the video tag.
                 </video>
               {% elseif project.featImageAlt %}
-                <img class="figure-image lazyload object-cover md:h-[525px] aspect-8/5"
+                <img class="figure-image lazyload md:h-[525px] aspect-8/5"
                   src="{{ project.featImageAlt.src|resizeDynamic(32, 24) }}"
                   data-srcset="
                   {{ project.featImageAlt.src|resizeDynamic(3840, 2160) }} 3840w,
@@ -52,7 +53,7 @@
                   data-sizes="auto"
                   alt="{{ project.featImageAlt.alt|e }}">
               {% else %}
-                <img class="figure-image lazyload object-cover md:h-[525px] aspect-8/5"
+                <img class="figure-image lazyload  md:h-[525px] aspect-8/5"
                   src="{{ project.thumbnail.src|resizeDynamic(32, 24) }}"
                   data-srcset="
                   {{ project.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,

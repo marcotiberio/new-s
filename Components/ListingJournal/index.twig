@@ -55,7 +55,7 @@
             <a href="{{ post.link }}">
               <div class="w-full flex flex-col md:grid grid-cols-12 gap-xs items-start">
                 {% if post.thumbnail %}
-                  <img class="lazyload transition grid duration-200 ease-in-out object-cover col-start-1 col-end-4 aspect-8/5"
+                  <img class="lazyload transition grid duration-200 ease-in-out col-start-1 col-end-4 aspect-8/5"
                     src="{{ post.thumbnail.src|resizeDynamic(32, 24) }}"
                     data-srcset="
                     {{ post.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,
