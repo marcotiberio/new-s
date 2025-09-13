@@ -34,13 +34,13 @@
 
     <!-- Posts Grid -->
     <div class="">
-      <div class="grid grid-cols-12 gap-xs">
+      <div class="flex flex-wrap flex-row gap-xs">
         {% for item in projects %}
           {% set project = item.project %}
           {% set projektCategoryTerms = project.terms('category') %}
           {% set postCategorySlugs = projektCategoryTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
           <div 
-            class="post {{ item.colStart }} {{ item.colEnd }} w-full hover:cursor-pointer" 
+            class="post {{ item.width }} hover:cursor-pointer" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                      (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
             x-transition:enter="transition ease-out duration-100"
