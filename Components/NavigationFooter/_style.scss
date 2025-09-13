@@ -1,5 +1,15 @@
 flynt-component[name='NavigationFooter'] {
-.current-language-menu-item {
+  .current-language-menu-item {
     @apply text-white;
+  }
+
+  .language {
+    &-en {
+      @apply col-start-11 col-end-12 justify-end lg:translate-x-[74%];
+    }
+
+    &-de {
+      @apply col-start-12 col-end-13 justify-end;
+    }
   }
 }
