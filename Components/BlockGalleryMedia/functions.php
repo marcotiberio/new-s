@@ -262,9 +262,20 @@ function getACFLayout()
                                 ],
                             ],
                             [
-                                'label' => __('Video Embed', 'flynt'),
-                                'name' => 'videoId',
+                                'label' => __('Video Embed ID - Landscape', 'flynt'),
+                                'name' => 'videoIDLandscape',
                                 'type' => 'text',
+                                'wrapper' => [
+                                    'width' => 50
+                                ],
+                            ],
+                            [
+                                'label' => __('Video Embed ID - Portrait', 'flynt'),
+                                'name' => 'videoIDPortrait',
+                                'type' => 'text',
+                                'wrapper' => [
+                                    'width' => 50
+                                ],
                             ]
                         ]
                     ]

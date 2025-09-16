@@ -124,6 +124,16 @@ function getACFLayout()
                             'width' => 100
                         ],
                     ],
+                    [
+                        'label' => __('Enable Newsletter Form', 'flynt'),
+                        'name' => 'enableNewsletter',
+                        'type' => 'true_false',
+                        'default_value' => 0,
+                        'ui' => 1,
+                        'wrapper' => [
+                            'width' => 50
+                        ],
+                    ],
                 ]
             ],
             [
