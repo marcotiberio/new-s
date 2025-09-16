@@ -91,9 +91,9 @@ function getBoxedTopPadding()
         'choices' => [
             '0' => 'None',
             '15px' => 'Default',
-            '5vw' => 'Small',
-            '8vw' => 'Medium',
-            '10rem' => 'Large',
+            '5vw' => 'Small', // 50px
+            '8vw' => 'Medium', // 120px
+            '160px' => 'Large',
         ],
         'return_format' => 'value',
         'default_value' => '15px',
@@ -117,7 +117,7 @@ function getBoxedBottomPadding()
             '15px' => 'Default',
             '5vw' => 'Small',
             '8vw' => 'Medium',
-            '10rem' => 'Large',
+            '160px' => 'Large',
         ],
         'return_format' => 'value',
         'default_value' => '15px',

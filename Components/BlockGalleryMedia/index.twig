@@ -11,7 +11,7 @@
             {% include 'Components/BlockGalleryMedia/Partials/video.twig' %}
           </div>
         {% elseif item.acf_fc_layout == 'oembed' %}
-          <div class="media-item--video w-full flex {{ item.alignY }}">
+          <div class="media-item--oembed w-full flex {{ item.alignY }}">
             {% include 'Components/BlockGalleryMedia/Partials/oembed.twig' %}
           </div>
         {% endif %}

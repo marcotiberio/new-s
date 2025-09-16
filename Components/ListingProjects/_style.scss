@@ -1,12 +1,12 @@
 flynt-component[name='ListingProjects'] {
   @screen lg {
-    .info {
+    .customText {
       opacity: 0;
     }
 
     .post {
       &:hover {
-        .info {
+        .customText {
           opacity: 1;
         }
       }

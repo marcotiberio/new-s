@@ -28,7 +28,15 @@
               x-transition:leave-end="opacity-0 scale-95"
             >
               <a class="flex flex-col gap-xs w-full" href="{{ item.link }}" title="{{ item.title }}">
-                <img class="figure-image lazyload aspect-8/5"
+                <img 
+                  class="figure-image lazyload aspect-8/5 object-cover"
+                  src="{{ item.thumbnail.src }}"
+                  alt="{{ item.thumbnail.alt|e | default('') }}"
+                  loading="lazy"
+                  style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+                  onload="this.style.opacity='1'"
+                />
+                {# <img class="figure-image lazyload aspect-8/5"
                   src="{{ item.thumbnail.src|resizeDynamic(32, 24) }}"
                   data-srcset="
                   {{ item.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,
@@ -39,7 +47,7 @@
                   {{ item.thumbnail.src|resizeDynamic(768, 432) }} 768w,
                   {{ item.thumbnail.src|resizeDynamic(375, 211) }} 375w"
                   data-sizes="auto"
-                  alt="{{ item.thumbnail.alt|e }}">
+                  alt="{{ item.thumbnail.alt|e }}"> #}
                 <div class="flex flex-col">
                   <h2 class="font-body !mb-0">{{ item.title }}</h2>
                 </div>

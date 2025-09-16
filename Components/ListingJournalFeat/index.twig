@@ -31,18 +31,14 @@
             <a href="{{ post.link }}">
               <div class="w-full flex flex-col gap-xs items-start">
                 {% if post.thumbnail %}
-                  <img class="lazyload transition grid duration-200 ease-in-out aspect-8/5"
-                    src="{{ post.thumbnail.src|resizeDynamic(32, 24) }}"
-                    data-srcset="
-                    {{ post.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,
-                    {{ post.thumbnail.src|resizeDynamic(2560, 1440) }} 2560w,
-                    {{ post.thumbnail.src|resizeDynamic(1920, 1080) }} 1920w,
-                    {{ post.thumbnail.src|resizeDynamic(1440, 810) }} 1440w,
-                    {{ post.thumbnail.src|resizeDynamic(1024, 576) }} 1024w,
-                    {{ post.thumbnail.src|resizeDynamic(768, 432) }} 768w,
-                    {{ post.thumbnail.src|resizeDynamic(375, 211) }} 375w"
-                    data-sizes="auto"
-                    alt="{{ post.thumbnail.alt|e }}">
+                  <img 
+                    class="lazyload transition grid duration-200 ease-in-out aspect-8/5 object-cover"
+                    src="{{ post.thumbnail.src }}"
+                    alt="{{ post.thumbnail.alt|e | default('') }}"
+                    loading="lazy"
+                    style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+                    onload="this.style.opacity='1'"
+                  />
                 {% endif %}
 
                 <div class="flex flex-row gap-xs items-center">

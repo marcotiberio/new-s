@@ -263,8 +263,8 @@ function getACFLayout()
                             ],
                             [
                                 'label' => __('Video Embed', 'flynt'),
-                                'name' => 'oembed',
-                                'type' => 'oembed',
+                                'name' => 'videoId',
+                                'type' => 'text',
                             ]
                         ]
                     ]

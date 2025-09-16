@@ -879,14 +879,14 @@ label {
 #{$input-selectors} {
   appearance: none !important;
   background-color: transparent !important;
-  border: 1px solid var(--black) !important;
-  border-radius: 5px !important;
+  border-bottom: 1px solid var(--black) !important;
+  border-radius: 0 !important;
   caret-color: var(--color-text) !important;
   color: var(--color-text) !important;
   font-size: var(--bodyFontSizeSmall) !important;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   max-width: 100%;
-  padding: 0.7rem 0.6rem;
+  padding: 0;
   transition: border-color 0.3s ease-in-out;
   width: 100%;
 
@@ -955,6 +955,37 @@ textarea {
     display: inline-block;
     font: inherit;
     width: calc(100% - 33px);
+  }
+}
+
+input:where([type='submit']) {
+  @include reset-link;
+  appearance: none;
+  font-family: 'FKGroteskNeue', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  @apply py-[10px];
+  @apply px-lg;
+  @apply text-black;
+  @apply uppercase;
+  @apply bg-transparent;
+  @apply justify-center;
+  @apply border;
+  @apply border-black;
+  @apply whitespace-nowrap;
+  @apply w-full;
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  @apply cursor-pointer;
+  @apply relative;
+  @apply text-center;
+  @apply no-underline;
+
+  &:hover,
+  &:focus {
+    color: var(--white) !important;
+    @apply bg-black;
   }
 }
 
