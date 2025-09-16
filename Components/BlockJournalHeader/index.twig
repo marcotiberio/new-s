@@ -17,9 +17,6 @@
               <div class="font-bodySmall !mb-0 col-start-2 col-end-3">{{ post.postAuthor }}</div>
               {% set journalCategories = function('get_terms', {'taxonomy': 'journal-category', 'hide_empty': true}) %}
               {% set journalCategoryTerms = post.terms('journal-category') %}
-              {% for term in journalCategoryTerms %}
-                <span class="font-bodySmall !mb-0 col-start-3 col-end-4">{{ term.name }}</span>
-              {% endfor %}
             </div>
             <div class="font-h2">{{ post.title }}</div>
           </div>

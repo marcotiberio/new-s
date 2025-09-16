@@ -66,6 +66,10 @@ html.home {
             }
         }
     }
+
+    .mainFooter {
+        @apply border-t;
+    }
 }
 
 /* Prevent flash of content before page load animation */

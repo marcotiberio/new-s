@@ -17,7 +17,7 @@
         <div class="grid grid-cols-12 gap-xs">
           {% for item in items %}
             <div 
-              class="post flex col-span-3 w-full [&_h2]:hover:underline hover:cursor-pointer" 
+              class="post flex col-span-3 w-full [&_h2]:hover:text-orange hover:cursor-pointer" 
               x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => {{ item.postType|default([])|json_encode }}.includes(cat))) &&
                      (searchQuery === '' || '{{ item.title|lower }}'.includes(searchQuery.toLowerCase()))"
               x-transition:enter="transition ease-out duration-100"

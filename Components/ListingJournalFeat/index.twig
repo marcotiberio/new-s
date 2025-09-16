@@ -18,7 +18,7 @@
           {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
 
           <div 
-            class="post w-full md:w-1/4 [&_h2]:hover:underline hover:cursor-pointer" 
+            class="post w-full md:w-1/4 [&_h2]:hover:text-orange hover:cursor-pointer" 
             x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => ['{{ postCategorySlugs|join("','") }}'].includes(cat))) && 
                      (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
             x-transition:enter="transition ease-out duration-100"

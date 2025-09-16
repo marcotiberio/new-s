@@ -2,8 +2,8 @@
   {% for item in items %}
     {# regular menu item #}
     {% if not item.children %}
-      <li class="item font-menu flex align-middle items-center hover:text-orange font-bodyMenu {{ item.classes|join(' ') }} {{- item.current ? ' text-orange' }} {{- item.target == '_blank' ? ' external-link' }} {{- item.object == 'page' ? ' page-item' }} {{- item.object == 'post' ? ' post-item' }}">
-        <a class="link flex align-middle items-center transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+      <li class="item font-menu flex align-middle items-center hover:text-orange no-underline font-bodyMenu {{ item.classes|join(' ') }} {{- item.current ? ' text-orange' }} {{- item.target == '_blank' ? ' external-link' }} {{- item.object == 'page' ? ' page-item' }} {{- item.object == 'post' ? ' post-item' }}">
+        <a class="link flex align-middle items-center no-underline transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
           {{ item.title }}
         </a>
       </li>
