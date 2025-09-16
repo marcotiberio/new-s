@@ -42,7 +42,7 @@
           {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
 
           <div 
-            class="post w-full py-sm [&_h2]:hover:underline border-t last:border-b hover:cursor-pointer" 
+            class="post w-full py-sm [&_h2]:hover:text-orange border-t last:border-b hover:cursor-pointer" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                      (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
             x-transition:enter="transition ease-out duration-100"
@@ -68,7 +68,6 @@
 
                 <div class="w-full h-full flex flex-col justify-between !mb-0 col-start-5 col-end-8">
                   <h2 class="w-full !mb-0">{{ post.title }}</h2>
-                  <button class="button button--link" href="{{ post.link }}" aria-label="{{ post.title }}">Lesen</button>
                 </div>
 
                 <div class="flex flex-row gap-xs col-start-9 col-end-11">
