@@ -26,18 +26,23 @@
           <div class="w-full md:col-span-9" style="color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};">
             <div class="w-full">
               {% if post.featImageAlt %}
-                <img class="figure-image lazyload object-cover"
-                  src="{{ post.featImageAlt.src | resize(2000) }}"
-                  data-srcset="{{function('wp_get_attachment_image_srcset', post.featImageAlt.id)}}"
-                  data-sizes="auto"
-                  alt="{{ post.featImageAlt.alt|e }}">
+                <img 
+                  class="figure-image object-cover aspect-8/5"
+                  src="{{ post.featImageAlt.src }}"
+                  alt="{{ post.featImageAlt.alt|e | default('') }}"
+                  loading="lazy"
+                  style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+                  onload="this.style.opacity='1'"
+                />
               {% else %}
-                <img class="figure-image lazyload object-cover"
-                  src="{{ post.thumbnail.src | resize(2000) }}"
-                  data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
-                  data-sizes="auto"
-                  alt="{{ post.thumbnail.alt|e }}">
-              {% endif %}
+                <img 
+                  class="figure-image object-cover aspect-8/5"
+                  src="{{ post.thumbnail.src }}"
+                  alt="{{ post.thumbnail.alt|e | default('') }}"
+                  loading="lazy"
+                  style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+                  onload="this.style.opacity='1'"
+                />
             </div>
             <div class="wysiwyg py-sm">{{ post.postContent|e('wp_kses_post') }}</div>
           </div>

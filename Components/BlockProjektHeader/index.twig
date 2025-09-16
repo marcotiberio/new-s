@@ -21,18 +21,14 @@
       </div>
       <div class="w-full">
         {% if post.projectOverviewImage %}
-          <img class="figure-image lazyload object-cover"
-            src="{{ post.projectOverviewImage.src|resizeDynamic(32, 24) }}"
-            data-srcset="
-            {{ post.projectOverviewImage.src|resizeDynamic(3840, 2160) }} 3840w,
-            {{ post.projectOverviewImage.src|resizeDynamic(2560, 1440) }} 2560w,
-            {{ post.projectOverviewImage.src|resizeDynamic(1920, 1080) }} 1920w,
-            {{ post.projectOverviewImage.src|resizeDynamic(1440, 810) }} 1440w,
-            {{ post.projectOverviewImage.src|resizeDynamic(1024, 576) }} 1024w,
-            {{ post.projectOverviewImage.src|resizeDynamic(768, 432) }} 768w,
-            {{ post.projectOverviewImage.src|resizeDynamic(375, 211) }} 375w"
-            data-sizes="auto"
-            alt="{{ post.projectOverviewImage.alt|e }}">
+          <img 
+            class="figure-image lazyload object-cover aspect-8/5"
+            src="{{ post.projectOverviewImage.src }}"
+            alt="{{ post.projectOverviewImage.alt|e | default('') }}"
+            loading="lazy"
+            style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+            onload="this.style.opacity='1'"
+          />
         {% elseif post.featVideo %}
           <video class="figure-video object-cover"
             autoplay 
@@ -45,17 +41,23 @@
             Your browser does not support the video tag.
           </video>
         {% elseif post.featImageAlt %}
-          <img class="figure-image lazyload object-cover"
-            src="{{ post.featImageAlt.src | resize(2000) }}"
-            data-srcset="{{function('wp_get_attachment_image_srcset', post.featImageAlt.id)}}"
-            data-sizes="auto"
-            alt="{{ post.featImageAlt.alt|e }}">
+          <img 
+            class="figure-image lazyload object-cover aspect-8/5"
+            src="{{ post.featImageAlt.src }}"
+            alt="{{ post.featImageAlt.alt|e | default('') }}"
+            loading="lazy"
+            style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+            onload="this.style.opacity='1'"
+          />
         {% else %}
-          <img class="figure-image lazyload object-cover"
-            src="{{ post.thumbnail.src | resize(2000) }}"
-            data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
-            data-sizes="auto"
-            alt="{{ post.thumbnail.alt|e }}">
+          <img 
+            class="figure-image lazyload object-cover aspect-8/5"
+            src="{{ post.thumbnail.src }}"
+            alt="{{ post.thumbnail.alt|e | default('') }}"
+            loading="lazy"
+            style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+            onload="this.style.opacity='1'"
+          />
         {% endif %}
       </div>
     </div>
