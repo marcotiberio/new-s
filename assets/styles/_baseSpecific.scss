@@ -134,9 +134,12 @@ body.footer-open {
         left: 0;
         right: 0;
         z-index: 1000;
-        height: calc(100vh - 55px);
         overflow-y: auto;
         opacity: 1;
+
+        flynt-component[name='NavigationFooter'] {
+            height: calc(100vh - 55px);
+        }
     }
 }
 
