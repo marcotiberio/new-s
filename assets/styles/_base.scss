@@ -78,10 +78,22 @@ p,
   }
 
   a {
-    @apply text-black;
-    @apply underline;
-    @apply underline-offset-[5px];
+    @apply no-underline;
     @apply hover:text-orange;
+
+    &::after {
+      content: '↗';
+      font-size: 1rem;
+      @apply ml-[5px];
+      vertical-align: super;
+    }
+
+    &.link-NoArrow {
+      &::after {
+        content: '';
+        @apply ml-0;
+      }
+    }
   }
 }
 

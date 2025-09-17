@@ -37,13 +37,28 @@ function getACFLayout()
                 'endpoint' => 0,
             ],
             [
-                'label' => __('Image', 'flynt'),
+                'label' => __('Image Desktop', 'flynt'),
                 'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
                 'name' => 'image',
                 'type' => 'image',
                 'preview_size' => 'medium',
                 'required' => 1,
-                'mime_types' => 'jpg,jpeg,png,svg'
+                'mime_types' => 'jpg,jpeg,png,svg',
+                'wrapper' => [
+                    'width' => 50
+                ],
+            ],
+            [
+                'label' => __('Image Mobile', 'flynt'),
+                'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
+                'name' => 'imageMobile',
+                'type' => 'image',
+                'preview_size' => 'medium',
+                'required' => 1,
+                'mime_types' => 'jpg,jpeg,png,svg',
+                'wrapper' => [
+                    'width' => 50
+                ],
             ],
             [
                 'label' => __('Logo', 'flynt'),

@@ -61,10 +61,58 @@ $(document).ready(function () {
   })
 })
 
-// Footer toggle functionality
+// Footer toggle functionality with slide animation
 $(document).ready(function () {
+  // Function to close footer
+  function closeFooter() {
+    const $footer = $('.mainFooter')
+    const $body = $('body')
+    const $openFooterBtn = $('.openFooter')
+    
+    $footer.removeClass('show')
+    $body.removeClass('footer-open')
+    $openFooterBtn.removeClass('active')
+  }
+  
+  // Function to open footer
+  function openFooter() {
+    const $footer = $('.mainFooter')
+    const $body = $('body')
+    const $openFooterBtn = $('.openFooter')
+    
+    $footer.addClass('show')
+    $body.addClass('footer-open')
+    $openFooterBtn.addClass('active')
+  }
+  
+  // Open/close footer button
   $('.openFooter').click(function () {
-    $('.mainFooter').toggleClass('show')
+    const $footer = $('.mainFooter')
+    
+    if ($footer.hasClass('show')) {
+      closeFooter()
+    } else {
+      openFooter()
+    }
+  })
+  
+  // Close footer button
+  $('.closeFooter').click(function () {
+    closeFooter()
+  })
+  
+  // Close footer when clicking outside (overlay)
+  $('.mainFooter').click(function (e) {
+    if (e.target === this) {
+      closeFooter()
+    }
+  })
+  
+  // Close footer on escape key
+  $(document).keyup(function (e) {
+    if (e.keyCode === 27) { // ESC key
+      closeFooter()
+    }
   })
 })
 

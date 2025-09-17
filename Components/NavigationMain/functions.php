@@ -61,6 +61,16 @@ Options::addTranslatable('NavigationMain', [
                     'width' => '50',
                 ],
             ],
+            [
+                'label' => __('Toggle Menu', 'flynt'),
+                'name' => 'toggleMenu',
+                'type' => 'text',
+                'default_value' => __('Toggle Menu', 'flynt'),
+                'required' => 1,
+                'wrapper' => [
+                    'width' => '50',
+                ],
+            ],
         ],
     ],
 ]);

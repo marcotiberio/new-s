@@ -7,7 +7,13 @@
       color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
       background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
     
-    <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategory: '', searchQuery: '', filtersOpen: false }">
+    <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ 
+      selectedCategory: '', 
+      searchQuery: '', 
+      filtersOpen: false,
+      isTransitioning: false,
+      transitionDelay: 150
+    }">
       <div class="grid grid-cols-12 gap-xs">
         
         <div class="flex flex-col flex-wrap justify-start col-start-8 col-end-12">
@@ -16,17 +22,37 @@
           <div 
             class="font-body !mb-0 cursor-pointer hover:text-orange w-fit"
             :class="selectedCategory === '' ? 'text-orange' : ''"
-            @click="selectedCategory = ''">
+            @click="
+              if (selectedCategory !== '') {
+                isTransitioning = true;
+                setTimeout(() => {
+                  selectedCategory = '';
+                  setTimeout(() => isTransitioning = false, transitionDelay);
+                }, transitionDelay);
+              }
+            ">
             All
           </div>
           
-          {% set journalCategories = function('get_terms', {'taxonomy': 'journal-category', 'hide_empty': true}) %}
+          {% set journalCategories = [
+            {'name': 'Events', 'slug': 'events'},
+            {'name': 'Longreads', 'slug': 'longreads'},
+            {'name': 'News', 'slug': 'news'},
+            {'name': 'Resources', 'slug': 'resources'},
+          ] %}
           {% for journalCategory in journalCategories %}
-            {% set slug = journalCategory.name|lower|replace({' ' : '-'}) %}
             <div 
               class="font-body !mb-0 cursor-pointer hover:text-orange w-fit"
-              :class="selectedCategory === '{{ slug }}' ? 'text-orange' : ''"
-              @click="selectedCategory = '{{ slug }}'">
+              :class="selectedCategory === '{{ journalCategory.slug }}' ? 'text-orange' : ''"
+              @click="
+                if (selectedCategory !== '{{ journalCategory.slug }}') {
+                  isTransitioning = true;
+                  setTimeout(() => {
+                    selectedCategory = '{{ journalCategory.slug }}';
+                    setTimeout(() => isTransitioning = false, transitionDelay);
+                  }, transitionDelay);
+                }
+              ">
               {{ journalCategory.name }}
             </div>
           {% endfor %}
@@ -39,18 +65,19 @@
         {% for post in posts %}
           {% set journalCategoryTerms = post.terms('journal-category') %}
           {% set allTerms = journalCategoryTerms %}
-          {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
+          {% set hardcodedCategories = {
+            'Events': 'events',
+            'Longreads': 'longreads',
+            'News': 'news',
+            'Resources': 'resources'
+          } %}
+          {% set postCategorySlugs = allTerms|map(term => hardcodedCategories[term.name]|default(term.name|lower|replace({' ' : '-'}))) %}
 
           <div 
-            class="post w-full py-sm [&_h2]:hover:text-orange border-t last:border-b hover:cursor-pointer" 
+            class="post w-full py-sm [&_h2]:hover:text-orange border-t last:border-b hover:cursor-pointer transition-opacity duration-300" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                      (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
-            x-transition:enter="transition ease-out duration-100"
-            x-transition:enter-start="opacity-0 scale-95"
-            x-transition:enter-end="opacity-100 scale-100"
-            x-transition:leave="transition ease-in duration-100"
-            x-transition:leave-start="opacity-100 scale-100"
-            x-transition:leave-end="opacity-0 scale-95"
+            :class="isTransitioning ? 'opacity-0' : 'opacity-100'"
           >
             <a href="{{ post.link }}">
               <div class="w-full flex flex-col md:grid grid-cols-12 gap-xs items-start">

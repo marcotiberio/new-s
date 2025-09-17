@@ -14,7 +14,7 @@
     </a>
     {% block layout %}
       <div 
-        class="pageWrapper {% if post.pageBackgroundCustom %}{{ post.pageBackgroundCustom }}{% else %}bg-white{% endif %}">
+        class="pageWrapper">
         <header class="w-full">
           {% block header %}
             <div class="wrapper wrapper--menu">
@@ -35,7 +35,7 @@
             </div>
           {% endblock %}
         </header>
-        <main id="mainContent" class="mainContent {% if fn('is_front_page') %}mt-0{% else %}mt-[55px]{% endif %}" aria-label="{{ __('Content', 'flynt') }}">
+        <main id="mainContent" class="mainContent min-h-[calc(100vh-55px)] {% if fn('is_front_page') %}mt-0{% else %}mt-[55px]{% endif %}" aria-label="{{ __('Content', 'flynt') }}">
           {% if function('post_password_required') %}
             {{ function('get_the_password_form') }}
           {% else %}

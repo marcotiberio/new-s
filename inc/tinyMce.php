@@ -130,7 +130,7 @@ function getConfig()
                 ]
             ],
             [
-                'title' => 'Buttons',
+                'title' => 'Buttons/Links',
                 'icon' => '',
                 'items' => [
                     [
@@ -139,8 +139,8 @@ function getConfig()
                         'selector' => 'a'
                     ],
                     [
-                        'title' => 'Button Link',
-                        'classes' => 'button button--link',
+                        'title' => 'Link No Arrow',
+                        'classes' => 'link-NoArrow',
                         'selector' => 'a'
                     ],
                 ]

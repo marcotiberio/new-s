@@ -70,9 +70,9 @@ function getACFLayout()
                         'type' => 'button_group',
                         'choices' => [
                             'w-full' => sprintf('<p>Full</p>', __('Full', 'flynt')),
-                            'w-full lg:w-[calc(50%_-_15px)]' => sprintf('<p>Half</p>', __('Half', 'flynt')),
-                            'w-full lg:w-[calc(33.33%_-_15px)]' => sprintf('<p>Third</p>', __('Third', 'flynt')),
-                            'w-full lg:w-[calc(25%_-_15px)]' => sprintf('<p>Quarter</p>', __('Quarter', 'flynt')),
+                            'w-full lg:w-[calc(50%_-_7.5px)]' => sprintf('<p>Half</p>', __('Half', 'flynt')),
+                            'w-full lg:w-[calc(33.33%_-_7.5px)]' => sprintf('<p>Third</p>', __('Third', 'flynt')),
+                            'w-full lg:w-[calc(25%_-_7.5px)]' => sprintf('<p>Quarter</p>', __('Quarter', 'flynt')),
                         ],
                         'wrapper' => [
                             'width' => 50

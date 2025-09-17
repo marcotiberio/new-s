@@ -1,19 +1,25 @@
 <flynt-component
   load:on="visible" name="HeroHeaderHome"
-  class="w-full lg:w-screen lg:h-screen mx-auto relative">
+  class="w-full lg:w-screen h-screen mx-auto relative">
   {% if image %}
-    <img class="figure-image lazyload w-full h-full"
-      src="{{ image.src|resizeDynamic(32, 24) }}"
-      data-srcset="
-      {{ image.src|resizeDynamic(3840, 2160) }} 3840w,
-      {{ image.src|resizeDynamic(2560, 1440) }} 2560w,
-      {{ image.src|resizeDynamic(1920, 1080) }} 1920w,
-      {{ image.src|resizeDynamic(1440, 810) }} 1440w,
-      {{ image.src|resizeDynamic(1024, 576) }} 1024w,
-      {{ image.src|resizeDynamic(768, 432) }} 768w,
-      {{ image.src|resizeDynamic(375, 211) }} 375w"
-      data-sizes="auto"
-      alt="{{ image.alt|e }}">
+    <img 
+      class="hidden lg:block figure-image lazyload w-full h-full object-cover"
+      src="{{ image.src }}"
+      alt="{{ image.alt|e | default('') }}"
+      loading="lazy"
+      style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+      onload="this.style.opacity='1'"
+    />
+  {% endif %}
+  {% if imageMobile %}
+    <img 
+      class="block lg:hidden figure-image lazyload w-full h-full object-cover"
+      src="{{ imageMobile.src }}"
+      alt="{{ imageMobile.alt|e | default('') }}"
+      loading="lazy"
+      style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+      onload="this.style.opacity='1'"
+    />
   {% endif %}
   <div class="absolute z-20 top-0 left-0 flex h-full w-full justify-center items-center">
     <div class="flex flex-col justify-between gap-sm py-xs">

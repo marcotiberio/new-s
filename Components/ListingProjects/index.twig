@@ -6,7 +6,13 @@
     color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
     background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
 
-  <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategory: '', searchQuery: '', filtersOpen: false }">
+  <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ 
+    selectedCategory: '', 
+    searchQuery: '', 
+    filtersOpen: false,
+    isTransitioning: false,
+    transitionDelay: 150
+  }">
     <div class="grid grid-cols-12 gap-xs">
       
       <div class="flex flex-col flex-wrap justify-start col-start-7 col-end-13">
@@ -15,17 +21,37 @@
         <div 
           class="font-body !mb-0 cursor-pointer hover:text-orange w-fit"
           :class="selectedCategory === '' ? 'text-orange' : ''"
-          @click="selectedCategory = ''">
+          @click="
+            if (selectedCategory !== '') {
+              isTransitioning = true;
+              setTimeout(() => {
+                selectedCategory = '';
+                setTimeout(() => isTransitioning = false, transitionDelay);
+              }, transitionDelay);
+            }
+          ">
           All
         </div>
         
-        {% set projektCategories = function('get_terms', {'taxonomy': 'category', 'hide_empty': true}) %}
+        {% set projektCategories = [
+          {'name': 'Strategy', 'slug': 'strategy'},
+          {'name': 'Brand', 'slug': 'brand'},
+          {'name': 'Campaign', 'slug': 'campaign'},
+          {'name': 'Product & Service', 'slug': 'product-service'},
+        ] %}
         {% for projektCategory in projektCategories %}
-          {% set slug = projektCategory.name|lower|replace({' ' : '-'}) %}
           <div 
             class="font-body !mb-0 cursor-pointer hover:text-orange w-fit"
-            :class="selectedCategory === '{{ slug }}' ? 'text-orange' : ''"
-            @click="selectedCategory = '{{ slug }}'">
+            :class="selectedCategory === '{{ projektCategory.slug }}' ? 'text-orange' : ''"
+            @click="
+              if (selectedCategory !== '{{ projektCategory.slug }}') {
+                isTransitioning = true;
+                setTimeout(() => {
+                  selectedCategory = '{{ projektCategory.slug }}';
+                  setTimeout(() => isTransitioning = false, transitionDelay);
+                }, transitionDelay);
+              }
+            ">
             {{ projektCategory.name }}
           </div>
         {% endfor %}
@@ -38,17 +64,18 @@
         {% for item in projects %}
           {% set project = item.project %}
           {% set projektCategoryTerms = project.terms('category') %}
-          {% set postCategorySlugs = projektCategoryTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
+          {% set hardcodedCategories = {
+            'Strategy': 'strategy',
+            'Brand': 'brand', 
+            'Campaign': 'campaign',
+            'Product & Service': 'product-service',
+          } %}
+          {% set postCategorySlugs = projektCategoryTerms|map(term => hardcodedCategories[term.name]|default(term.name|lower|replace({' ' : '-'}))) %}
           <div 
-            class="post {{ item.width }} hover:cursor-pointer" 
+            class="post {{ item.width }} hover:cursor-pointer transition-opacity duration-300" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                      (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
-            x-transition:enter="transition ease-in-out duration-300"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="transition ease-in-out duration-300"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
+            :class="isTransitioning ? 'opacity-0' : 'opacity-100'"
           >
             <a class="flex flex-col gap-xs w-full no-underline" href="{{ project.link }}">
               {% if project.featVideo %}
