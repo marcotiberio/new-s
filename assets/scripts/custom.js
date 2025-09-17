@@ -61,21 +61,10 @@ $(document).ready(function () {
   })
 })
 
-// Footer toggle functionality with slide animation
+// Footer toggle functionality with fade animation
 $(document).ready(function () {
-  // Function to close footer
-  function closeFooter() {
-    const $footer = $('.mainFooter')
-    const $body = $('body')
-    const $openFooterBtn = $('.openFooter')
-    
-    $footer.removeClass('show')
-    $body.removeClass('footer-open')
-    $openFooterBtn.removeClass('active')
-  }
-  
-  // Function to open footer
-  function openFooter() {
+  // Function to fade footer out (hide it)
+  function fadeFooterOut() {
     const $footer = $('.mainFooter')
     const $body = $('body')
     const $openFooterBtn = $('.openFooter')
@@ -85,33 +74,44 @@ $(document).ready(function () {
     $openFooterBtn.addClass('active')
   }
   
+  // Function to fade footer in (show it)
+  function fadeFooterIn() {
+    const $footer = $('.mainFooter')
+    const $body = $('body')
+    const $openFooterBtn = $('.openFooter')
+    
+    $footer.removeClass('show')
+    $body.removeClass('footer-open')
+    $openFooterBtn.removeClass('active')
+  }
+  
   // Open/close footer button
   $('.openFooter').click(function () {
     const $footer = $('.mainFooter')
     
     if ($footer.hasClass('show')) {
-      closeFooter()
+      fadeFooterIn()
     } else {
-      openFooter()
+      fadeFooterOut()
     }
   })
   
   // Close footer button
   $('.closeFooter').click(function () {
-    closeFooter()
+    fadeFooterIn()
   })
   
   // Close footer when clicking outside (overlay)
   $('.mainFooter').click(function (e) {
     if (e.target === this) {
-      closeFooter()
+      fadeFooterIn()
     }
   })
   
   // Close footer on escape key
   $(document).keyup(function (e) {
     if (e.keyCode === 27) { // ESC key
-      closeFooter()
+      fadeFooterIn()
     }
   })
 })

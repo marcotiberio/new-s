@@ -1,1 +1,0 @@
-import{g as e}from"./main-36ec7eee.js";function a(){const t=document.querySelector(".mainMenu");t&&(e.set(t,{opacity:0}),e.to(t,{opacity:1,duration:.3,ease:"power2.out",delay:2}))}export{a as default};
