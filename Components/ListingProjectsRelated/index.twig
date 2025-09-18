@@ -28,7 +28,7 @@
             x-transition:leave-end="opacity-0 scale-95"
           >
             <a class="flex flex-col gap-xs w-full" href="{{ project.link }}">
-              <img class="figure-image lazyload aspect-8/5"
+              <img class="figure-image lazyload"
                 src="{{ project.thumbnail.src|resizeDynamic(32, 24) }}"
                 data-srcset="
                 {{ project.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,

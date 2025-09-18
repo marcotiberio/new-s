@@ -29,7 +29,7 @@
           >
             <a class="flex flex-col gap-xs w-full" href="{{ project.link }}">
               {% if project.featVideo %}
-                <video class="figure-video object-cover md:!h-[525px]"
+                <video class="figure-video object-cover"
                   autoplay 
                   muted 
                   loop 
@@ -41,7 +41,7 @@
                 </video>
               {% elseif project.featImageAlt %}
                 <img 
-                  class="figure-image lazyload md:h-[525px] aspect-8/5 object-cover"
+                  class="figure-image lazyload object-cover"
                   src="{{ project.featImageAlt.src }}"
                   alt="{{ project.featImageAlt.alt|e | default('') }}"
                   loading="lazy"
@@ -50,7 +50,7 @@
                 />
               {% else %}
                 <img 
-                  class="figure-image lazyload  md:h-[525px] aspect-8/5 object-cover"
+                  class="figure-image lazyload object-cover"
                   src="{{ project.thumbnail.src }}"
                   alt="{{ project.thumbnail.alt|e | default('') }}"
                   loading="lazy"
