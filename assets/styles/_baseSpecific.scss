@@ -75,6 +75,14 @@ html.home {
         }
     }
 
+    .openFooter {
+        &:hover {
+            line {
+                @apply stroke-white;
+            }
+        }
+    }
+
     .mainContent {
         .wysiwyg {
             a {
