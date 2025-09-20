@@ -79,53 +79,53 @@ function getColorText()
     ];
 }
 
-function getBoxedTopPadding()
-{
-    return [
-        'label' => __('Custom Top Padding', 'flynt'),
-        'instructions' => sprintf(
-            'Set custom top padding for component.'
-        ),
-        'name' => 'topPadding',
-        'type' => 'select',
-        'choices' => [
-            '0' => 'None',
-            '15px' => 'Default',
-            '5vw' => 'Small', // 50px
-            '8vw' => 'Medium', // 120px
-            '160px' => 'Large',
-        ],
-        'return_format' => 'value',
-        'default_value' => '15px',
-        'wrapper' => [
-            'width' => 50,
-        ],
-    ];
-}
+// function getBoxedTopPadding()
+// {
+//     return [
+//         'label' => __('Custom Top Padding', 'flynt'),
+//         'instructions' => sprintf(
+//             'Set custom top padding for component.'
+//         ),
+//         'name' => 'topPadding',
+//         'type' => 'select',
+//         'choices' => [
+//             '0' => 'None',
+//             '15px' => 'Default',
+//             '5vw' => 'Small', // 50px
+//             '8vw' => 'Medium', // 120px
+//             '160px' => 'Large',
+//         ],
+//         'return_format' => 'value',
+//         'default_value' => '15px',
+//         'wrapper' => [
+//             'width' => 50,
+//         ],
+//     ];
+// }
 
-function getBoxedBottomPadding()
-{
-    return [
-        'label' => __('Custom Bottom Padding', 'flynt'),
-        'instructions' => sprintf(  
-            'Set custom bottom padding for component.'
-        ),
-        'name' => 'bottomPadding',
-        'type' => 'select',
-        'choices' => [
-            '0' => 'None',
-            '15px' => 'Default',
-            '5vw' => 'Small',
-            '8vw' => 'Medium',
-            '160px' => 'Large',
-        ],
-        'return_format' => 'value',
-        'default_value' => '15px',
-        'wrapper' => [
-            'width' => 50,
-        ],
-    ];
-}
+// function getBoxedBottomPadding()
+// {
+//     return [
+//         'label' => __('Custom Bottom Padding', 'flynt'),
+//         'instructions' => sprintf(  
+//             'Set custom bottom padding for component.'
+//         ),
+//         'name' => 'bottomPadding',
+//         'type' => 'select',
+//         'choices' => [
+//             '0' => 'None',
+//             '15px' => 'Default',
+//             '5vw' => 'Small',
+//             '8vw' => 'Medium',
+//             '160px' => 'Large',
+//         ],
+//         'return_format' => 'value',
+//         'default_value' => '15px',
+//         'wrapper' => [
+//             'width' => 50,
+//         ],
+//     ];
+// }
 
 function getFirstComponent()
 {
@@ -136,6 +136,7 @@ function getFirstComponent()
         ),
         'name' => 'firstComponent',
         'type' => 'true_false',
+        'ui' => 1,
         'choices' => [
         'default_value' => '',
             '1' => 'True',

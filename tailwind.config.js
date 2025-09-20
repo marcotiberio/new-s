@@ -79,6 +79,7 @@ module.exports = {
         4: '4px'
       },
       spacing: {
+        min: '7.5px',
         xs: '15px',
         sm: '30px',
         md: '50px',

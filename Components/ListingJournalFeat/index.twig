@@ -5,57 +5,60 @@
     class="boxed w-full"
     style="
       color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
-      background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};
-      padding-top: {{ options.topPadding }}; padding-bottom: {{ options.bottomPadding }};">
+      background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
     
+    <script type="application/json">{{ jsonData|json_encode }}</script>
     <div class="wrapper flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
       
       <!-- Posts Grid -->
-      <div class="flex flex-col md:flex-row gap-xs">
-        {% for post in posts %}
-          {% set journalCategoryTerms = post.terms('journal-category') %}
-          {% set allTerms = journalCategoryTerms %}
-          {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
+      <div data-ref="slider" class="slider swiper-container pb-md">
+        <div data-ref="dots" class="flex justify-center absolute !bottom-[20px] z-[40] slider-pagination swiper-pagination-fraction"></div>
+        <div class="swiper-wrapper flex flex-row">
+          {% for post in posts %}
+            {% set journalCategoryTerms = post.terms('journal-category') %}
+            {% set allTerms = journalCategoryTerms %}
+            {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
 
-          <div 
-            class="post w-full md:w-1/4 [&_h2]:hover:text-orange hover:cursor-pointer" 
-            x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => ['{{ postCategorySlugs|join("','") }}'].includes(cat))) && 
-                     (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
-            x-transition:enter="transition ease-out duration-100"
-            x-transition:enter-start="opacity-0 scale-95"
-            x-transition:enter-end="opacity-100 scale-100"
-            x-transition:leave="transition ease-in duration-100"
-            x-transition:leave-start="opacity-100 scale-100"
-            x-transition:leave-end="opacity-0 scale-95"
-          >
-            <a href="{{ post.link }}">
-              <div class="w-full flex flex-col gap-xs items-start">
-                {% if post.thumbnail %}
-                  <img 
-                    class="lazyload transition grid duration-200 ease-in-out aspect-8/5 object-cover"
-                    src="{{ post.thumbnail.src }}"
-                    alt="{{ post.thumbnail.alt|e | default('') }}"
-                    loading="lazy"
-                    style="opacity: 0; transition: opacity 0.5s ease-in-out;"
-                    onload="this.style.opacity='1'"
-                  />
-                {% endif %}
+            <div 
+              class="slider-item swiper-slide post [&_h2]:hover:text-orange hover:cursor-pointer" 
+              x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => ['{{ postCategorySlugs|join("','") }}'].includes(cat))) && 
+                      (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
+              x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="opacity-0 scale-95"
+              x-transition:enter-end="opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-100"
+              x-transition:leave-start="opacity-100 scale-100"
+              x-transition:leave-end="opacity-0 scale-95"
+            >
+              <a href="{{ post.link }}">
+                <div class="w-full flex flex-col gap-xs items-start">
+                  {% if post.thumbnail %}
+                    <img 
+                      class="lazyload transition grid duration-200 ease-in-out aspect-8/5 object-cover"
+                      src="{{ post.thumbnail.src }}"
+                      alt="{{ post.thumbnail.alt|e | default('') }}"
+                      loading="lazy"
+                      style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+                      onload="this.style.opacity='1'"
+                    />
+                  {% endif %}
 
-                <div class="flex flex-row gap-xs items-center">
-                  <div class="font-bodySmall !mb-0">{{ post.date|date('d.m.y') }}</div>
-                  <div class="flex flex-row gap-xs">
-                    {% for term in allTerms %}
-                      <span class="font-label">{{ term.name }}</span>
-                    {% endfor %}
+                  <div class="flex flex-row gap-xs items-center">
+                    <div class="font-bodySmall !mb-0">{{ post.date|date('d.m.y') }}</div>
+                    <div class="flex flex-row gap-xs">
+                      {% for term in allTerms %}
+                        <span class="font-label">{{ term.name }}</span>
+                      {% endfor %}
+                    </div>
                   </div>
-                </div>
 
-                <h2 class="w-full !mb-0">{{ post.title }}</h2>
-                
-              </div>
-            </a>
-          </div>
-        {% endfor %}
+                  <h2 class="w-full !mb-0">{{ post.title }}</h2>
+                  
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
 

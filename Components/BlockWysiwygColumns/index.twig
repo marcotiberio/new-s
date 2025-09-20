@@ -1,12 +1,11 @@
 <flynt-component 
   load:on="visible" 
   name="BlockWysiwygColumns"
+  class="{% if options.firstComponent %}pt-[160px]{% endif %}"
   style="
     background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}transparent{% endif %};"
   >
-  <div class="boxed w-full" 
-    {% if options.topPadding or options.bottomPadding %}style="padding-top: {{ options.topPadding }}; padding-bottom: {{ options.bottomPadding }};"{% endif %}
-    >
+  <div class="boxed !py-[22.5px] w-full">
     <div class="grid lg:grid-cols-12 gap-xs align-start justify-start lg:justify-between {% if options.stickyTitle %}stickyTitle{% endif %}">
       {% for column in columns %}
         <div class="column flex {{ column.colStart }} {{ column.colEnd }} lg:row-start-1 lg:row-end-2">
@@ -21,7 +20,9 @@
                 onload="this.style.opacity='1'"
               />
             {% endif %}
-            <div class="wysiwyg">{{ column.contentHtml|e('wp_kses_post') }}</div>
+            {% if column.contentHtml %}
+              <div class="wysiwyg">{{ column.contentHtml|e('wp_kses_post') }}</div>
+            {% endif %}
             {% if column.buttonLink %}
               <a 
                 class="button button--outline" 

@@ -8,7 +8,7 @@
     "src": "Components/BlockGalleryMedia/script.js"
   },
   "Components/BlockSliderLogos/script.js": {
-    "file": "assets/script-1c320911.js",
+    "file": "assets/script-c6c4f710.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_a11y-d0e9ac2c.js",
@@ -37,7 +37,7 @@
     "src": "Components/GridPostsArchive/script.js"
   },
   "Components/HeroHeaderHome/script.js": {
-    "file": "assets/script-e3bb969d.js",
+    "file": "assets/script-90c698a5.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_helpers-0bb72b7a.js"
@@ -53,6 +53,17 @@
     "isDynamicEntry": true,
     "src": "Components/ListComponents/script.js"
   },
+  "Components/ListingJournalFeat/script.js": {
+    "file": "assets/script-1aeede61.js",
+    "imports": [
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_pagination-e92855f2.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ListingJournalFeat/script.js"
+  },
   "Components/NavigationBurger/script.js": {
     "file": "assets/script-e54e009e.js",
     "imports": [
@@ -63,7 +74,7 @@
     "src": "Components/NavigationBurger/script.js"
   },
   "Components/NavigationFooter/script.js": {
-    "file": "assets/script-90c698a5.js",
+    "file": "assets/script-e3bb969d.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_helpers-0bb72b7a.js"
@@ -72,7 +83,7 @@
     "src": "Components/NavigationFooter/script.js"
   },
   "Components/NavigationMain/script.js": {
-    "file": "assets/script-54efbbaa.js",
+    "file": "assets/script-dcb9af22.js",
     "imports": [
       "assets/main.js"
     ],
@@ -216,7 +227,7 @@
     "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ZZZ/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-94fc0cab.js",
+    "file": "assets/script-94215a45.js",
     "imports": [
       "assets/main.js"
     ],
@@ -335,6 +346,7 @@
       "Components/GridPostsArchive/script.js",
       "Components/HeroHeaderHome/script.js",
       "Components/ListComponents/script.js",
+      "Components/ListingJournalFeat/script.js",
       "Components/NavigationBurger/script.js",
       "Components/NavigationFooter/script.js",
       "Components/NavigationMain/script.js",
@@ -358,12 +370,12 @@
       "Components/ZZZ/SliderLogos/script.js",
       "Components/ZZZ/SliderQuotes/script.js"
     ],
-    "file": "assets/main-b7f01787.js",
+    "file": "assets/main-072882b2.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-dab1a69a.css",
+    "file": "assets/main-cf19f9f8.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -373,7 +385,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-7745f850.css",
+    "file": "assets/tinyMce-7ad27532.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

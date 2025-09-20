@@ -3,7 +3,7 @@
   class="w-full mx-auto flex flex-col justify-between items-center">
   <div class="wrapper max-w-screen-max mx-auto">
     <div class="flex flex-col h-full relative boxed !pt-[160px]">
-      <div class="w-full lg:w-full h-full flex flex-col justify-between pb-xs">
+      <div class="w-full lg:w-full h-full flex flex-col justify-between pb-[22.5px]">
         <div class="grid md:grid-cols-12 gap-xs">
           <div class="w-full md:col-span-3 flex flex-col justify-start gap-xs h-fit md:sticky md:top-[91px]">
             <div class="font-h2">{{ post.title }}</div>
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="w-full">
+      <div class="w-full py-min">
         {% if post.projectOverviewImage %}
           <img 
             class="figure-image lazyload object-cover aspect-8/5"

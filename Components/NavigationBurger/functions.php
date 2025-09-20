@@ -73,4 +73,29 @@ Options::addTranslatable('NavigationBurger', [
             ],
         ],
     ],
+    [
+        'label' => __('Footer Links', 'flynt'),
+        'name' => 'footerLinksTab',
+        'type' => 'tab',
+        'placement' => 'top',
+        'endpoint' => 0
+    ],
+    [
+        'label' => __('Footer Links', 'flynt'),
+        'name' => 'footerLinks',
+        'type' => 'repeater',
+        'layout' => 'table',
+        'button_label' => __('Add Footer Link', 'flynt'),
+        'sub_fields' => [
+            [
+                'label' => __('Menu Link', 'flynt'),
+                'name' => 'menuLink',
+                'type' => 'link',
+                'required' => 0,
+                'wrapper' => [
+                    'width' => 100
+                ],
+            ],
+        ],
+    ],
 ]);

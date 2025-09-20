@@ -116,8 +116,6 @@ function getACFLayout()
                 'sub_fields' => [
                     FieldVariables\getColorBackground(),
                     FieldVariables\getColorText(),
-                    FieldVariables\getBoxedTopPadding(),
-                    FieldVariables\getBoxedBottomPadding(),
                 ]
             ]
         ],

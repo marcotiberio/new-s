@@ -1085,7 +1085,7 @@ flynt-component {
   @apply max-w-screen-max;
   @apply mx-auto;
   @apply px-xs;
-  @apply py-xs;
+  @apply py-min;
 
   // &--small {
   //   @apply py-xs;

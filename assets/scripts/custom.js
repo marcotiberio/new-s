@@ -46,75 +46,60 @@ $(document).ready(function () {
   new PageLoadAnimation()
 })
 
-$(document).ready(function () {
-  $('#showMyCalendar').click(function () {
-    $('#myCalendarWrapper').toggle()
-  })
-  $('#hideMyCalendar').click(function () {
-    $('#myCalendarWrapper').hide()
-  })
-})
-
-$(document).ready(function () {
-  $('#showFilters').click(function () {
-    $('.filterSection--inner').slideToggle('fast')
-  })
-})
-
 // Footer toggle functionality with fade animation
-$(document).ready(function () {
-  // Function to fade footer out (hide it)
-  function fadeFooterOut() {
-    const $footer = $('.mainFooter')
-    const $body = $('body')
-    const $openFooterBtn = $('.openFooter')
+// $(document).ready(function () {
+//   // Function to fade footer out (hide it)
+//   function fadeFooterOut() {
+//     const $footer = $('.mainFooter')
+//     const $body = $('body')
+//     const $openFooterBtn = $('.openFooter')
     
-    $footer.addClass('show')
-    $body.addClass('footer-open')
-    $openFooterBtn.addClass('active')
-  }
+//     $footer.addClass('show')
+//     $body.addClass('footer-open')
+//     $openFooterBtn.addClass('active')
+//   }
   
-  // Function to fade footer in (show it)
-  function fadeFooterIn() {
-    const $footer = $('.mainFooter')
-    const $body = $('body')
-    const $openFooterBtn = $('.openFooter')
+//   // Function to fade footer in (show it)
+//   function fadeFooterIn() {
+//     const $footer = $('.mainFooter')
+//     const $body = $('body')
+//     const $openFooterBtn = $('.openFooter')
     
-    $footer.removeClass('show')
-    $body.removeClass('footer-open')
-    $openFooterBtn.removeClass('active')
-  }
+//     $footer.removeClass('show')
+//     $body.removeClass('footer-open')
+//     $openFooterBtn.removeClass('active')
+//   }
   
-  // Open/close footer button
-  $('.openFooter').click(function () {
-    const $footer = $('.mainFooter')
+//   // Open/close footer button
+//   $('.openFooter').click(function () {
+//     const $footer = $('.mainFooter')
     
-    if ($footer.hasClass('show')) {
-      fadeFooterIn()
-    } else {
-      fadeFooterOut()
-    }
-  })
+//     if ($footer.hasClass('show')) {
+//       fadeFooterIn()
+//     } else {
+//       fadeFooterOut()
+//     }
+//   })
   
-  // Close footer button
-  $('.closeFooter').click(function () {
-    fadeFooterIn()
-  })
+//   // Close footer button
+//   $('.closeFooter').click(function () {
+//     fadeFooterIn()
+//   })
   
-  // Close footer when clicking outside (overlay)
-  $('.mainFooter').click(function (e) {
-    if (e.target === this) {
-      fadeFooterIn()
-    }
-  })
+//   // Close footer when clicking outside (overlay)
+//   $('.mainFooter').click(function (e) {
+//     if (e.target === this) {
+//       fadeFooterIn()
+//     }
+//   })
   
-  // Close footer on escape key
-  $(document).keyup(function (e) {
-    if (e.keyCode === 27) { // ESC key
-      fadeFooterIn()
-    }
-  })
-})
+//   // Close footer on escape key
+//   $(document).keyup(function (e) {
+//     if (e.keyCode === 27) { // ESC key
+//       fadeFooterIn()
+//     }
+//   })
+// })
 
 var menu = $('.mainMenu');
 

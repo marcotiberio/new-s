@@ -72,14 +72,14 @@
           } %}
           {% set postCategorySlugs = projektCategoryTerms|map(term => hardcodedCategories[term.name]|default(term.name|lower|replace({' ' : '-'}))) %}
           <div 
-            class="post {{ item.width }} hover:cursor-pointer transition-opacity duration-300" 
+            class="post {{ item.width }} hover:cursor-pointer transition-opacity duration-300 [&_h2]:hover:text-orange [&_.customText]:hover:text-orange" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
-                     (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
+                    (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
             :class="isTransitioning ? 'opacity-0' : 'opacity-100'"
           >
             <a class="flex flex-col gap-xs w-full no-underline" href="{{ project.link }}">
               {% if project.featVideo %}
-                <video class="figure-video object-cover"
+                <video class="figure-video object-cover lg:!h-[30.4vw]"
                   autoplay 
                   muted 
                   loop 
@@ -90,7 +90,7 @@
                   Your browser does not support the video tag.
                 </video>
               {% elseif project.featVideoEmbed %}
-                <div class="video-wrapper w-full h-full">
+                <div class="video-wrapper w-full h-full lg:!h-[30.4vw]">
                   <div data-ref="videoPlayer" class="video-player w-full mx-auto" data-state="isLoaded">
                     {{ project.featVideoEmbed }}
                     <div class="video-loader"></div>
@@ -99,25 +99,13 @@
                 </div>
               {% elseif project.featImageAlt %}
                 <img 
-                  class="figure-image lazyload object-cover"
+                  class="figure-image lazyload object-cover lg:!h-[30.4vw]"
                   src="{{ project.featImageAlt.src }}"
                   alt="{{ project.featImageAlt.alt|e | default('') }}"
                   loading="lazy"
                   style="opacity: 0; transition: opacity 0.5s ease-in-out;"
                   onload="this.style.opacity='1'"
                 />
-                {# <img class="figure-image lazyload md:h-[525px] aspect-8/5"
-                  src="{{ project.featImageAlt.src|resizeDynamic(32, 24) }}"
-                  data-srcset="
-                  {{ project.featImageAlt.src|resizeDynamic(3840, 2160) }} 3840w,
-                  {{ project.featImageAlt.src|resizeDynamic(2560, 1440) }} 2560w,
-                  {{ project.featImageAlt.src|resizeDynamic(1920, 1080) }} 1920w,
-                  {{ project.featImageAlt.src|resizeDynamic(1440, 810) }} 1440w,
-                  {{ project.featImageAlt.src|resizeDynamic(1024, 576) }} 1024w,
-                  {{ project.featImageAlt.src|resizeDynamic(768, 432) }} 768w,
-                  {{ project.featImageAlt.src|resizeDynamic(375, 211) }} 375w"
-                  data-sizes="auto"
-                  alt="{{ project.featImageAlt.alt|e }}"> #}
               {% else %}
                 <img 
                   class="figure-image lazyload object-cover"
@@ -127,18 +115,6 @@
                   style="opacity: 0; transition: opacity 0.5s ease-in-out;"
                   onload="this.style.opacity='1'"
                 />
-                {# <img class="figure-image lazyload md:h-[525px] aspect-8/5"
-                  src="{{ project.thumbnail.src|resizeDynamic(32, 24) }}"
-                  data-srcset="
-                  {{ project.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,
-                  {{ project.thumbnail.src|resizeDynamic(2560, 1440) }} 2560w,
-                  {{ project.thumbnail.src|resizeDynamic(1920, 1080) }} 1920w,
-                  {{ project.thumbnail.src|resizeDynamic(1440, 810) }} 1440w,
-                  {{ project.thumbnail.src|resizeDynamic(1024, 576) }} 1024w,
-                  {{ project.thumbnail.src|resizeDynamic(768, 432) }} 768w,
-                  {{ project.thumbnail.src|resizeDynamic(375, 211) }} 375w"
-                  data-sizes="auto"
-                  alt="{{ project.thumbnail.alt|e }}"> #}
               {% endif %}
               <div class="flex flex-col">
                 <h2 class="font-body !mb-0">{{ project.title }}</h2>

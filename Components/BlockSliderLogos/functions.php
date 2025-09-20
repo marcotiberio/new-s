@@ -84,8 +84,6 @@ function getACFLayout()
                 'layout' => 'row',
                 'sub_fields' => [
                     FieldVariables\getColorBackground(),
-                    FieldVariables\getBoxedTopPadding(),
-                    FieldVariables\getBoxedBottomPadding(),
                     [
                         'label' => __('Enable Autoplay', 'flynt'),
                         'instructions' => __('Enable for infinite loop autoplay.', 'flynt'),
