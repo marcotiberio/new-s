@@ -48,6 +48,16 @@ function getACFLayout()
                     //     ],
                     // ],
                     [
+                        'label' => __('I want this to be an accordion on mobile!', 'flynt'),
+                        'name' => 'enableAccordion',
+                        'type' => 'true_false',
+                        'default_value' => 0,
+                        'ui' => 1,
+                        'wrapper' => [
+                            'width' => 100
+                        ],
+                    ],
+                    [
                         'label' => __('Text starts in column:', 'flynt'),
                         'name' => 'colStart',
                         'type' => 'button_group',
@@ -92,10 +102,19 @@ function getACFLayout()
                         ],
                     ],
                     [
+                        'label' => __('Title', 'flynt'),
+                        'name' => 'title',
+                        'type' => 'text',
+                        'required' => 0,
+                        'wrapper' => [
+                            'width' => 100
+                        ],
+                    ],
+                    [
                         'label' => __('Content', 'flynt'),
                         'name' => 'contentHtml',
                         'type' => 'wysiwyg',
-                        'tabs' => 'visual,text',
+                        'tabs' => 'visual',
                         'delay' => 1,
                         'media_upload' => 0,
                         'required' => 0,
@@ -115,15 +134,15 @@ function getACFLayout()
                             'width' => 100
                         ],
                     ],
-                    [
-                        'label' => __('Button', 'flynt'),
-                        'name' => 'buttonLink',
-                        'type' => 'link',
-                        'required' => 0,
-                        'wrapper' => [
-                            'width' => 100
-                        ],
-                    ],
+                    // [
+                    //     'label' => __('Button', 'flynt'),
+                    //     'name' => 'buttonLink',
+                    //     'type' => 'link',
+                    //     'required' => 0,
+                    //     'wrapper' => [
+                    //         'width' => 100
+                    //     ],
+                    // ],
                     [
                         'label' => __('Enable Newsletter Form', 'flynt'),
                         'name' => 'enableNewsletter',
@@ -131,7 +150,7 @@ function getACFLayout()
                         'default_value' => 0,
                         'ui' => 1,
                         'wrapper' => [
-                            'width' => 50
+                            'width' => 100
                         ],
                     ],
                 ]

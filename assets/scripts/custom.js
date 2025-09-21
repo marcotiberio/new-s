@@ -8,8 +8,27 @@ class PageLoadAnimation {
   }
 
   init() {
-    // Start the animation sequence
-    this.startAnimation()
+    // Only run animation on desktop devices
+    if (this.isDesktop()) {
+      this.startAnimation()
+    } else {
+      // On mobile, immediately remove loading state
+      this.skipAnimation()
+    }
+  }
+
+  isDesktop() {
+    // Check if screen width is desktop size (typically 1024px and above)
+    return window.innerWidth >= 1024
+  }
+
+  skipAnimation() {
+    // Remove loading state immediately on mobile
+    const $animation = $('#pageLoadAnimation')
+    if ($animation.length) {
+      $animation.remove()
+    }
+    $('body').removeClass('page-loading')
   }
 
   startAnimation() {
@@ -45,61 +64,6 @@ class PageLoadAnimation {
 $(document).ready(function () {
   new PageLoadAnimation()
 })
-
-// Footer toggle functionality with fade animation
-// $(document).ready(function () {
-//   // Function to fade footer out (hide it)
-//   function fadeFooterOut() {
-//     const $footer = $('.mainFooter')
-//     const $body = $('body')
-//     const $openFooterBtn = $('.openFooter')
-    
-//     $footer.addClass('show')
-//     $body.addClass('footer-open')
-//     $openFooterBtn.addClass('active')
-//   }
-  
-//   // Function to fade footer in (show it)
-//   function fadeFooterIn() {
-//     const $footer = $('.mainFooter')
-//     const $body = $('body')
-//     const $openFooterBtn = $('.openFooter')
-    
-//     $footer.removeClass('show')
-//     $body.removeClass('footer-open')
-//     $openFooterBtn.removeClass('active')
-//   }
-  
-//   // Open/close footer button
-//   $('.openFooter').click(function () {
-//     const $footer = $('.mainFooter')
-    
-//     if ($footer.hasClass('show')) {
-//       fadeFooterIn()
-//     } else {
-//       fadeFooterOut()
-//     }
-//   })
-  
-//   // Close footer button
-//   $('.closeFooter').click(function () {
-//     fadeFooterIn()
-//   })
-  
-//   // Close footer when clicking outside (overlay)
-//   $('.mainFooter').click(function (e) {
-//     if (e.target === this) {
-//       fadeFooterIn()
-//     }
-//   })
-  
-//   // Close footer on escape key
-//   $(document).keyup(function (e) {
-//     if (e.keyCode === 27) { // ESC key
-//       fadeFooterIn()
-//     }
-//   })
-// })
 
 var menu = $('.mainMenu');
 

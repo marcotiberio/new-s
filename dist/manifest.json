@@ -8,7 +8,7 @@
     "src": "Components/BlockGalleryMedia/script.js"
   },
   "Components/BlockSliderLogos/script.js": {
-    "file": "assets/script-c6c4f710.js",
+    "file": "assets/script-63625fc4.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_a11y-d0e9ac2c.js",
@@ -83,7 +83,7 @@
     "src": "Components/NavigationFooter/script.js"
   },
   "Components/NavigationMain/script.js": {
-    "file": "assets/script-dcb9af22.js",
+    "file": "assets/script-7b9f9414.js",
     "imports": [
       "assets/main.js"
     ],
@@ -146,7 +146,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/logo.svg"
   },
   "Components/ZZZ/BlockCta/Assets/twitter.svg": {
     "file": "assets/twitter-bc2ba69f.svg",
@@ -224,10 +224,10 @@
   },
   "Components/ZZZ/NavigationMainLogo/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/logo.svg"
   },
   "Components/ZZZ/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-94215a45.js",
+    "file": "assets/script-96e3d8e8.js",
     "imports": [
       "assets/main.js"
     ],
@@ -370,12 +370,12 @@
       "Components/ZZZ/SliderLogos/script.js",
       "Components/ZZZ/SliderQuotes/script.js"
     ],
-    "file": "assets/main-072882b2.js",
+    "file": "assets/main-f5591f2e.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-cf19f9f8.css",
+    "file": "assets/main-f028bb4e.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -385,7 +385,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-7ad27532.css",
+    "file": "assets/tinyMce-0b583b98.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },
