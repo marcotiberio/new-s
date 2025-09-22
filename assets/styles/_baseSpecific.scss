@@ -83,6 +83,12 @@ html.home {
         }
     }
 
+    .language-menu-item {
+        &:hover {
+            @apply text-white;
+        }
+    }
+
     .mainContent {
         .wysiwyg {
             a {

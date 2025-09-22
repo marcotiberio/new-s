@@ -42,10 +42,26 @@
               </li>
             {% endif %}
           {% endfor %}
+          
+          {# Language Menu in Main Area #}
+          {% if showLanguageMenu and languageMenuPosition == 'main' and languageMenu %}
+            <li class="item language-menu-item border-t w-full pt-xs mt-sm">
+              <div class="flex flex-col gap-xs">
+                <span class="text-sm text-gray-600 font-menu">Language</span>
+                <div class="flex flex-col gap-xs">
+                  {% for languageItem in languageMenu.items %}
+                    <a class="link font-menu text-sm" href="{{ languageItem.link }}" {{ languageItem.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+                      {{ languageItem.title }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endif %}
         </ul>
 
         {# Footer Links Section #}
-          {# <div class="w-full px-xs">
+          <div class="w-full px-xs">
             <div class="flex !px-0 py-sm border-t justify-between items-start">
               <div class="flex flex-col gap-xs">
                 {% for footerLink in footerLinks %}
@@ -61,11 +77,19 @@
               </div>
               
               <div class="language-selector flex gap-xs">
-                {{ function('do_shortcode', '[trp_language language="en_US"] [/trp_language]') }}
-                {{ function('do_shortcode', '[[trp_language language="de_DE"] ]') }}
+                {% if showLanguageMenu and languageMenuPosition == 'footer' and languageMenu %}
+                  {# Language Menu from WordPress Menu #}
+                  {% for languageItem in languageMenu.items %}
+                    <li class="item hover:text-orange {{ item.classes|join(' ') }} {{- item.current ? ' text-white' }}" >
+                      <a class="font-menuFooter" href="{{ languageItem.link }}" {{ languageItem.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+                        {{ languageItem.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                {% endif %}
               </div>
             </div>
-          </div> #}
+          </div>
       </div>
     {% endif %}
   </nav>

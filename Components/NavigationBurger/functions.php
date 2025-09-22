@@ -8,12 +8,14 @@ use Timber\Timber;
 
 add_action('init', function () {
     register_nav_menus([
-        'navigation_burger' => __('Navigation Burger', 'flynt')
+        'navigation_burger' => __('Navigation Burger', 'flynt'),
+        'navigation_burger_language' => __('Navigation Burger Language', 'flynt')
     ]);
 });
 
 add_filter('Flynt/addComponentData?name=NavigationBurger', function ($data) {
     $data['menu'] = Timber::get_menu('navigation_burger') ?? Timber::get_pages_menu();
+    $data['languageMenu'] = Timber::get_menu('navigation_burger_language');
     $data['logo'] = [
         'src' => get_theme_mod('custom_header_logo') ? get_theme_mod('custom_header_logo') : Asset::requireUrl('assets/images/logo.svg'),
         'alt' => get_bloginfo('name')
@@ -96,6 +98,38 @@ Options::addTranslatable('NavigationBurger', [
                     'width' => 100
                 ],
             ],
+        ],
+    ],
+    [
+        'label' => __('Language Menu', 'flynt'),
+        'name' => 'languageMenuTab',
+        'type' => 'tab',
+        'placement' => 'top',
+        'endpoint' => 0
+    ],
+    [
+        'label' => __('Show Language Menu', 'flynt'),
+        'name' => 'showLanguageMenu',
+        'type' => 'true_false',
+        'default_value' => 1,
+        'ui' => 1,
+        'ui_on_text' => __('Show', 'flynt'),
+        'ui_off_text' => __('Hide', 'flynt'),
+        'wrapper' => [
+            'width' => 50
+        ],
+    ],
+    [
+        'label' => __('Language Menu Position', 'flynt'),
+        'name' => 'languageMenuPosition',
+        'type' => 'select',
+        'choices' => [
+            'footer' => __('Footer Area', 'flynt'),
+            'main' => __('Main Menu Area', 'flynt'),
+        ],
+        'default_value' => 'footer',
+        'wrapper' => [
+            'width' => 50
         ],
     ],
 ]);
