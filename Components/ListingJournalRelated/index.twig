@@ -7,17 +7,19 @@
       color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
       background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}transparent{% endif %};">
 
-    <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm my-[60px]" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+    <script type="application/json">{{ jsonData|json_encode }}</script>
+    <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
 
       <!-- Posts Grid -->
-      <div class="wrapper max-w-screen-max border-t border-black pt-lg">
-        {% if preContentHtml %}
-          <div class="font-body">{{ preContentHtml|e('wp_kses_post') }}</div>
+      <div data-ref="slider" class="slider swiper-container pb-md pt-sm border-t">
+        {% if labels.preContentHtml %}
+          <div class="font-body">{{ labels.preContentHtml|e('wp_kses_post') }}</div>
         {% endif %}
-        <div class="grid grid-cols-12 gap-xs">
+        <div data-ref="dots" class="flex justify-center absolute !bottom-[20px] z-[40] slider-pagination swiper-pagination-fraction"></div>
+        <div class="swiper-wrapper flex flex-row">
           {% for item in items %}
             <div 
-              class="post flex col-span-3 w-full [&_h2]:hover:text-orange hover:cursor-pointer" 
+              class="slider-item swiper-slide post flex col-span-3 w-full [&_h2]:hover:text-orange hover:cursor-pointer" 
               x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => {{ item.postType|default([])|json_encode }}.includes(cat))) &&
                      (searchQuery === '' || '{{ item.title|lower }}'.includes(searchQuery.toLowerCase()))"
               x-transition:enter="transition ease-out duration-100"
@@ -36,18 +38,6 @@
                   style="opacity: 0; transition: opacity 0.5s ease-in-out;"
                   onload="this.style.opacity='1'"
                 />
-                {# <img class="figure-image lazyload aspect-8/5"
-                  src="{{ item.thumbnail.src|resizeDynamic(32, 24) }}"
-                  data-srcset="
-                  {{ item.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,
-                  {{ item.thumbnail.src|resizeDynamic(2560, 1440) }} 2560w,
-                  {{ item.thumbnail.src|resizeDynamic(1920, 1080) }} 1920w,
-                  {{ item.thumbnail.src|resizeDynamic(1440, 810) }} 1440w,
-                  {{ item.thumbnail.src|resizeDynamic(1024, 576) }} 1024w,
-                  {{ item.thumbnail.src|resizeDynamic(768, 432) }} 768w,
-                  {{ item.thumbnail.src|resizeDynamic(375, 211) }} 375w"
-                  data-sizes="auto"
-                  alt="{{ item.thumbnail.alt|e }}"> #}
                 <div class="flex flex-col">
                   <h2 class="font-body !mb-0">{{ item.title }}</h2>
                 </div>
@@ -56,6 +46,7 @@
           {% endfor %}
         </div>
       </div>
+      
     </div>
   </flynt-component>
 {% endif %}

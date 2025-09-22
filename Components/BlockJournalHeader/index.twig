@@ -18,7 +18,7 @@
               {% set journalCategories = function('get_terms', {'taxonomy': 'journal-category', 'hide_empty': true}) %}
               {% set journalCategoryTerms = post.terms('journal-category') %}
             </div>
-            <div class="font-h2">{{ post.title }}</div>
+            <div class="font-h2 pb-sm">{{ post.title }}</div>
           </div>
           <div class="w-full md:col-span-9" style="color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};">
             <div class="w-full">

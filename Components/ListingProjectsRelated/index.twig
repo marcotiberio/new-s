@@ -6,18 +6,22 @@
     color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
     background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
 
-  <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm my-[60px]" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+  <script type="application/json">{{ jsonData|json_encode }}</script>
+  <div class="wrapper max-w-screen-max mx-auto boxed flex flex-col gap-sm" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
 
-    <!-- Posts Grid -->
-    <div class="wrapper max-w-screen-max border-t border-black pt-lg">
-      <div class="font-body">Related Projects</div>
-      <div class="grid grid-cols-12 gap-xs">
+    <!-- Projects Grid -->
+    <div data-ref="slider" class="slider swiper-container pb-md pt-sm border-t">
+      {% if labels.preContentHtml %}
+        <div class="font-body">{{ labels.preContentHtml|e('wp_kses_post') }}</div>
+      {% endif %}
+      <div data-ref="dots" class="flex justify-center absolute !bottom-[20px] z-[40] slider-pagination swiper-pagination-fraction"></div>
+      <div class="swiper-wrapper flex flex-row">
         {% for item in projects %}
           {% set project = item.project %}
           {% set projektCategoryTerms = project.terms('category') %}
           {% set postCategorySlugs = projektCategoryTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
           <div 
-            class="post flex col-span-3 w-full [&_h2]:hover:underline hover:cursor-pointer" 
+            class="slider-item swiper-slide post flex col-span-3 w-full [&_h2]:hover:underline hover:cursor-pointer" 
             x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => {{ postCategorySlugs|default([])|json_encode }}.includes(cat))) &&
                    (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
             x-transition:enter="transition ease-out duration-100"
@@ -27,19 +31,15 @@
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95"
           >
-            <a class="flex flex-col gap-xs w-full" href="{{ project.link }}">
-              <img class="figure-image lazyload"
-                src="{{ project.thumbnail.src|resizeDynamic(32, 24) }}"
-                data-srcset="
-                {{ project.thumbnail.src|resizeDynamic(3840, 2160) }} 3840w,
-                {{ project.thumbnail.src|resizeDynamic(2560, 1440) }} 2560w,
-                {{ project.thumbnail.src|resizeDynamic(1920, 1080) }} 1920w,
-                {{ project.thumbnail.src|resizeDynamic(1440, 810) }} 1440w,
-                {{ project.thumbnail.src|resizeDynamic(1024, 576) }} 1024w,
-                {{ project.thumbnail.src|resizeDynamic(768, 432) }} 768w,
-                {{ project.thumbnail.src|resizeDynamic(375, 211) }} 375w"
-                data-sizes="auto"
-                alt="{{ project.thumbnail.alt|e }}">
+            <a class="flex flex-col gap-xs w-full" href="{{ project.link }}" title="{{ project.title }}">
+              <img 
+                class="figure-image lazyload object-cover"
+                src="{{ project.thumbnail.src }}"
+                alt="{{ project.thumbnail.alt|e | default('') }}"
+                loading="lazy"
+                style="opacity: 0; transition: opacity 0.5s ease-in-out;"
+                onload="this.style.opacity='1'"
+              />
               <div class="flex flex-col">
                 <h2 class="font-body !mb-0">{{ project.title }}</h2>
                 <div class="flex flex-row gap-[5px]">
@@ -54,5 +54,6 @@
         {% endfor %}
       </div>
     </div>
+
   </div>
 </flynt-component>

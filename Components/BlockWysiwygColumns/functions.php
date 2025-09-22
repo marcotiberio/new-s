@@ -48,16 +48,6 @@ function getACFLayout()
                     //     ],
                     // ],
                     [
-                        'label' => __('I want this to be an accordion on mobile!', 'flynt'),
-                        'name' => 'enableAccordion',
-                        'type' => 'true_false',
-                        'default_value' => 0,
-                        'ui' => 1,
-                        'wrapper' => [
-                            'width' => 100
-                        ],
-                    ],
-                    [
                         'label' => __('Text starts in column:', 'flynt'),
                         'name' => 'colStart',
                         'type' => 'button_group',
@@ -170,6 +160,16 @@ function getACFLayout()
                 'sub_fields' => [
                     FieldVariables\getColorBackground(),
                     FieldVariables\getFirstComponent(),
+                    // [
+                    //     'label' => __('I want this to be an accordion on mobile!', 'flynt'),
+                    //     'name' => 'enableAccordion',
+                    //     'type' => 'true_false',
+                    //     'default_value' => 0,
+                    //     'ui' => 1,
+                    //     'wrapper' => [
+                    //         'width' => 100
+                    //     ],
+                    // ],
                     [
                         'label' => __('Sticky title?', 'flynt'),
                         'name' => 'stickyTitle',

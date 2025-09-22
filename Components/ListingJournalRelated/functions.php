@@ -49,6 +49,14 @@ add_filter('Flynt/addComponentData?name=ListingJournalRelated', function ($data)
     return $data;
 });
 
+add_filter('Flynt/addComponentData?name=ListingJournalRelated', function ($data) {
+    $translatableOptions = Options::getTranslatable('SliderOptions');
+    $data['jsonData'] = [
+        'options' => array_merge($translatableOptions, $data['options']),
+    ];
+    return $data;
+});
+
 function getACFLayout()
 {
     return [
@@ -61,11 +69,6 @@ function getACFLayout()
                 'type' => 'tab',
                 'placement' => 'top',
                 'endpoint' => 0
-            ],
-            [
-                'label' => __('Title', 'flynt'),
-                'name' => 'preContentHtml',
-                'type' => 'text'
             ],
             [
                 'label' => __('Categories', 'flynt'),
@@ -96,13 +99,29 @@ function getACFLayout()
                 'sub_fields' => [
                     FieldVariables\getTheme(),
                     [
-                        'label' => __('Columns', 'flynt'),
-                        'name' => 'columns',
+                        'label' => __('Enable Autoplay', 'flynt'),
+                        'name' => 'autoplay',
+                        'type' => 'true_false',
+                        'default_value' => 0,
+                        'ui' => 1
+                    ],
+                    [
+                        'label' => __('Autoplay Speed (in milliseconds)', 'flynt'),
+                        'name' => 'autoplaySpeed',
                         'type' => 'number',
-                        'default_value' => 3,
-                        'min' => 1,
-                        'max' => 4,
-                        'step' => 1
+                        'min' => 2000,
+                        'step' => 1,
+                        'default_value' => 4000,
+                        'required' => 0,
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'fieldPath' => 'autoplay',
+                                    'operator' => '==',
+                                    'value' => 1
+                                ]
+                            ]
+                        ],
                     ]
                 ]
             ],
@@ -110,49 +129,24 @@ function getACFLayout()
     ];
 }
 
-// Options::addTranslatable('ListingJournalRelated', [
-//     [
-//         'label' => __('Labels', 'flynt'),
-//         'name' => 'labelsTab',
-//         'type' => 'tab',
-//         'placement' => 'top',
-//         'endpoint' => 0
-//     ],
-//     [
-//         'label' => '',
-//         'name' => 'labels',
-//         'type' => 'group',
-//         'sub_fields' => [
-//             [
-//                 'label' => __('Reading Time', 'flynt'),
-//                 'name' => 'readingTime',
-//                 'type' => 'text',
-//                 'default_value' => 'min',
-//                 'required' => 1,
-//                 'wrapper' => [
-//                     'width' => 50
-//                 ],
-//             ],
-//             [
-//                 'label' => __('All Posts', 'flynt'),
-//                 'name' => 'allPosts',
-//                 'type' => 'text',
-//                 'default_value' => 'See More Posts',
-//                 'required' => 1,
-//                 'wrapper' => [
-//                     'width' => 50
-//                 ],
-//             ],
-//             [
-//                 'label' => __('Read More', 'flynt'),
-//                 'name' => 'readMore',
-//                 'type' => 'text',
-//                 'default_value' => 'Read More',
-//                 'required' => 1,
-//                 'wrapper' => [
-//                     'width' => 50
-//                 ],
-//             ]
-//         ],
-//     ]
-// ]);
+Options::addTranslatable('ListingJournalRelated', [
+    [
+        'label' => __('Labels', 'flynt'),
+        'name' => 'labelsTab',
+        'type' => 'tab',
+        'placement' => 'top',
+        'endpoint' => 0
+    ],
+    [
+        'label' => '',
+        'name' => 'labels',
+        'type' => 'group',
+        'sub_fields' => [
+            [
+                'label' => __('Title', 'flynt'),
+                'name' => 'preContentHtml',
+                'type' => 'text'
+            ],
+        ],
+    ]
+]);
