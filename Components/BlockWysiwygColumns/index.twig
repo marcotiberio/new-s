@@ -22,7 +22,7 @@
             {% endif %}
             {# Mobile #}
             {% if column.title or column.contentHtml %}
-              {% if columns|length > 3 %}
+              {% if options.enableAccordion %} {# Accordion #}
                 <div class="block lg:hidden">
                   <div x-data="{ open: false }">
                     <button @click="open = !open" class="w-full flex justify-between items-center font-body {% if column.contentHtml %} !mb-0{% else %} mb-xs{% endif %}" type="button" :aria-expanded="open" aria-controls="content-{{ loop.index }}">
@@ -47,13 +47,13 @@
                       class="" 
                       :aria-hidden="!open" 
                       id="content-{{ loop.index }}">
-                      <div class="wysiwyg mb-sm">
+                      <div class="wysiwyg mt-xs mb-sm">
                         {{ column.contentHtml|e('wp_kses_post') }}
                       </div>
                     </div>
                   </div>
                 </div>
-              {% else %} {# One column #}
+              {% else %} {# No accordion #}
               <div class="block lg:hidden">
                 <div class="font-body {% if column.contentHtml %}mb-xs{% endif %}">{{ column.title }}</div>
                 <div class="wysiwyg">{{ column.contentHtml|e('wp_kses_post') }}</div>
