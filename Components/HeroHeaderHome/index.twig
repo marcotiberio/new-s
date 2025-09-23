@@ -24,8 +24,8 @@
   <div class="absolute z-20 top-0 left-0 flex h-full w-full justify-center items-center">
     <div class="flex flex-col justify-between gap-sm py-xs">
       {% if logoHeader %}
-        <div data-ref="marquee" class="marquee-container relative max-w-full swiper-container !overflow-hidden">
-          <div class="swiper-wrapper w-full h-full items-center py-0 !overflow-hidden">
+        <div data-ref="marquee" class="marquee-container relative max-w-full swiper-container overflow-hidden">
+          <div class="swiper-wrapper w-full h-full items-center py-0">
             <div class="swiper-slide w-full h-full flex items-center justify-center">
               <figure class="figure w-full">
                 <img class="w-full mx-auto object-contain"
@@ -65,7 +65,7 @@
             <div class="swiper-slide w-full h-full flex items-center justify-center">
               <figure class="figure w-full">
                 <img class="w-full mx-auto object-contain"
-                  src="{{ logoFooter.src | resize(32) }}"
+                  src="{{ logoHeader.src | resize(32) }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', logoHeader.id)}}"
                   data-sizes="auto"
                   alt="{{ logoHeader.alt|e }}">

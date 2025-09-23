@@ -18,7 +18,6 @@ html {
   line-height: 1;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 :disabled {
@@ -33,7 +32,6 @@ html {
 body {
   color: var(--color-text);
   font-family: 'FKGroteskNeue', Arial, sans-serif;
-  overflow-x: hidden;
 }
 
 #{$heading-selectors} {
