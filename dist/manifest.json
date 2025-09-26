@@ -1,6 +1,6 @@
 {
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-80eb5179.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -8,7 +8,7 @@
     "src": "Components/BlockGalleryMedia/script.js"
   },
   "Components/BlockSliderLogos/script.js": {
-    "file": "assets/script-0faa73bd.js",
+    "file": "assets/script-e13b44bd.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_a11y-d0e9ac2c.js",
@@ -20,7 +20,7 @@
     "src": "Components/BlockSliderLogos/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -37,7 +37,7 @@
     "src": "Components/GridPostsArchive/script.js"
   },
   "Components/HeroHeaderHome/script.js": {
-    "file": "assets/script-e3bb969d.js",
+    "file": "assets/script-90c698a5.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_helpers-0bb72b7a.js"
@@ -96,7 +96,7 @@
     "src": "Components/NavigationBurger/script.js"
   },
   "Components/NavigationFooter/script.js": {
-    "file": "assets/script-90c698a5.js",
+    "file": "assets/script-e3bb969d.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_helpers-0bb72b7a.js"
@@ -105,7 +105,7 @@
     "src": "Components/NavigationFooter/script.js"
   },
   "Components/NavigationMain/script.js": {
-    "file": "assets/script-bb4a7f2e.js",
+    "file": "assets/script-665a2d59.js",
     "imports": [
       "assets/main.js"
     ],
@@ -133,16 +133,6 @@
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderBoxText/script.js"
-  },
-  "Components/SliderFeatProjects/script.js": {
-    "file": "assets/script-5c600d09.js",
-    "imports": [
-      "_swiper-bundle.min-6558999d.js",
-      "_a11y-d0e9ac2c.js",
-      "_helpers-0bb72b7a.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "Components/SliderFeatProjects/script.js"
   },
   "Components/ZZZ/AccordionSystems/script.js": {
     "file": "assets/script-3d69e1a7.js",
@@ -232,7 +222,7 @@
     "src": "Components/ZZZ/HeroSliderComposite/script.js"
   },
   "Components/ZZZ/HeroVideoBackground/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-80eb5179.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -249,12 +239,22 @@
     "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ZZZ/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-20a1e1a1.js",
+    "file": "assets/script-ff4a7352.js",
     "imports": [
       "assets/main.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ZZZ/ScrolltriggerComparison/script.js"
+  },
+  "Components/ZZZ/SliderFeatProjects/script.js": {
+    "file": "assets/script-5c600d09.js",
+    "imports": [
+      "_swiper-bundle.min-6558999d.js",
+      "_a11y-d0e9ac2c.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ZZZ/SliderFeatProjects/script.js"
   },
   "Components/ZZZ/SliderHorizontal/script.js": {
     "file": "assets/script-5e5554fb.js",
@@ -376,7 +376,6 @@
       "Components/NavigationMain/script.js",
       "Components/SliderBox/script.js",
       "Components/SliderBoxText/script.js",
-      "Components/SliderFeatProjects/script.js",
       "_script-db2e204d.js",
       "Components/ZZZ/AccordionSystems/script.js",
       "Components/ZZZ/BlockPostArchive/script.js",
@@ -389,17 +388,18 @@
       "Components/ZZZ/HeroVideoBackground/script.js",
       "Components/ZZZ/ListingHomepage/script.js",
       "Components/ZZZ/ScrolltriggerComparison/script.js",
+      "Components/ZZZ/SliderFeatProjects/script.js",
       "Components/ZZZ/SliderHorizontal/script.js",
       "Components/ZZZ/SliderImages/script.js",
       "Components/ZZZ/SliderLogos/script.js",
       "Components/ZZZ/SliderQuotes/script.js"
     ],
-    "file": "assets/main-de9fa863.js",
+    "file": "assets/main-ecc51120.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-2b99d64a.css",
+    "file": "assets/main-dc8884ef.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
