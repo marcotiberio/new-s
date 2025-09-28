@@ -5,7 +5,7 @@
   style="
     background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}transparent{% endif %};"
   >
-  <div class="boxed !py-[22.5px] w-full fade-in move-up">
+  <div class="boxed !py-[22.5px] w-full fade-in">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-xs align-start justify-start lg:justify-between {% if options.stickyTitle %}stickyTitle{% endif %}">
       {% for column in columns %}
         <div class="column flex {{ column.colStart }} {{ column.colEnd }} lg:row-start-1 lg:row-end-2">

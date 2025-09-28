@@ -10,11 +10,15 @@
           </div>
           <div class="w-full md:col-span-9" style="color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};">
             <div class="wysiwyg">{{ post.postIntro }}</div>
-            <div class="mt-xs">
               {% set postCategories = post.terms('category') %}
-              {% for term in postCategories %}
-                <span class="font-bodySmall">{{ term }}{% if not loop.last %},{% endif %}</span>
-              {% endfor %}
+              <div class="mt-xs">
+              {% if post.postServices %}
+                <div class="font-bodySmall !mb-0">{{ post.postServices }}</div>
+              {% else %}
+                  {% for term in postCategories %}
+                    <span class="font-bodySmall !mb-0">{{ term }}{% if not loop.last %},{% endif %}</span>
+                  {% endfor %}
+              {% endif %}
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@
       color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
       background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
 
-  <div class="wrapper flex flex-col gap-sm fade-in move-up" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+  <div class="wrapper flex flex-col gap-sm fade-in" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
 
     <!-- Posts Grid -->
     <div class="wrapper max-w-screen-max mx-auto">

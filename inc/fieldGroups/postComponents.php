@@ -38,6 +38,14 @@ add_action('Flynt/afterRegisterComponents', function () {
                 ]
             ],
             [
+                'label' => __('Services', 'flynt'),
+                'name' => 'postServices',
+                'type' => 'text',
+                'wrapper' => [
+                    'width' => 100,
+                ]
+            ],
+            [
                 'label' => __('Media', 'flynt'),
                 'name' => 'mediaTab',
                 'type' => 'tab',
