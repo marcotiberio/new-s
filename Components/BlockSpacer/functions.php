@@ -30,6 +30,7 @@ function getACFLayout(): array
                         'type' => 'select',
                         'choices' => [
                             '0' => 'None',
+                            '30px' => 'X-Small',
                             '5vw' => 'Small',
                             '8vw' => 'Medium',
                             '10vw' => 'Large',
