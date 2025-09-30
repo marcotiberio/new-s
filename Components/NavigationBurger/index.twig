@@ -20,7 +20,7 @@
           {% for item in menu.items %}
             {# regular menu item #}
             {% if not item.children %}
-              <li class="item {{- item.current ? ' current-menu-item text-orange' }}">
+              <li class="item {{- item.current ? ' current-menu-item text-orangeHover' }}">
                 <a class="link font-menu" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
                   {{ item.title }}
                 </a>
@@ -28,13 +28,13 @@
             {% endif %}
             {# menu with submenu item #}
             {% if item.children %}
-              <li class="item open-submenu {{- item.current ? ' current-menu-item text-orange' }}" >
+              <li class="item open-submenu {{- item.current ? ' current-menu-item text-orangeHover' }}" >
                 <a class="link font-menu" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
                   {{ item.title }}
                 </a>
                 <ul class="submenu">
                   {% for subitem in item.children %}
-                    <li class="item {{- subitem.current ? ' current-menu-item text-orange' }}">
+                    <li class="item {{- subitem.current ? ' current-menu-item text-orangeHover' }}">
                       <a class="link !p-0 font-menu" href="{{ subitem.link }}" {{ subitem.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>{{ subitem.title }}</a>
                     </li>
                   {% endfor %}
@@ -80,7 +80,7 @@
                 {% if showLanguageMenu and languageMenuPosition == 'footer' and languageMenu %}
                   {# Language Menu from WordPress Menu #}
                   {% for languageItem in languageMenu.items %}
-                    <li class="item hover:text-orange {{ item.classes|join(' ') }} {{- item.current ? ' text-white' }}" >
+                    <li class="item hover:text-orangeHover {{ item.classes|join(' ') }} {{- item.current ? ' text-white' }}" >
                       <a class="font-menuFooter" href="{{ languageItem.link }}" {{ languageItem.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
                         {{ languageItem.title }}
                       </a>

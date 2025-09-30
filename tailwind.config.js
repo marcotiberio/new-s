@@ -23,7 +23,8 @@ module.exports = {
     colors: {
       white: '#ffffff',
       black: '#000000',
-      orange: '#e25434',
+      orange: '#fa642e',
+      orangeHover: '#fe4400',
       yellow: '#ffdd47',
       green: '#7bdb8f',
       beige: '#f6f4ca',
