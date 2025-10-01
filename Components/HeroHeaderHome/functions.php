@@ -37,12 +37,28 @@ function getACFLayout()
                 'endpoint' => 0,
             ],
             [
+                'label' => __('Video Embed ID - Landscape', 'flynt'),
+                'name' => 'videoIDLandscape',
+                'type' => 'text',
+                'wrapper' => [
+                    'width' => 50
+                ],
+            ],
+            [
+                'label' => __('Video Embed ID - Portrait', 'flynt'),
+                'name' => 'videoIDPortrait',
+                'type' => 'text',
+                'wrapper' => [
+                    'width' => 50
+                ],
+            ],
+            [
                 'label' => __('Image Desktop', 'flynt'),
                 'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
                 'name' => 'image',
                 'type' => 'image',
                 'preview_size' => 'medium',
-                'required' => 1,
+                'required' => 0,
                 'mime_types' => 'jpg,jpeg,png,svg',
                 'wrapper' => [
                     'width' => 50
@@ -54,7 +70,7 @@ function getACFLayout()
                 'name' => 'imageMobile',
                 'type' => 'image',
                 'preview_size' => 'medium',
-                'required' => 1,
+                'required' => 0,
                 'mime_types' => 'jpg,jpeg,png,svg',
                 'wrapper' => [
                     'width' => 50

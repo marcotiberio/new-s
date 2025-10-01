@@ -1,6 +1,6 @@
 {
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-80eb5179.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -8,7 +8,7 @@
     "src": "Components/BlockGalleryMedia/script.js"
   },
   "Components/BlockSliderLogos/script.js": {
-    "file": "assets/script-e13b44bd.js",
+    "file": "assets/script-dbb1e6d3.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_a11y-d0e9ac2c.js",
@@ -20,7 +20,7 @@
     "src": "Components/BlockSliderLogos/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -37,7 +37,7 @@
     "src": "Components/GridPostsArchive/script.js"
   },
   "Components/HeroHeaderHome/script.js": {
-    "file": "assets/script-e3bb969d.js",
+    "file": "assets/script-b5005b15.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_helpers-0bb72b7a.js"
@@ -96,7 +96,7 @@
     "src": "Components/NavigationBurger/script.js"
   },
   "Components/NavigationFooter/script.js": {
-    "file": "assets/script-90c698a5.js",
+    "file": "assets/script-e3bb969d.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_helpers-0bb72b7a.js"
@@ -105,7 +105,7 @@
     "src": "Components/NavigationFooter/script.js"
   },
   "Components/NavigationMain/script.js": {
-    "file": "assets/script-665a2d59.js",
+    "file": "assets/script-324be5a2.js",
     "imports": [
       "assets/main.js"
     ],
@@ -184,7 +184,7 @@
     "src": "Components/ZZZ/BlockProductSpecs/script.js"
   },
   "Components/ZZZ/BlockVideoText/script.js": {
-    "file": "assets/script-9c1467d8.js",
+    "file": "assets/script-80eb5179.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -222,7 +222,7 @@
     "src": "Components/ZZZ/HeroSliderComposite/script.js"
   },
   "Components/ZZZ/HeroVideoBackground/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -239,7 +239,7 @@
     "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ZZZ/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-ff4a7352.js",
+    "file": "assets/script-dbf53b8c.js",
     "imports": [
       "assets/main.js"
     ],
@@ -394,12 +394,12 @@
       "Components/ZZZ/SliderLogos/script.js",
       "Components/ZZZ/SliderQuotes/script.js"
     ],
-    "file": "assets/main-ecc51120.js",
+    "file": "assets/main-c2496d41.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-af751901.css",
+    "file": "assets/main-f0d16e4b.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -409,7 +409,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-94673eb2.css",
+    "file": "assets/tinyMce-9be76e87.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

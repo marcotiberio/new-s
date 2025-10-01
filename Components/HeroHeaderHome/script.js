@@ -4,8 +4,18 @@ import { buildRefs } from '@/assets/scripts/helpers.js'
 
 export default (heroHeaderHome) => {
   const refs = buildRefs(heroHeaderHome)
-  const swiper = initMarquee(refs)
-  return () => swiper.destroy()
+  
+  // Initialize marquee if it exists
+  let swiper = null
+  if (refs.marquee) {
+    swiper = initMarquee(refs)
+  }
+  
+  return () => {
+    if (swiper) {
+      swiper.destroy()
+    }
+  }
 }
 
 function initMarquee(refs) {

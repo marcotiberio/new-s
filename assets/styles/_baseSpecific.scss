@@ -81,6 +81,14 @@ html.home {
         }
     }
 
+    .hamburger {
+        &:hover {
+            line {
+                @apply stroke-white;
+            }
+        }
+    }
+
     .openFooter {
         &:hover {
             line {

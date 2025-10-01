@@ -1,14 +1,14 @@
 <?php
 
-namespace Flynt\Components\BlockWysiwygColumns;
+namespace Flynt\Components\BlockWysiwygAccordion;
 
 use Flynt\FieldVariables;
 
 function getACFLayout()
 {
     return [
-        'name' => 'blockWysiwygColumns',
-        'label' => __('Block: Text Editor Columns', 'flynt'),
+        'name' => 'blockWysiwygAccordion',
+        'label' => __('Block: Text Editor Accordion', 'flynt'),
         'sub_fields' => [
             [
                 'label' => __('General', 'flynt'),
@@ -68,6 +68,16 @@ function getACFLayout()
                         ],
                         'wrapper' => [
                             'width' => 50
+                        ],
+                    ],
+                    [
+                        'label' => __('Title', 'flynt'),
+                        'instructions' => __('If this is the first column, this will be the title of the whole row. If not the first column, this will be the toggable title of each accordion item.', 'flynt'),
+                        'name' => 'title',
+                        'type' => 'text',
+                        'required' => 0,
+                        'wrapper' => [
+                            'width' => 100
                         ],
                     ],
                     [

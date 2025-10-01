@@ -69,6 +69,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockImageTest2\getACFLayout(),
                     Components\BlockGalleryMedia\getACFLayout(),
                     Components\BlockWysiwygColumns\getACFLayout(),
+                    Components\BlockWysiwygAccordion\getACFLayout(),
                     Components\HeroHeaderHome\getACFLayout(),
                     Components\ListingJournal\getACFLayout(),
                     Components\ListingJournalFeat\getACFLayout(),
