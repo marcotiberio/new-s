@@ -138,6 +138,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockGalleryMedia\getACFLayout(),
                     Components\BlockSpacer\getACFLayout(),
                     Components\BlockWysiwygColumns\getACFLayout(),
+                    Components\BlockWysiwygAccordion\getACFLayout(),
                     Components\ListingProjectsRelated\getACFLayout(),
                 ],
             ],
