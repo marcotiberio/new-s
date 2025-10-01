@@ -8,7 +8,7 @@
       background-color: {% if options.pageBackground %}{{ options.pageBackground }}{% else %}transparent{% endif %};">
     
     <script type="application/json">{{ jsonData|json_encode }}</script>
-    <div class="wrapper flex flex-col gap-sm fade-in" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+    <div class="wrapper flex flex-col gap-sm fade-in overflow-hidden" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
       
       <!-- Posts Grid -->
       <div data-ref="slider" class="slider swiper-container pb-md">
