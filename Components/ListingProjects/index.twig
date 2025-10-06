@@ -71,7 +71,7 @@
           } %}
           {% set postCategorySlugs = projektCategoryTerms|map(term => hardcodedCategories[term.name]|default(term.name|lower|replace({' ' : '-'}))) %}
           <div 
-            class="fade-in post {{ item.width }} hover:cursor-pointer transition-opacity duration-300 [&_h2]:hover:text-orangeHover [&_.customText]:hover:text-orangeHover [&_.customText]:hover:opacity-100" 
+            class="post {{ item.width }} hover:cursor-pointer transition-opacity duration-300 [&_h2]:hover:text-orangeHover [&_.customText]:hover:text-orangeHover [&_.customText]:hover:opacity-100" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                     (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
             :class="isTransitioning ? 'opacity-0' : 'opacity-100'"
