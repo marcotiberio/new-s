@@ -64,9 +64,9 @@
           {% set project = item.project %}
           {% set projektCategoryTerms = project.terms('category') %}
           {% set hardcodedCategories = {
-            {'name': 'Strategy', 'slug': 'strategy'},
-            {'name': 'Implementation', 'slug': 'implementation'},
-            {'name': 'Communication', 'slug': 'communication'},
+            'Strategy': 'strategy',
+            'Implementation': 'implementation', 
+            'Communication': 'communication',
           } %}
           {% set postCategorySlugs = projektCategoryTerms|map(term => hardcodedCategories[term.name]|default(term.name|lower|replace({' ' : '-'}))) %}
           <div 
