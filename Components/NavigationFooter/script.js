@@ -14,7 +14,7 @@ function initMarquee(refs) {
     slidesPerView: 'auto',
     spaceBetween: 200,
     loop: true,
-    speed: 40000,
+    speed: 60000,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
