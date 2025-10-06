@@ -1,6 +1,6 @@
 {
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -20,7 +20,7 @@
     "src": "Components/BlockSliderLogos/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-80eb5179.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -65,7 +65,7 @@
     "src": "Components/ListingJournalFeat/script.js"
   },
   "Components/ListingJournalRelated/script.js": {
-    "file": "assets/script-51cbd70b.js",
+    "file": "assets/script-ecd2891d.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_a11y-d0e9ac2c.js",
@@ -113,7 +113,7 @@
     "src": "Components/NavigationMain/script.js"
   },
   "Components/SliderBox/script.js": {
-    "file": "assets/script-ecd2891d.js",
+    "file": "assets/script-51cbd70b.js",
     "imports": [
       "_swiper-bundle.min-6558999d.js",
       "_a11y-d0e9ac2c.js",
@@ -146,7 +146,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/facebook.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/facebook.svg"
   },
   "Components/ZZZ/BlockCta/Assets/instagram.svg": {
     "file": "assets/instagram-5bab2c82.svg",
@@ -154,7 +154,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/linkedin.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/facebook.svg"
   },
   "Components/ZZZ/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
@@ -184,7 +184,7 @@
     "src": "Components/ZZZ/BlockProductSpecs/script.js"
   },
   "Components/ZZZ/BlockVideoText/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-80eb5179.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -399,7 +399,7 @@
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-e4481da9.css",
+    "file": "assets/main-b6e5d623.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },

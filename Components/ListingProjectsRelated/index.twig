@@ -21,7 +21,7 @@
           {% set projektCategoryTerms = project.terms('category') %}
           {% set postCategorySlugs = projektCategoryTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
           <div 
-            class="slider-item swiper-slide post flex col-span-3 w-full [&_h2]:hover:underline hover:cursor-pointer" 
+            class="slider-item swiper-slide post flex col-span-3 w-full [&_h2]:hover:text-orangeHover hover:cursor-pointer" 
             x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => {{ postCategorySlugs|default([])|json_encode }}.includes(cat))) &&
                    (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
             x-transition:enter="transition ease-out duration-100"
@@ -42,12 +42,12 @@
               />
               <div class="flex flex-col">
                 <h2 class="font-body !mb-0">{{ project.title }}</h2>
-                <div class="flex flex-row gap-[5px]">
+                {# <div class="flex flex-row gap-[5px]">
                   {% set postCategories = project.terms('category') %}
                   {% for term in postCategories %}
                     <span class="font-bodySmall !mb-0">{{ term }}{% if not loop.last %},{% endif %}</span>
                   {% endfor %}
-                </div>
+                </div> #}
               </div>
             </a>
           </div>

@@ -61,7 +61,7 @@
       </div>
 
       <!-- Posts Grid -->
-      <div class="flex flex-col">
+      <div class="flex flex-col border-t">
         {% for post in posts %}
           {% set journalCategoryTerms = post.terms('journal-category') %}
           {% set allTerms = journalCategoryTerms %}
@@ -74,7 +74,7 @@
           {% set postCategorySlugs = allTerms|map(term => hardcodedCategories[term.name]|default(term.name|lower|replace({' ' : '-'}))) %}
 
           <div 
-            class="fade-in post w-full py-sm [&_h2]:hover:text-orangeHover first:border-y border-b hover:cursor-pointer transition-opacity duration-300" 
+            class="fade-in post w-full py-sm [&_h2]:hover:text-orangeHover border-b hover:cursor-pointer transition-opacity duration-300" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                      (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
             :class="isTransitioning ? 'opacity-0' : 'opacity-100'"
