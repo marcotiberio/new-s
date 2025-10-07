@@ -41,7 +41,7 @@ ScrollTrigger.batch('.move-up', {
   end: 'top top',
 })
 
-// Page Load Animation - Similar to Justified Studio
+// Page Load Animation
 class PageLoadAnimation {
   constructor() {
     this.init()
@@ -117,19 +117,19 @@ $(document).scroll(function () {
 });
 
 // Menu items color change
-$(document).ready(function () {
-  let lastScrollTop = 0;
-  $(window).scroll(function () {
-    let currentScrollTop = $(this).scrollTop();
+// $(document).ready(function () {
+//   let lastScrollTop = 0;
+//   $(window).scroll(function () {
+//     let currentScrollTop = $(this).scrollTop();
     
-    if (currentScrollTop > lastScrollTop) {
-      // Scrolling down
-      $('flynt-component[name="NavigationBurger"]').addClass('scrolled')
-    } else {
-      // Scrolling up
-      $('flynt-component[name="NavigationBurger"]').removeClass('scrolled')
-    }
+//     if (currentScrollTop > lastScrollTop) {
+//       // Scrolling down
+//       $('flynt-component[name="NavigationBurger"]').addClass('scrolled')
+//     } else {
+//       // Scrolling up
+//       $('flynt-component[name="NavigationBurger"]').removeClass('scrolled')
+//     }
     
-    lastScrollTop = currentScrollTop;
-  })
-})
+//     lastScrollTop = currentScrollTop;
+//   })
+// })

@@ -123,6 +123,11 @@ function getConfig()
                 'icon' => '',
                 'items' => [
                     [
+                        'title' => 'Regular',
+                        'classes' => 'font-body',
+                        'selector' => '*'
+                    ],
+                    [
                         'title' => 'Small',
                         'classes' => 'font-bodySmall',
                         'selector' => '*'
