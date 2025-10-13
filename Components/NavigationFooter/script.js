@@ -12,7 +12,7 @@ function initMarquee(refs) {
   const config = {
     modules: [Autoplay],
     slidesPerView: 'auto',
-    spaceBetween: 200,
+    spaceBetween: 90,
     loop: true,
     speed: 60000,
     autoplay: {
