@@ -16,36 +16,36 @@
       <div
         data-ref="menu" 
         class="menu w-full h-screen !pt-[50px] z-40 relative {% if post.pageBackgroundCustom %}{{ post.pageBackgroundCustom }}{% else %}bg-white{% endif %}">
-        <ul class="w-full h-full max-w-screen-max mx-auto flex flex-col justify-start items-start gap-xs px-xs py-lg">
+        <div class="w-full h-full max-w-screen-max mx-auto flex flex-col justify-start items-start gap-xs px-xs py-lg">
           {% for item in menu.items %}
             {# regular menu item #}
             {% if not item.children %}
-              <li class="item {{- item.current ? ' current-menu-item text-orangeHover' }}">
+              <div class="item {{- item.current ? ' current-menu-item text-orangeHover' }}">
                 <a class="link font-menu" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
                   {{ item.title }}
                 </a>
-              </li>
+              </div>
             {% endif %}
             {# menu with submenu item #}
             {% if item.children %}
-              <li class="item open-submenu {{- item.current ? ' current-menu-item text-orangeHover' }}" >
+              <div class="item open-submenu {{- item.current ? ' current-menu-item text-orangeHover' }}" >
                 <a class="link font-menu" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
                   {{ item.title }}
                 </a>
-                <ul class="submenu">
+                <div class="submenu">
                   {% for subitem in item.children %}
-                    <li class="item {{- subitem.current ? ' current-menu-item text-orangeHover' }}">
+                    <div class="item {{- subitem.current ? ' current-menu-item text-orangeHover' }}">
                       <a class="link !p-0 font-menu" href="{{ subitem.link }}" {{ subitem.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>{{ subitem.title }}</a>
-                    </li>
+                    </div>
                   {% endfor %}
-                </ul>
-              </li>
+                </div>
+              </div>
             {% endif %}
           {% endfor %}
           
           {# Language Menu in Main Area #}
           {% if showLanguageMenu and languageMenuPosition == 'main' and languageMenu %}
-            <li class="item language-menu-item border-t w-full pt-xs mt-sm">
+            <div class="item language-menu-item border-t w-full pt-xs mt-sm">
               <div class="flex flex-col gap-xs">
                 <span class="text-sm text-gray-600 font-menu">Language</span>
                 <div class="flex flex-col gap-xs">
@@ -56,9 +56,9 @@
                   {% endfor %}
                 </div>
               </div>
-            </li>
+            </div>
           {% endif %}
-        </ul>
+        </div>
 
         {# Footer Links Section #}
           <div class="w-full px-xs">

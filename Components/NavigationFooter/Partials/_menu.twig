@@ -1,29 +1,29 @@
 <div data-ref="menu" class="menu w-full h-full">
-  <ul class="w-full h-full mx-auto flex flex-row flex-wrap lg:grid lg:grid-cols-12 gap-x-xs items-center">
+  <div class="w-full h-full mx-auto flex flex-row flex-wrap lg:grid lg:grid-cols-12 gap-x-xs items-center">
     {% for item in items %}
       {# regular menu item #}
       {% if not item.children %}
-        <li class="item flex hover:text-white {{ item.classes|join(' ') }} {{- item.current ? ' text-white' }}">
+        <div class="item flex hover:text-white {{ item.classes|join(' ') }} {{- item.current ? ' text-white' }}">
           <a class="link font-menuFooter" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
             {{ item.title }}
           </a>
-        </li>
+        </div>
       {% endif %}
       {# menu with submenu item #}
       {% if item.children %}
-        <li class="item open-submenu hover:text-white {{ item.classes|join(' ') }} {{- item.current ? ' text-white' }}" >
+        <div class="item open-submenu hover:text-white {{ item.classes|join(' ') }} {{- item.current ? ' text-white' }}" >
           <div class="link font-menuFooter !mb-[6px]">
             {{ item.title }}
           </div>
-          <ul class="submenu flex flex-row gap-xs">
+          <div class="submenu flex flex-row gap-xs">
             {% for subitem in item.children %}
-              <li class="item hover:text-white {{ subitem.classes|join(' ') }} {{- subitem.current ? ' text-white' }}">
+              <div class="item hover:text-white {{ subitem.classes|join(' ') }} {{- subitem.current ? ' text-white' }}">
                 <a class="link !p-0 font-menuFooter" href="{{ subitem.link }}" {{ subitem.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>{{ subitem.title }}</a>
-              </li>
+              </div>
             {% endfor %}
-          </ul>
-        </li>
+          </div>
+        </div>
       {% endif %}
     {% endfor %}
-  </ul>
+  </div>
 </div>
