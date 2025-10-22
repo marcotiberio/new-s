@@ -1,6 +1,6 @@
 {
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -20,7 +20,7 @@
     "src": "Components/BlockSliderLogos/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -399,7 +399,7 @@
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-91b35305.css",
+    "file": "assets/main-09dcb142.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -409,7 +409,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-da4850f6.css",
+    "file": "assets/tinyMce-8d80f758.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

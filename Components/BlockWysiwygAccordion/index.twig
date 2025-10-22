@@ -25,7 +25,7 @@
               <div class="block lg:hidden">
                 <div x-data="{ open: false }">
                   <button @click="open = !open" class="w-full flex justify-between items-center font-body {% if column.contentHtml %} !mb-0{% else %} mb-xs{% endif %}" type="button" :aria-expanded="open" aria-controls="content-{{ loop.index }}">
-                    {{ column.title|e }}
+                    <h2>{{ column.title|e }}</h2>
                     {% if column.contentHtml %}
                       <div class="accordion-icon transition-transform duration-300 ease-in-out" :class="{'rotate-180': open}">
                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +55,7 @@
               {# Desktop #}
               <div class="hidden lg:block">
                 {% if column.title %}
-                  <div class="title font-body {% if column.contentHtml %}mb-xs{% endif %}">{{ column.title }}</div>
+                  <div class="title font-body {% if column.contentHtml %}mb-xs{% endif %}"><h2>{{ column.title }}</h2></div>
                 {% endif %}
                 {% if column.contentHtml %}
                   <div class="wysiwyg">{{ column.contentHtml|e('wp_kses_post') }}</div>

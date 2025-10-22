@@ -17,9 +17,6 @@
   <body>
     <!-- Page Load Animation Overlay -->
     <div class="page-load-animation" id="pageLoadAnimation"></div>
-    <a href="#mainContent" class="skipLink">
-      {{ __("Skip to main content", "flynt") }}
-    </a>
     {% block layout %}
       <div 
         class="pageWrapper {% if post.pageBackgroundCustom %}{{ post.pageBackgroundCustom }}{% else %}bg-white{% endif %}">
@@ -44,6 +41,9 @@
           {% endblock %}
         </header>
         <main id="mainContent" class="mainContent min-h-[calc(100vh-55px)] {% if fn('is_front_page') %}mt-0{% else %}mt-[55px]{% endif %}" aria-label="{{ __('Content', 'flynt') }}">
+          <a href="#mainContent" class="skipLink">
+            {{ __("Skip to main content", "flynt") }}
+          </a>
           {% if function('post_password_required') %}
             {{ function('get_the_password_form') }}
           {% else %}
