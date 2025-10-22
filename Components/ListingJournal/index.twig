@@ -79,7 +79,7 @@
                      (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
             :class="isTransitioning ? 'opacity-0' : 'opacity-100'"
           >
-            <a href="{{ post.link }}">
+            <a href="{{ post.link }}" title="{{ post.title }}" aria-label="Go to post">
               <div class="w-full flex flex-col lg:grid grid-cols-12 gap-xs items-start">
                 {% if post.thumbnail %}
                   <img 

@@ -1,5 +1,5 @@
-<ul data-ref="menu" class="menu w-full h-full">
-  <div class="w-full h-full mx-auto flex flex-row flex-wrap lg:grid lg:grid-cols-12 gap-x-xs items-center">
+<div data-ref="menu" class="menu w-full h-full">
+  <ul class="w-full h-full mx-auto flex flex-row flex-wrap lg:grid lg:grid-cols-12 gap-x-xs items-center">
     {% for item in items %}
       {# regular menu item #}
       {% if not item.children %}
@@ -25,5 +25,5 @@
         </li>
       {% endif %}
     {% endfor %}
-  <div>
-</ul>
+  </ul>
+</div>

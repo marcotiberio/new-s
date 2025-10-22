@@ -26,7 +26,7 @@
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95"
           >
-            <a class="flex flex-col gap-xs w-full" href="{{ project.link }}">
+            <a class="flex flex-col gap-xs w-full" href="{{ project.link }}" aria-label="Go to project">
               {% if project.featVideo %}
                 <video class="figure-video object-cover lg:!h-[30.4vw]"
                   autoplay 

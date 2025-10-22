@@ -30,7 +30,7 @@
               x-transition:leave-start="opacity-100 scale-100"
               x-transition:leave-end="opacity-0 scale-95"
             >
-              <a href="{{ post.link }}">
+              <a href="{{ post.link }}" title="{{ post.title }}" aria-label="Go to post">
                 <div class="w-full flex flex-col gap-xs items-start">
                   {% if post.thumbnail %}
                     <img 

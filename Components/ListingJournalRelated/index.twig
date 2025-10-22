@@ -29,7 +29,7 @@
               x-transition:leave-start="opacity-100 scale-100"
               x-transition:leave-end="opacity-0 scale-95"
             >
-              <a class="flex flex-col gap-xs w-full" href="{{ item.link }}" title="{{ item.title }}">
+              <a class="flex flex-col gap-xs w-full" href="{{ item.link }}" title="{{ item.title }}" aria-label="Go to post">
                 <img 
                   class="figure-image lazyload object-cover"
                   src="{{ item.thumbnail.src }}"

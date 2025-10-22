@@ -75,7 +75,7 @@
                     (searchQuery === '' || '{{ project.title|lower }}'.includes(searchQuery.toLowerCase()))"
             :class="isTransitioning ? 'opacity-0' : 'opacity-100'"
           >
-            <a class="flex flex-col gap-xs w-full no-underline" href="{{ project.link }}">
+            <a class="flex flex-col gap-xs w-full no-underline" href="{{ project.link }}" aria-label="Go to project">
               {% if project.featVideo %}
                 <video class="figure-video object-cover lg:!h-[30.4vw]"
                   autoplay 
