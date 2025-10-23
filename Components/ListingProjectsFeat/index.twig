@@ -8,6 +8,10 @@
 
   <div class="wrapper flex flex-col gap-sm fade-in" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
 
+    <div class="">
+      <h2>{{ headlineTitle|e }}</h2>
+    </div>
+
     <!-- Posts Grid -->
     <div class="wrapper max-w-screen-max mx-auto">
       <div class="grid grid-cols-12 gap-xs">

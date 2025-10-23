@@ -31,6 +31,12 @@ function getACFLayout()
                 'endpoint' => 0
             ],
             [
+                'label' => __('Title', 'flynt'),
+                'instructions' => __('Want to add a headline? And a paragraph? Go ahead! Or just leave it empty and nothing will be shown.', 'flynt'),
+                'name' => 'headlineTitle',
+                'type' => 'text',
+            ],
+            [
                 'label' => __('Projects', 'flynt'),
                 'name' => 'projects',
                 'type' => 'repeater',
