@@ -25,7 +25,7 @@ add_filter('Flynt/addComponentData?name=ListingJournalRelated', function ($data)
     $queryArgs = [
         'post_status' => 'publish',
         'post_type' => $postType,
-        'posts_per_page' => $data['options']['columns'],
+        'posts_per_page' => 4,
         'ignore_sticky_posts' => 1,
         'post__not_in' => array(get_the_ID())
     ];

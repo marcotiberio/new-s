@@ -20,7 +20,7 @@
             {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'}) ) %}
 
             <div 
-              class="slider-item swiper-slide post [&_h2]:hover:text-orangeHover hover:cursor-pointer" 
+              class="slider-item swiper-slide post [&_.group]:hover:text-orangeHover hover:cursor-pointer" 
               x-show="(selectedCategories.length === 0 || selectedCategories.some(cat => ['{{ postCategorySlugs|join("','") }}'].includes(cat))) && 
                       (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
               x-transition:enter="transition ease-out duration-100"
@@ -31,7 +31,7 @@
               x-transition:leave-end="opacity-0 scale-95"
             >
               <a href="{{ post.link }}" title="{{ post.title }}" aria-label="Go to post">
-                <div class="w-full flex flex-col gap-xs items-start">
+                <div class="groupw-full flex flex-col gap-xs items-start">
                   {% if post.thumbnail %}
                     <img 
                       class="lazyload transition grid duration-200 ease-in-out aspect-8/5 object-cover"
@@ -43,7 +43,6 @@
                       aria-label="Go to post"
                     />
                   {% endif %}
-
                   <div class="flex flex-row gap-xs items-center">
                     <div class="font-bodySmall !mb-0">{{ post.date|date('d.m.y') }}</div>
                     <div class="flex flex-row gap-xs">
@@ -52,9 +51,7 @@
                       {% endfor %}
                     </div>
                   </div>
-
                   <h3 class="w-full !mb-0">{{ post.title }}</h3>
-                  
                 </div>
               </a>
             </div>
