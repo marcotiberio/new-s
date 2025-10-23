@@ -28,7 +28,7 @@ add_filter('Flynt/addComponentData?name=ListingJournalFeat', function ($data) {
         'post_status'         => 'publish',
         'post_type'           => $postType,
         'ignore_sticky_posts' => 1,
-        'posts_per_page'      => -1,
+        'posts_per_page'      => 4,
         'orderby'             => 'date',
         'order'               => 'DESC',
     ];
