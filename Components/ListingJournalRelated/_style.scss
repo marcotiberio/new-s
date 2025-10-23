@@ -45,4 +45,8 @@ flynt-component[name='ListingJournalRelated'] {
       background: var(--black);
     }
   }
+
+  .swiper-pagination-fraction {
+    @apply font-body;
+  }
 }

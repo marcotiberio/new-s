@@ -45,5 +45,9 @@ flynt-component[name='ListingProjectsRelated'] {
         background: var(--black);
       }
     }
+
+    .swiper-pagination-fraction {
+      @apply font-body;
+    }
   }
   
