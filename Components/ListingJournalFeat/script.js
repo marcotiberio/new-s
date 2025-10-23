@@ -22,7 +22,7 @@ function initSlider (refs, data) {
     },
     pagination: {
       el: refs.dots,
-      type: 'bullets',
+      type: 'fraction',
       clickable: true
     },
     breakpoints: {

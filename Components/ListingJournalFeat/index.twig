@@ -9,10 +9,17 @@
     
     <script type="application/json">{{ jsonData|json_encode }}</script>
     <div class="wrapper flex flex-col gap-sm fade-in overflow-hidden" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
+
+      <div class="hidden lg:block">
+        <h2>{{ headlineTitle|e }}</h2>
+      </div>
       
       <!-- Posts Grid -->
-      <div data-ref="slider" class="slider swiper-container pb-md">
-        <div data-ref="dots" class="flex justify-center absolute !bottom-[20px] z-[40] slider-pagination swiper-pagination-fraction"></div>
+      <div data-ref="slider" class="slider swiper-container pt-md md:pt-0">
+        <div class="block lg:hidden h-fit absolute top-0 left-0">
+          <h2>{{ headlineTitle|e }}</h2>
+        </div>
+        <div data-ref="dots" class="flex justify-end h-fit absolute !top-0 right-0 z-[40] slider-pagination swiper-pagination-fraction"></div>
         <div class="swiper-wrapper flex flex-row">
           {% for post in posts %}
             {% set journalCategoryTerms = post.terms('journal-category') %}
