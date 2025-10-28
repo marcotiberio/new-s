@@ -19,6 +19,19 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'endpoint' => 0,
             ],
             [
+                'label' => 'Date (Required)',
+                'instructions' => '',
+                'required' => 1,
+                'name' => 'end_date',
+                'type' => 'date_picker',
+                'display_format' => 'd.m.y',
+                'return_format' => 'd.m.y',
+                'first_day' => 1,
+                'wrapper' => [
+                    'width' => 100,
+                ]
+            ],
+            [
                 'label' => __('Author', 'flynt'),
                 'name' => 'postAuthor',
                 'type' => 'text',
@@ -53,26 +66,6 @@ add_action('Flynt/afterRegisterComponents', function () {
             //     'delay' => 1,
             //     'wrapper' => [
             //         'width' => 100,
-            //     ]
-            // ],
-            // [
-            //     'label' => __('Date', 'flynt'),
-            //     'name' => 'dateTab',
-            //     'type' => 'tab',
-            //     'placement' => 'top',
-            //     'endpoint' => 0,
-            // ],
-            // [
-            //     'label' => 'Date (Required)',
-            //     'instructions' => '',
-            //     'required' => 1,
-            //     'name' => 'end_date',
-            //     'type' => 'date_picker',
-            //     'display_format' => 'F j, Y',
-            //     'return_format' => 'Ymd',
-            //     'first_day' => 1,
-            //     'wrapper' => [
-            //         'width' => 50,
             //     ]
             // ],
             // [

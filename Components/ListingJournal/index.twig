@@ -92,7 +92,9 @@
                     aria-label="Go to post"
                   />
                 {% endif %}
-                <div class="font-bodySmall !mb-0 col-start-4 col-end-5">{{ post.date|date('d.m.y') }}</div>
+                <div class="font-bodySmall !mb-0 col-start-4 col-end-5">
+                  {{ post.end_date }}
+                </div>
 
                 <div class="w-full h-full flex flex-col justify-between !mb-0 col-start-5 col-end-8">
                   <h2 class="w-full !mb-0">{{ post.title }}</h2>

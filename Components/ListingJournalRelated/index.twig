@@ -40,7 +40,7 @@
                   aria-label="Go to post"
                 />
                 <div class="flex flex-row gap-xs items-center">
-                    <div class="font-bodySmall !mb-0">{{ post.date|date('d.m.y') }}</div>
+                    <div class="font-bodySmall !mb-0">{{ post.end_date }}</div>
                     <div class="flex flex-row gap-xs">
                       {% for term in allTerms %}
                         <span class="font-label">{{ term.name }}</span>

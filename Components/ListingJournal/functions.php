@@ -29,7 +29,8 @@ add_filter('Flynt/addComponentData?name=ListingJournal', function ($data) {
         'post_type'           => $postType,
         'ignore_sticky_posts' => 1,
         'posts_per_page'      => -1,
-        'orderby'             => 'date',
+        'meta_key'            => 'end_date',
+        'orderby'             => 'meta_value',
         'order'               => 'DESC',
     ];
 
