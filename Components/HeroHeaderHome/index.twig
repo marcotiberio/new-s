@@ -1,8 +1,8 @@
 <flynt-component
   load:on="visible" name="HeroHeaderHome"
-  class="w-full @6xl:w-screen h-screen mx-auto relative overflow-hidden">
+  class="w-full lgplus:w-screen h-screen mx-auto relative overflow-hidden">
   {% if videoIDLandscape %}
-    <div class="video hidden @6xl:block">
+    <div class="video hidden lgplus:block">
       <div data-ref="videoPlayer" class="video-player w-full mx-auto" data-state="isLoaded">
         <iframe 
           src="https://player.vimeo.com/video/{{ videoIDLandscape }}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;controls=0&amp;background=1"
@@ -15,14 +15,14 @@
   {% endif %}
   {% if image %}
     <img 
-      class="hidden @6xl:block figure-image w-full h-full object-cover"
+      class="hidden lgplus:block figure-image w-full h-full object-cover"
       src="{{ image.src }}"
       alt="{{ image.alt|e | default('') }}"
       loading="eager"
     />
   {% endif %}
   {% if videoIDPortrait %}
-    <div class="video block @6xl:hidden scale-[1.45] lg:scale-[3.5] @6xl:scale-100">
+    <div class="video block lgplus:hidden scale-[1.45] lg:scale-[3.5] lgplus:scale-100">
       <div data-ref="videoPlayer" class="video-player w-full mx-auto" data-state="isLoaded">
         <iframe 
           src="https://player.vimeo.com/video/{{ videoIDPortrait }}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;controls=0&amp;background=1"
@@ -35,7 +35,7 @@
   {% endif %}
   {% if imageMobile %}
     <img 
-      class="block @6xl:hidden figure-image w-full h-full object-cover"
+      class="block lgplus:hidden figure-image w-full h-full object-cover"
       src="{{ imageMobile.src }}"
       alt="{{ imageMobile.alt|e | default('') }}"
       loading="eager"
