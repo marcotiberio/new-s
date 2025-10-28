@@ -137,6 +137,7 @@ $(document).scroll(function () {
 // Reload page on viewport resize
 let resizeTimer;
 let currentWidth = window.innerWidth;
+let currentHeight = window.innerHeight;
 
 $(window).on('resize', function() {
   // Clear the previous timer
@@ -144,9 +145,19 @@ $(window).on('resize', function() {
   
   // Set a new timer to reload the page after resize stops for 500ms
   resizeTimer = setTimeout(function() {
-    // Only reload if the width actually changed (to avoid reloading on mobile scroll)
-    if (window.innerWidth !== currentWidth) {
+    const newWidth = window.innerWidth;
+    const newHeight = window.innerHeight;
+    
+    // Only reload if the width changed significantly (more than 100px)
+    // This avoids reloading on mobile when address bar shows/hides
+    const widthDiff = Math.abs(newWidth - currentWidth);
+    
+    if (widthDiff > 100) {
       location.reload();
+    } else {
+      // Update stored dimensions if no reload happened
+      currentWidth = newWidth;
+      currentHeight = newHeight;
     }
   }, 500);
 });
