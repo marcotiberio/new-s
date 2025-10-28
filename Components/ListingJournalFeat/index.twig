@@ -51,14 +51,15 @@
                     />
                   {% endif %}
                   <div class="flex flex-row gap-xs items-center">
-                    <div class="font-bodySmall !mb-0">{{ post.end_date }}</div>
+                    <span class="font-bodySmall !mb-0">{{ post.end_date }}</span>
                     <div class="flex flex-row gap-xs">
                       {% for term in allTerms %}
-                        <span class="font-label">{{ term.name }}</span>
+                        <span class="font-bodySmall !mb-0">{{ term.name }}</span>
                       {% endfor %}
                     </div>
                   </div>
-                  <h3 class="w-full !mb-0">{{ post.title }}</h3>
+                  <h3 class="w-full !mb-0 font-body">{{ post.title }}</h3>
+                  <span class="font-bodySmall !mb-0">{{ post.postAuthor }}</span>
                 </div>
               </a>
             </div>

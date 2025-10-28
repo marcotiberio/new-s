@@ -92,8 +92,9 @@
                     aria-label="Go to post"
                   />
                 {% endif %}
-                <div class="font-bodySmall !mb-0 col-start-4 col-end-5">
-                  {{ post.end_date }}
+                <div class="font-bodySmall !mb-0 col-start-4 col-end-5 flex flex-row gap-xs items-center">
+                  <span class="font-bodySmall !mb-0">{{ post.end_date }}</span>
+                  <span class="font-bodySmall !mb-0 block lg:hidden">{{ post.postAuthor }}</span>
                 </div>
 
                 <div class="w-full h-full flex flex-col justify-between !mb-0 col-start-5 col-end-8">
@@ -106,7 +107,7 @@
                   {% endfor %}
                 </div>
 
-                <div class="font-bodySmall !mb-0 col-start-11 col-end-13">{{ post.postAuthor }}</div>
+                <span class="font-bodySmall !mb-0 col-start-11 col-end-13 hidden lg:block">{{ post.postAuthor }}</span>
                 
               </div>
             </a>

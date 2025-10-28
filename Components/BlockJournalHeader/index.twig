@@ -14,7 +14,7 @@
             </div> #}
             <div class="grid grid-cols-3 justify-between items-center">
               <div class="font-bodySmall !mb-0 col-start-1 col-end-2">{{ post.end_date }}</div>
-              <div class="font-bodySmall !mb-0 col-start-2 col-end-3">{{ post.postAuthor }}</div>
+              <div class="font-bodySmall !mb-0 col-start-2 col-end-4">{{ post.postAuthor }}</div>
               {% set journalCategories = function('get_terms', {'taxonomy': 'journal-category', 'hide_empty': true}) %}
               {% set journalCategoryTerms = post.terms('journal-category') %}
             </div>

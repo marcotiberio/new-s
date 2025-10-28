@@ -87,9 +87,10 @@ function getConfig()
             'fe4400', 'Orange',
         ],
         'blockformats' => [
-            'Paragraph' => 'p',
             'Heading 1' => 'h1',
             'Heading 2' => 'h2',
+            'Paragraph' => 'p',
+            'Small Text' => 'samp',
         ],
         'styleformats' => [
             // [
