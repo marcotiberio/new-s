@@ -117,6 +117,7 @@ module.exports = {
       'pt-[120px]',
       'pt-[230px]',
       'pt-[160px]',
+      'pt-[10vw]',
       'pb-[0px]',
       'pb-[15px]',
       'pb-[50px]',

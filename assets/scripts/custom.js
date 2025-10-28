@@ -133,3 +133,20 @@ $(document).scroll(function () {
 //     lastScrollTop = currentScrollTop;
 //   })
 // })
+
+// Reload page on viewport resize
+let resizeTimer;
+let currentWidth = window.innerWidth;
+
+$(window).on('resize', function() {
+  // Clear the previous timer
+  clearTimeout(resizeTimer);
+  
+  // Set a new timer to reload the page after resize stops for 500ms
+  resizeTimer = setTimeout(function() {
+    // Only reload if the width actually changed (to avoid reloading on mobile scroll)
+    if (window.innerWidth !== currentWidth) {
+      location.reload();
+    }
+  }, 500);
+});

@@ -11,7 +11,7 @@
     <div class="wrapper overflow-hidden max-w-screen-max mx-auto boxed flex flex-col gap-sm fade-in" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
 
       <!-- Posts Grid -->
-      <div data-ref="slider" class="slider swiper-container pt-[60px] md:pt-sm border-t">
+      <div data-ref="slider" class="slider swiper-container pt-[60px] md:pt-sm md:pb-sm border-t">
         {% if labels.preContentHtml %}
           <div class="font-body">{{ labels.preContentHtml|e('wp_kses_post') }}</div>
         {% endif %}
@@ -31,7 +31,7 @@
             >
               <a class="group flex flex-col gap-xs w-full" href="{{ item.link }}" title="{{ item.title }}" aria-label="Go to post">
                 <img 
-                  class="figure-image lazyload object-cover"
+                  class="figure-image lazyload object-cover aspect-8/5"
                   src="{{ item.thumbnail.src }}"
                   alt="{{ item.thumbnail.alt|e | default('') }}"
                   loading="lazy"

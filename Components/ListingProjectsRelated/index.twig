@@ -10,7 +10,7 @@
   <div class="wrapper overflow-hidden max-w-screen-max mx-auto boxed flex flex-col gap-sm fade-in" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
 
     <!-- Projects Grid -->
-      <div data-ref="slider" class="slider swiper-container pt-[60px] md:pt-sm border-t">
+      <div data-ref="slider" class="slider swiper-container pt-[60px] md:pt-sm md:pb-sm border-t">
       {% if labels.preContentHtml %}
         <div class="font-body">{{ labels.preContentHtml|e('wp_kses_post') }}</div>
       {% endif %}
@@ -33,7 +33,7 @@
           >
             <a class="flex flex-col gap-xs w-full" href="{{ project.link }}" title="{{ project.title }}" aria-label="Go to project">
               <img 
-                class="figure-image lazyload object-cover"
+                class="figure-image lazyload object-cover aspect-8/5"
                 src="{{ project.thumbnail.src }}"
                 alt="{{ project.thumbnail.alt|e | default('') }}"
                 loading="lazy"
