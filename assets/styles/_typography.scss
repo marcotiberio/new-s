@@ -87,6 +87,25 @@ p,
   }
 }
 
+a.font-bodySmall {
+  @apply no-underline;
+  @apply hover:text-orangeHover;
+
+  &::after {
+    content: '↗';
+    font-size: 0.675rem;
+    @apply ml-[3px];
+    vertical-align: super;
+  }
+
+  &.link-NoArrow {
+    &::after {
+      content: '';
+      @apply ml-0;
+    }
+  }
+}
+
 .font-menu {
   font-family: 'FKGroteskNeue', Arial, sans-serif;
   font-size: 1.5rem;
