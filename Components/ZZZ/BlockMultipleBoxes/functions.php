@@ -41,7 +41,7 @@ function getACFLayout()
                         'preview_size' => 'small',
                         'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
                         'required' => 0,
-                        'mime_types' => 'jpg,jpeg,png,svg',
+                        'mime_types' => 'jpg,jpeg,png,svg,webp',
                     ],
                     [
                         'label' => __('Title', 'flynt'),

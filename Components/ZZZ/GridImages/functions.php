@@ -45,7 +45,7 @@ function getACFLayout()
                         'name' => 'image',
                         'type' => 'image',
                         'preview_size' => 'full',
-                        'mime_types' => 'jpg,jpeg,png,svg',
+                        'mime_types' => 'jpg,jpeg,png,svg,webp',
                         'wrapper' => [
                             'width' => 50
                         ],
