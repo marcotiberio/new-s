@@ -27,7 +27,10 @@ add_filter('Flynt/addComponentData?name=ListingJournalRelated', function ($data)
         'post_type' => $postType,
         'posts_per_page' => 4,
         'ignore_sticky_posts' => 1,
-        'post__not_in' => array(get_the_ID())
+        'post__not_in' => array(get_the_ID()),
+        'meta_key'            => 'end_date',
+        'orderby'             => 'meta_value',
+        'order'               => 'DESC',
     ];
 
     // Only add category filter if we have categories

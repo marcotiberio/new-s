@@ -40,14 +40,14 @@
                   aria-label="Go to post"
                 />
                 <div class="flex flex-row gap-xs items-center">
-                    <div class="font-bodySmall !mb-0">{{ post.end_date }}</div>
+                    <div class="font-bodySmall !mb-0">{{ item.end_date }}</div>
                     <div class="flex flex-row gap-xs">
                       {% for term in allTerms %}
                         <span class="font-label">{{ term.name }}</span>
                       {% endfor %}
                     </div>
                   </div>
-                  <h3 class="w-full !mb-0">{{ post.title }}</h3>
+                  <h3 class="w-full !mb-0">{{ item.title }}</h3>
               </a>
             </div>
           {% endfor %}
