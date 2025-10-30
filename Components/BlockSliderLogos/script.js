@@ -20,6 +20,14 @@ function initSlider(refs, data) {
     a11y: options.a11y,
     slidesPerView: 2.5,
     spaceBetween: 25,
+    loop: true,
+    loopAdditionalSlides: 3,
+    allowTouchMove: true,
+    simulateTouch: false,
+    freeMode: {
+      enabled: true,
+      momentum: false,
+    },
     navigation: {
       nextEl: refs.next,
       prevEl: refs.prev,

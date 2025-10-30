@@ -16,7 +16,7 @@
     }">
       <div class="grid grid-cols-12 gap-xs">
         
-        <div class="flex flex-col flex-wrap justify-start col-start-8 col-end-12">
+        <div class="flex flex-col flex-wrap justify-start col-start-1 col-end-13 lg:col-start-8">
           
           <!-- All Category Filter -->
           <div 
@@ -94,20 +94,24 @@
                 {% endif %}
                 <div class="font-bodySmall !mb-0 col-start-4 col-end-5 flex flex-row gap-xs items-center">
                   <span class="font-bodySmall !mb-0">{{ post.end_date }}</span>
-                  <span class="font-bodySmall !mb-0 block lg:hidden">{{ post.postAuthor }}</span>
+                  <div class="flex lg:hidden nd-11">
+                    {% for term in allTerms %}
+                      <span class="font-label">{{ term.name }}</span>
+                    {% endfor %}
+                  </div>
                 </div>
 
                 <div class="w-full h-full flex flex-col justify-between !mb-0 col-start-5 col-end-8">
                   <h2 class="w-full !mb-0">{{ post.title }}</h2>
                 </div>
 
-                <div class="flex flex-row gap-xs col-start-9 col-end-11">
+                <div class="hidden lg:flex flex-row gap-xs col-start-9 col-end-11">
                   {% for term in allTerms %}
                     <span class="font-label">{{ term.name }}</span>
                   {% endfor %}
                 </div>
 
-                <span class="font-bodySmall !mb-0 col-start-11 col-end-13 hidden lg:block">{{ post.postAuthor }}</span>
+                <span class="font-bodySmall !mb-0 col-start-11 col-end-13">{{ post.postAuthor }}</span>
                 
               </div>
             </a>

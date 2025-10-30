@@ -16,6 +16,7 @@ function initSlider (refs, data) {
     a11y: options.a11y,
     slidesPerView: 1,
     spaceBetween: 20,
+    loop: true,
     navigation: {
       nextEl: refs.next,
       prevEl: refs.prev

@@ -14,13 +14,16 @@ function initMarquee(refs) {
     slidesPerView: 'auto',
     spaceBetween: 90,
     loop: true,
-    speed: 60000,
+    speed: 50000,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
       pauseOnMouseEnter: false,
+      waitForTransition: false,
     },
-    allowTouchMove: false,
+    loopAdditionalSlides: 3,
+    allowTouchMove: true,
+    simulateTouch: false,
     freeMode: {
       enabled: true,
       momentum: false,
