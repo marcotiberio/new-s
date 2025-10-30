@@ -15,7 +15,7 @@
     {% if menu %}
       <div
         data-ref="menu" 
-        class="menu w-full h-screen !pt-[50px] z-40 relative {% if post.pageBackgroundCustom %}{{ post.pageBackgroundCustom }}{% else %}bg-white{% endif %}">
+        class="menu w-full h-[100dvh] !pt-[50px] z-40 relative {% if post.pageBackgroundCustom %}{{ post.pageBackgroundCustom }}{% else %}bg-white{% endif %}">
         <div class="w-full h-full max-w-screen-max mx-auto flex flex-col justify-start items-start gap-xs px-xs py-lg">
           {% for item in menu.items %}
             {# regular menu item #}

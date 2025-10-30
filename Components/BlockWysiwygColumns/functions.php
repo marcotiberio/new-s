@@ -18,6 +18,16 @@ function getACFLayout()
                 'endpoint' => 0,
             ],
             [
+                'label' => __('Headline', 'flynt'),
+                'name' => 'headlineTitle',
+                'instructions' => __('Headline for mobile view only. Desktop view will use the first column\'s headline.', 'flynt'),
+                'type' => 'text',
+                'required' => 0,
+                'wrapper' => [
+                    'width' => 100
+                ],
+            ],
+            [
                 'label' => __('Columns', 'flynt'),
                 'name' => 'columns',
                 'type' => 'repeater',

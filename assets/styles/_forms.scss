@@ -109,6 +109,7 @@ input:where([type='submit']) {
   font-family: 'FKGroteskNeue', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1;
+  border-radius: 0 !important;
   @apply py-[10px];
   @apply px-[10px];
   @apply text-black;
