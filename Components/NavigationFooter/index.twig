@@ -16,7 +16,7 @@
       </div>
     </div>
     {# Center #}
-    <div class="boxed grid grid-cols-1 md:grid-cols-12 gap-sm lg:gap-xs align-start justify-start md:justify-between">
+    <div class="boxed grid grid-cols-1 md:grid-cols-12 gap-md lg:gap-xs align-start justify-start md:justify-between">
       {% for column in columns %}
         <div class="column flex flex-col {{ column.colStart }} {{ column.colEnd }} lg:row-start-1 lg:row-end-2">
           <div class="wysiwyg">{{ column.contentHtml|e('wp_kses_post') }}</div>
