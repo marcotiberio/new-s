@@ -22,12 +22,9 @@ function initSlider(refs, data) {
     spaceBetween: 25,
     loop: true,
     loopAdditionalSlides: 3,
+    loopPreventsSliding: false,
     allowTouchMove: true,
     simulateTouch: false,
-    freeMode: {
-      enabled: true,
-      momentum: false,
-    },
     navigation: {
       nextEl: refs.next,
       prevEl: refs.prev,
