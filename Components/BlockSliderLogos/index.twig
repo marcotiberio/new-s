@@ -8,32 +8,48 @@
       <h3 class="mb-xxl">{{ blockTitle }}</h3>
     {% endif %}
 
-    <div data-ref="slider" class="slider relative max-w-full swiper-container">
-      
-      {# Pagination dots - matching SliderLogos structure #}
-      {# <div class="w-full button-wrapper absolute left-0 bottom-0 z-50 translate-y-xl xs:translate-y-xl lg:translate-y-sm">
-        <div data-ref="dots" class="flex justify-center slider-pagination swiper-pagination-fraction"></div>
-      </div> #}
-      
-      <div class="swiper-wrapper w-full h-full items-center py-0">
-        {% for box in contentBoxes %}
-          <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
+    <div class="marquee-container relative max-w-full overflow-hidden">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          {% for box in contentBoxes %}
             {% if box.panelLogo %}
-              {% if box.panelLink %}
-                <a href="{{ box.panelLink.url }}" class="" {% if box.panelLink.target %} target="{{ box.panelLink.target }}" rel="noreferrer noopener"{% endif %}>
-              {% endif %}
-                <img 
-                  class="logo lazyload w-full max-h-[100px] h-full object-contain aspect-square"
-                  src="{{ box.panelLogo.src }}"
-                  data-srcset="{{function('wp_get_attachment_image_srcset', box.panelLogo.id)}}"
-                  data-sizes="auto"
-                  alt="{{ box.panelLogo.alt|e }}">
-              {% if box.panelLink %}
-                </a>
-              {% endif %}
+              <figure class="marquee-item">
+                {% if box.panelLink %}
+                  <a href="{{ box.panelLink.url }}" class="" {% if box.panelLink.target %} target="{{ box.panelLink.target }}" rel="noreferrer noopener"{% endif %}>
+                {% endif %}
+                  <img 
+                    class="logo lazyload w-full max-h-[150px] h-full object-contain aspect-square"
+                    src="{{ box.panelLogo.src }}"
+                    data-srcset="{{function('wp_get_attachment_image_srcset', box.panelLogo.id)}}"
+                    data-sizes="auto"
+                    alt="{{ box.panelLogo.alt|e }}">
+                {% if box.panelLink %}
+                  </a>
+                {% endif %}
+              </figure>
             {% endif %}
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          {% for box in contentBoxes %}
+            {% if box.panelLogo %}
+              <figure class="marquee-item">
+                {% if box.panelLink %}
+                  <a href="{{ box.panelLink.url }}" class="" {% if box.panelLink.target %} target="{{ box.panelLink.target }}" rel="noreferrer noopener"{% endif %}>
+                {% endif %}
+                  <img 
+                    class="logo lazyload w-full max-h-[100px] h-full object-contain aspect-square"
+                    src="{{ box.panelLogo.src }}"
+                    data-srcset="{{function('wp_get_attachment_image_srcset', box.panelLogo.id)}}"
+                    data-sizes="auto"
+                    alt="">
+                {% if box.panelLink %}
+                  </a>
+                {% endif %}
+              </figure>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
