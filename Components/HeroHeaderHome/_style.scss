@@ -12,6 +12,11 @@ flynt-component[name='HeroHeaderHome'] {
     display: flex;
     width: fit-content;
     animation: marquee 20s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 
     @media (max-width: $breakpoint-tablet) {
       animation: marquee 5s linear infinite;
@@ -32,16 +37,26 @@ flynt-component[name='HeroHeaderHome'] {
 
   @keyframes marquee {
     0% {
-      transform: translateX(0);
+      transform: translateX(0) translateZ(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-50%) translateZ(0);
+    }
+  }
+
+  @-webkit-keyframes marquee {
+    0% {
+      -webkit-transform: translateX(0) translateZ(0);
+    }
+    100% {
+      -webkit-transform: translateX(-50%) translateZ(0);
     }
   }
 
   // Pause animation on hover for better UX
   .marquee-track:hover {
     animation-play-state: paused;
+    -webkit-animation-play-state: paused;
   }
 
   .slider {
