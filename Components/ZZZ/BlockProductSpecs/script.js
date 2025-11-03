@@ -1,5 +1,6 @@
-import Swiper, { Navigation, A11y, Autoplay } from 'swiper'
-import 'swiper/css/bundle'
+import Swiper from 'swiper'
+import { Navigation, A11y, Autoplay } from 'swiper/modules'
+import 'swiper/swiper-bundle.css'
 import { buildRefs, getJSON } from '@/assets/scripts/helpers.js'
 
 export default function (blockProductSpecs) {
