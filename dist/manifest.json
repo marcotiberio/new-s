@@ -1,6 +1,6 @@
 {
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-80eb5179.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -13,7 +13,7 @@
     "src": "Components/BlockSliderLogos/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-9c1467d8.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -53,7 +53,7 @@
     "src": "Components/ListingJournalFeat/script.js"
   },
   "Components/ListingJournalRelated/script.js": {
-    "file": "assets/script-82d703b8.js",
+    "file": "assets/script-7b562e10.js",
     "imports": [
       "_swiper-bundle.min-e382c7af.js",
       "_pagination-50e1862f.js",
@@ -63,7 +63,7 @@
     "src": "Components/ListingJournalRelated/script.js"
   },
   "Components/ListingProjectsRelated/script.js": {
-    "file": "assets/script-7b562e10.js",
+    "file": "assets/script-82d703b8.js",
     "imports": [
       "_swiper-bundle.min-e382c7af.js",
       "_pagination-50e1862f.js",
@@ -125,7 +125,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/facebook.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/facebook.svg"
   },
   "Components/ZZZ/BlockCta/Assets/instagram.svg": {
     "file": "assets/instagram-5bab2c82.svg",
@@ -133,7 +133,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/linkedin.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/facebook.svg"
   },
   "Components/ZZZ/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
@@ -162,7 +162,7 @@
     "src": "Components/ZZZ/BlockProductSpecs/script.js"
   },
   "Components/ZZZ/BlockVideoText/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-80eb5179.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -198,7 +198,7 @@
     "src": "Components/ZZZ/HeroSliderComposite/script.js"
   },
   "Components/ZZZ/HeroVideoBackground/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -363,7 +363,7 @@
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-40dda83c.css",
+    "file": "assets/main-d4512681.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },

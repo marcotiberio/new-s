@@ -2,20 +2,28 @@ flynt-component[name='BlockSliderLogos'] {
   .marquee-container {
     width: 100%;
     overflow: hidden;
+    position: relative;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .marquee-track {
     display: flex;
     width: fit-content;
     animation: marquee 100s linear infinite;
+    animation-fill-mode: forwards;
     will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-animation: marquee 100s linear infinite;
+    -webkit-animation-fill-mode: forwards;
 
     @media (max-width: $breakpoint-tablet) {
       animation: marquee 100s linear infinite;
+      -webkit-animation: marquee 100s linear infinite;
     }
   }
 
@@ -39,19 +47,19 @@ flynt-component[name='BlockSliderLogos'] {
 
   @keyframes marquee {
     0% {
-      transform: translateX(0) translateZ(0);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translateX(-25%) translateZ(0);
+      transform: translate3d(-25%, 0, 0);
     }
   }
 
   @-webkit-keyframes marquee {
     0% {
-      -webkit-transform: translateX(0) translateZ(0);
+      -webkit-transform: translate3d(0, 0, 0);
     }
     100% {
-      -webkit-transform: translateX(-25%) translateZ(0);
+      -webkit-transform: translate3d(-25%, 0, 0);
     }
   }
 
