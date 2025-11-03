@@ -50,7 +50,7 @@ flynt-component[name='NavigationFooter'] {
       transform: translateX(0) translateZ(0);
     }
     100% {
-      transform: translateX(-50%) translateZ(0);
+      transform: translateX(-25%) translateZ(0);
     }
   }
 
@@ -59,7 +59,7 @@ flynt-component[name='NavigationFooter'] {
       -webkit-transform: translateX(0) translateZ(0);
     }
     100% {
-      -webkit-transform: translateX(-50%) translateZ(0);
+      -webkit-transform: translateX(-25%) translateZ(0);
     }
   }
 

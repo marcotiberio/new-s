@@ -67,6 +67,26 @@
                   alt="">
               </figure>
             </div>
+            <div class="marquee-content" aria-hidden="true">
+              <figure class="marquee-item">
+                <img class="object-contain h-[130px] invert"
+                  src="{{ logoHeader.src | resize(32) }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', logoHeader.id)}}"
+                  data-sizes="auto"
+                  fetchpriority="high"
+                  alt="">
+              </figure>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+              <figure class="marquee-item">
+                <img class="object-contain h-[130px] invert"
+                  src="{{ logoHeader.src | resize(32) }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', logoHeader.id)}}"
+                  data-sizes="auto"
+                  fetchpriority="high"
+                  alt="">
+              </figure>
+            </div>
           </div>
         </div>
       {% endif %}
