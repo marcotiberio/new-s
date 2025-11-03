@@ -25,15 +25,20 @@ function initMarquee(refs) {
     slidesPerView: 'auto',
     spaceBetween: 90,
     loop: true,
-    speed: 8000,
+    speed: 50000,
     autoplay: {
-      delay: 1,
+      delay: 0,
       disableOnInteraction: false,
       pauseOnMouseEnter: false,
+      waitForTransition: false,
     },
     loopAdditionalSlides: 3,
-    allowTouchMove: false,
+    allowTouchMove: true,
     simulateTouch: false,
+    freeMode: {
+      enabled: true,
+      momentum: false,
+    },
   }
 
   return new Swiper(refs.marquee, config)
