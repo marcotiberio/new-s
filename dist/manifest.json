@@ -8,7 +8,7 @@
     "src": "Components/BlockGalleryMedia/script.js"
   },
   "Components/BlockSliderLogos/script.js": {
-    "file": "assets/script-b81434e0.js",
+    "file": "assets/script-bd5c8a28.js",
     "imports": [
       "_swiper-bundle-b5fcd991.js",
       "_a11y-72d1898a.js",
@@ -20,7 +20,7 @@
     "src": "Components/BlockSliderLogos/script.js"
   },
   "Components/BlockVideoOembed/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -65,7 +65,7 @@
     "src": "Components/ListingJournalFeat/script.js"
   },
   "Components/ListingJournalRelated/script.js": {
-    "file": "assets/script-cbd71725.js",
+    "file": "assets/script-8a8025cb.js",
     "imports": [
       "_swiper-bundle-b5fcd991.js",
       "_a11y-72d1898a.js",
@@ -76,7 +76,7 @@
     "src": "Components/ListingJournalRelated/script.js"
   },
   "Components/ListingProjectsRelated/script.js": {
-    "file": "assets/script-8a8025cb.js",
+    "file": "assets/script-cbd71725.js",
     "imports": [
       "_swiper-bundle-b5fcd991.js",
       "_a11y-72d1898a.js",
@@ -105,7 +105,7 @@
     "src": "Components/NavigationFooter/script.js"
   },
   "Components/NavigationMain/script.js": {
-    "file": "assets/script-01f86f66.js",
+    "file": "assets/script-78b7a80f.js",
     "imports": [
       "assets/main.js"
     ],
@@ -146,7 +146,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/facebook.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/facebook.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
   },
   "Components/ZZZ/BlockCta/Assets/instagram.svg": {
     "file": "assets/instagram-5bab2c82.svg",
@@ -154,7 +154,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/linkedin.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/facebook.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
   },
   "Components/ZZZ/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
@@ -184,7 +184,7 @@
     "src": "Components/ZZZ/BlockProductSpecs/script.js"
   },
   "Components/ZZZ/BlockVideoText/script.js": {
-    "file": "assets/script-9c1467d8.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -239,7 +239,7 @@
     "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ZZZ/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-c7475846.js",
+    "file": "assets/script-1969cb6d.js",
     "imports": [
       "assets/main.js"
     ],
@@ -394,7 +394,7 @@
       "Components/ZZZ/SliderLogos/script.js",
       "Components/ZZZ/SliderQuotes/script.js"
     ],
-    "file": "assets/main-bd8a513e.js",
+    "file": "assets/main-b02cf5e5.js",
     "isEntry": true,
     "src": "assets/main.js"
   },

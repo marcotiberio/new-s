@@ -20,21 +20,6 @@ function initSlider(refs, data) {
     modules: [Navigation, A11y, Autoplay, Pagination],
     a11y: options.a11y,
     slidesPerView: 2.5,
-    spaceBetween: 25,
-    loop: true,
-    loopAdditionalSlides: 3,
-    loopPreventsSliding: false,
-    allowTouchMove: true,
-    simulateTouch: false,
-    navigation: {
-      nextEl: refs.next,
-      prevEl: refs.prev,
-    },
-    pagination: {
-      el: refs.dots,
-      type: 'bullets',
-      clickable: true,
-    },
     breakpoints: {
       640: {
         slidesPerView: 3,
@@ -45,17 +30,14 @@ function initSlider(refs, data) {
         spaceBetween: 30,
       },
     },
-    on: {
-      afterInit: () => {
-        ScrollTrigger.refresh()
-      },
-    },
-    loop: options.autoplayDelay,
+    loop: true,
+    freeMode: true,
+    spaceBetween: 25,
     speed: options.autoplaySpeed,
-  }
-  if (options.autoplay && options.autoplayDelay) {
-    config.autoplay = {
+    autoplay: {
       delay: options.autoplayDelay,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
     }
   }
 
