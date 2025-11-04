@@ -49,8 +49,7 @@
           <div data-ref="marqueeContent" class="marquee-content inline-flex items-center gap-[90px]">
             {% for i in 1..9 %}
               <figure class="figure flex-shrink-0 inline-block">
-                <img class="object-contain h-[130px] invert block"
-                  style="min-width: 200px;"
+                <img class="object-contain h-[80px] lg:h-[130px] invert block"
                   src="{{ logoHeader.src | resize(32) }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', logoHeader.id)}}"
                   data-sizes="auto"

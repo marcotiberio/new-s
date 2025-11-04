@@ -8,24 +8,20 @@
       <h3 class="mb-xxl">{{ blockTitle }}</h3>
     {% endif %}
 
-    <div data-ref="slider" class="slider relative max-w-full swiper-container">
-      
-      {# Pagination dots - matching SliderLogos structure #}
-      {# <div class="w-full button-wrapper absolute left-0 bottom-0 z-50 translate-y-xl xs:translate-y-xl lg:translate-y-sm">
-        <div data-ref="dots" class="flex justify-center slider-pagination swiper-pagination-fraction"></div>
-      </div> #}
-      
-      <div class="swiper-wrapper w-full h-full items-center py-0">
+    <div data-ref="marquee" class="marquee-container relative w-full overflow-hidden">
+      <div data-ref="marqueeContent" class="marquee-content inline-flex items-center gap-[30px]">
         {% for box in contentBoxes %}
-          <div class="w-[110px] h-auto aspect-8/5 box-border overflow-hidden relative item swiper-slide">
+          <figure class="figure flex-shrink-0 inline-block">
             {% if box.panelLogo %}
               <img 
-                class="logo lazyload object-contain aspect-8/5"
+                class="logo lazyload object-contain block"
+                style="min-width: 200px; width: 200px; height: auto;"
                 src="{{ box.panelLogo.src | resize(32) }}"
                 data-srcset="{{function('wp_get_attachment_image_srcset', box.panelLogo.id)}}"
-                data-sizes="auto">
+                data-sizes="auto"
+                alt="{{ box.panelLogo.alt|e | default('Logo') }}">
             {% endif %}
-          </div>
+          </figure>
         {% endfor %}
       </div>
     </div>

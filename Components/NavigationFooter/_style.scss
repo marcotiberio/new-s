@@ -12,4 +12,29 @@ flynt-component[name='NavigationFooter'] {
       @apply col-start-12 col-end-13 justify-end;
     }
   }
+
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    
+    .marquee-content {
+      will-change: transform;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      min-width: fit-content;
+      
+      figure {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      img {
+        flex-shrink: 0;
+      }
+    }
+  }
 }

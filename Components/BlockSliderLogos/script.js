@@ -1,58 +1,80 @@
-import Swiper from 'swiper'
-import { Navigation, A11y, Autoplay, Pagination } from 'swiper/modules'
-import 'swiper/swiper-bundle.css'
-import { buildRefs, getJSON } from '@/assets/scripts/helpers.js'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { gsap } from 'gsap'
-
-gsap.registerPlugin(ScrollTrigger)
+import { buildRefs } from '@/assets/scripts/helpers.js'
 
 export default (sliderLogos) => {
   const refs = buildRefs(sliderLogos)
-  const data = getJSON(sliderLogos)
-  const swiper = initSlider(refs, data)
-  return () => swiper.destroy()
-}
-
-function initSlider(refs, data) {
-  const { options } = data
-  const config = {
-    modules: [Navigation, A11y, Autoplay, Pagination],
-    a11y: options.a11y,
-    slidesPerView: 2.5,
-    spaceBetween: 25,
-    navigation: {
-      nextEl: refs.next,
-      prevEl: refs.prev,
-    },
-    pagination: {
-      el: refs.dots,
-      type: 'bullets',
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 3,
-        spaceBetween: 35,
-      },
-      1181: {
-        slidesPerView: 6,
-        spaceBetween: 30,
-      },
-    },
-    on: {
-      afterInit: () => {
-        ScrollTrigger.refresh()
-      },
-    },
-    loop: options.autoplayDelay,
-    speed: options.autoplaySpeed,
+  
+  // Initialize marquee if it exists
+  let marqueeInstance = null
+  if (refs.marquee) {
+    marqueeInstance = initMarquee(refs)
   }
-  if (options.autoplay && options.autoplayDelay) {
-    config.autoplay = {
-      delay: options.autoplayDelay,
+  
+  return () => {
+    if (marqueeInstance) {
+      marqueeInstance.destroy()
     }
   }
+}
 
-  return new Swiper(refs.slider, config)
+function initMarquee(refs) {
+  const marqueeContainer = refs.marquee
+  const marqueeContent = marqueeContainer.querySelector('[data-ref="marqueeContent"]')
+  
+  if (!marqueeContent) return null
+  
+  // Clone the content for seamless loop
+  const clone = marqueeContent.cloneNode(true)
+  marqueeContainer.appendChild(clone)
+  
+  // Configuration
+  const speed = 50 // pixels per second
+  let animationId = null
+  let position = 0
+  let isPaused = false
+  
+  // Get the width of the content
+  const contentWidth = marqueeContent.offsetWidth
+  
+  // Animation function
+  function animate() {
+    if (!isPaused) {
+      position -= speed / 60 // 60fps
+      
+      // Reset position for seamless loop
+      if (Math.abs(position) >= contentWidth) {
+        position = 0
+      }
+      
+      marqueeContent.style.transform = `translateX(${position}px)`
+      clone.style.transform = `translateX(${position + contentWidth}px)`
+    }
+    
+    animationId = requestAnimationFrame(animate)
+  }
+  
+  // Start animation
+  animate()
+  
+  // Optional: Pause on hover
+  marqueeContainer.addEventListener('mouseenter', () => {
+    isPaused = true
+  })
+  
+  marqueeContainer.addEventListener('mouseleave', () => {
+    isPaused = false
+  })
+  
+  // Return cleanup function
+  return {
+    destroy: () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId)
+      }
+      marqueeContainer.removeEventListener('mouseenter', () => {})
+      marqueeContainer.removeEventListener('mouseleave', () => {})
+      if (clone && clone.parentNode) {
+        clone.parentNode.removeChild(clone)
+      }
+    }
+  }
 }

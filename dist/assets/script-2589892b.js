@@ -1,1 +1,0 @@
-import{g as e}from"./main-32e0f6a3.js";function a(){const t=document.querySelector(".mainMenu");t&&(e.set(t,{opacity:0,y:50}),e.to(t,{opacity:1,y:0,duration:.5,ease:"power2.out",delay:2}))}export{a as default};

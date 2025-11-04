@@ -53,98 +53,18 @@
   {# Bottom #}
   <div class="flex flex-col justify-between gap-sm py-xs">
     {% if logoFooter %}
-      <div data-ref="marquee" class="marquee-container relative max-w-full swiper-container overflow-hidden scale-125 mb-xs lg:mb-xs">
-        <div class="swiper-wrapper w-full h-full items-center py-0">
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
+      <div data-ref="marquee" class="marquee-container relative w-full overflow-hidden">
+        <div data-ref="marqueeContent" class="marquee-content inline-flex items-center gap-[90px]">
+          {% for i in 1..10 %}
+            <figure class="figure flex-shrink-0 inline-block">
+              <img class="object-contain h-[60px] lg:h-[130px] block"
                 src="{{ logoFooter.src | resize(32) }}"
                 data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
                 data-sizes="auto"
+                fetchpriority="high"
                 alt="{{ logoFooter.alt|e }}">
             </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
-          <div class="swiper-slide w-full h-full flex items-center justify-center">
-            <figure class="figure w-full">
-              <img class="w-full mx-auto object-contain"
-                src="{{ logoFooter.src | resize(32) }}"
-                data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-                data-sizes="auto"
-                alt="{{ logoFooter.alt|e }}">
-            </figure>
-          </div>
+          {% endfor %}
         </div>
       </div>
     {% endif %}
