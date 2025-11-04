@@ -3,18 +3,28 @@ flynt-component[name='HeroHeaderHome'] {
   overflow-x: hidden !important;
   max-width: 100vw;
 
-  .slider {
-    max-width: 100%;
-    overflow-x: hidden !important;
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
     position: relative;
-
-    .swiper-wrapper {
-      overflow-x: hidden !important;
-      box-sizing: inherit;
-    }
-
-    .swiper-slide {
-      display: flex;
+    display: flex;
+    
+    .marquee-content {
+      will-change: transform;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      min-width: fit-content;
+      
+      figure {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      img {
+        flex-shrink: 0;
+      }
     }
   }
 
