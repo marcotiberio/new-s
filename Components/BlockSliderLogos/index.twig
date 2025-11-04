@@ -17,20 +17,13 @@
       
       <div class="swiper-wrapper w-full h-full items-center py-0">
         {% for box in contentBoxes %}
-          <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
+          <div class="w-[110px] h-auto aspect-8/5 box-border overflow-hidden relative item swiper-slide">
             {% if box.panelLogo %}
-              {% if box.panelLink %}
-                <a href="{{ box.panelLink.url }}" class="" {% if box.panelLink.target %} target="{{ box.panelLink.target }}" rel="noreferrer noopener"{% endif %}>
-              {% endif %}
-                <img 
-                  class="logo lazyload w-full max-h-[100px] h-full object-contain aspect-square"
-                  src="{{ box.panelLogo.src }}"
-                  data-srcset="{{function('wp_get_attachment_image_srcset', box.panelLogo.id)}}"
-                  data-sizes="auto"
-                  alt="{{ box.panelLogo.alt|e }}">
-              {% if box.panelLink %}
-                </a>
-              {% endif %}
+              <img 
+                class="logo lazyload object-contain aspect-8/5"
+                src="{{ box.panelLogo.src | resize(32) }}"
+                data-srcset="{{function('wp_get_attachment_image_srcset', box.panelLogo.id)}}"
+                data-sizes="auto">
             {% endif %}
           </div>
         {% endfor %}
