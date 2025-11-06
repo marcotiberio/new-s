@@ -234,3 +234,22 @@ body.footer-open {
       }
   }
 }
+
+// Language footer menu mobile
+.language-en {
+    @apply absolute;
+    @apply top-xs;
+    @apply right-md;
+    @apply lg:relative;
+    @apply lg:top-auto;
+    @apply lg:right-auto;
+}
+
+.language-de {
+    @apply absolute;
+    @apply top-xs;
+    @apply right-xs;
+    @apply lg:relative;
+    @apply lg:top-auto;
+    @apply lg:right-auto;
+}
