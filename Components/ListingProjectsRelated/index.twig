@@ -10,11 +10,11 @@
   <div class="wrapper overflow-hidden max-w-screen-max mx-auto boxed flex flex-col gap-sm fade-in" x-data="{ selectedCategories: [], searchQuery: '', filtersOpen: false }">
 
     <!-- Projects Grid -->
-      <div data-ref="slider" class="slider swiper-container pt-[60px] md:pt-xs md:pb-sm border-t">
+      <div data-ref="slider" class="slider swiper-container pt-xs md:pt-xs md:pb-sm border-t">
       {% if labels.preContentHtml %}
         <div class="font-body !mb-md">{{ labels.preContentHtml|e('wp_kses_post') }}</div>
       {% endif %}
-      <div data-ref="dots" class="flex justify-end h-fit absolute !top-[20px] right-0 z-[40] slider-pagination swiper-pagination-fraction"></div>
+      <div data-ref="dots" class="flex justify-end h-fit absolute !top-xs right-0 z-[40] slider-pagination swiper-pagination-fraction"></div>
       <div class="swiper-wrapper flex flex-row">
         {% for item in projects %}
           {% set project = item.project %}
