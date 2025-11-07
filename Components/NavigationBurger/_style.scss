@@ -35,6 +35,10 @@ flynt-component[name='NavigationBurger'] {
     padding: 5px 10px;
   }
 
+  .current-language-menu-item {
+    @apply text-orange;
+  }
+
   @import 'Partials/hamburger';
   @import 'Partials/menu';
 }

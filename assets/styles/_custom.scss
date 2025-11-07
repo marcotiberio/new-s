@@ -102,14 +102,16 @@ html.home {
       }
   }
 
-  .current-menu-item {
-      @apply text-white;
-      
-      &:hover {
-          @apply text-white;
-          @apply no-underline;
-      }
-  }
+  flynt-component[name='NavigationMain'] {
+    .current-menu-item {
+            @apply text-white;
+            
+            &:hover {
+                @apply text-white;
+                @apply no-underline;
+            }
+        }
+    }
 
   .hamburger {
       &:hover {
