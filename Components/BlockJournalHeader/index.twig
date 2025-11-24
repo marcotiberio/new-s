@@ -42,7 +42,12 @@
                 />
               {% endif %}
             </div>
-            <div class="wysiwyg py-sm">{{ post.postContent|e('wp_kses_post') }}</div>
+            {% if post.postContent %}
+              <div class="wysiwyg py-sm">{{ post.postContent|e('wp_kses_post') }}</div>
+            {% endif %}
+            {% if post.postForm %}
+              <div class="wysiwyg py-sm">{{ post.postForm|raw }}</div>
+            {% endif %}
           </div>
         </div>
       </div>

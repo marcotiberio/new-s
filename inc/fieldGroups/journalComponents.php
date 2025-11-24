@@ -50,6 +50,17 @@ add_action('Flynt/afterRegisterComponents', function () {
                     'width' => 100,
                 ]
             ],
+            [
+                'label' => __('Form', 'flynt'),
+                'name' => 'postForm',
+                'type' => 'wysiwyg',
+                'tabs' => 'visual',
+                'media_upload' => 0,
+                'delay' => 1,
+                'wrapper' => [
+                    'width' => 100,
+                ]
+            ],
             // [
             //     'label' => __('Main Text', 'flynt'),
             //     'name' => 'maintextTab',

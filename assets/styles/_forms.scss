@@ -24,6 +24,9 @@ label {
   appearance: none !important;
   background-color: transparent !important;
   border-bottom: 1px solid var(--black) !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 0 !important;
   border-radius: 0 !important;
   caret-color: var(--color-text) !important;
   color: var(--color-text) !important;
@@ -31,12 +34,12 @@ label {
   margin-bottom: 15px;
   max-width: 100%;
   outline: none !important;
-  padding: 0;
+  padding: 0 !important;
   transition: border-color 0.3s ease-in-out;
   width: 100%;
 
   &::placeholder {
-    color: var(--color-border-secondary);
+    color: var(--black);
   }
 
   &:disabled {
@@ -47,6 +50,11 @@ label {
 
   &:invalid {
     border-color: var(--color-error);
+  }
+
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
   }
 }
 
@@ -137,4 +145,55 @@ input:where([type='submit']) {
 
 .wpcf7 form .wpcf7-response-output {
   margin: 0 !important;
+}
+
+.wpforms-container {
+  ::placeholder {
+    color: var(--black) !important;
+    opacity: 1 !important;
+  }
+
+  .wpforms-field-label {
+    font-weight: 400 !important;
+  }
+  .wpforms-submit {
+    @include reset-link;
+    appearance: none;
+    font-family: 'FKGroteskNeue', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: 0 !important;
+    border: 1px solid var(--black) !important;
+    @apply py-[10px];
+    @apply px-[10px];
+    @apply text-black !important;
+    @apply uppercase;
+    @apply bg-transparent !important;
+    @apply justify-center;
+    @apply whitespace-nowrap;
+    @apply w-fit !important;
+    @apply flex !important;
+    @apply justify-center;
+    @apply items-center !important;
+    @apply cursor-pointer;
+    @apply relative !important;
+    @apply text-center;
+    @apply no-underline !important;
+  
+    &:hover,
+    &:focus {
+      color: var(--white) !important;
+      @apply bg-black !important;
+    }
+  }
+
+  ul {
+    list-style: none !important;
+
+    li {
+      &::before {
+        content: none !important;
+      }
+    }
+  }
 }
