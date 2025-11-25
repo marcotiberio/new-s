@@ -148,6 +148,8 @@ input:where([type='submit']) {
 }
 
 .wpforms-container {
+  margin: 0 !important;
+  
   ::placeholder {
     color: var(--black) !important;
     opacity: 1 !important;
