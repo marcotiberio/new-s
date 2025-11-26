@@ -17,17 +17,14 @@
         &.font-body {
           font-size: 1.25rem;
           line-height: 1.2;
+          @screen lgplus {
+            font-size: 1.5rem;
+          }
         }
 
         &.font-bodySmall {
           font-size: 1rem;
           line-height: 1;
-        }
-
-        @screen lgplus {
-          &.font-body {
-            font-size: 1.5rem;
-          }
         }
 
         &::before {
@@ -38,7 +35,7 @@
     }
   
     li {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       line-height: 1.2 !important;
       margin-bottom: 0;
       margin-left: 1rem;
@@ -47,6 +44,9 @@
       &.font-body {
         font-size: 1.25rem;
         line-height: 1.2;
+        @screen lgplus {
+          font-size: 1.5rem;
+        }
       }
 
       &.font-bodySmall {
@@ -54,11 +54,7 @@
         line-height: 1;
       }
 
-      @screen lgplus {
-        &.font-body {
-          font-size: 1.5rem;
-        }
-      }
+      
 
       &::before {
         content: '-';
@@ -76,7 +72,7 @@
       margin-bottom: 0;
   
       li {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         line-height: 1.2 !important;
         margin-left: 1.65rem;
         // text-indent: -1.65rem;
