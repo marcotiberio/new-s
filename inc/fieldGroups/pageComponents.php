@@ -76,6 +76,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\ListingJournalFeat\getACFLayout(),
                     Components\ListingProjects\getACFLayout(),
                     Components\ListingProjectsFeat\getACFLayout(),
+                    Components\ListingProjectsRelated\getACFLayout(),
                     Components\BlockSliderLogos\getACFLayout(),
                     Components\BlockSpacer\getACFLayout(),
                 ],
