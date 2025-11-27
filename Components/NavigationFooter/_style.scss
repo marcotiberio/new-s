@@ -5,7 +5,7 @@ flynt-component[name='NavigationFooter'] {
 
   .language {
     &-en {
-      @apply col-start-11 col-end-12 justify-end lg:translate-x-[74%];
+      @apply col-start-11 col-end-12 justify-end lg:translate-x-[74%] z-10;
     }
 
     &-de {
