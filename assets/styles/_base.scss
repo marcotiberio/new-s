@@ -8,7 +8,7 @@
 
 html {
   color: var(--black);
-  font-size: 16px;
+  font-size: var(--base-font-size-desktop);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
@@ -16,11 +16,11 @@ html {
   scroll-behavior: smooth;
 
   @media (min-width: $breakpoint-mobile) {
-    font-size: 14px;
+    font-size: var(--base-font-size-mobile);
   }
 
   @media (min-width: $breakpoint-desktop) {
-    font-size: 16px;
+    font-size: var(--base-font-size-desktop);
   }
 }
 
@@ -35,7 +35,7 @@ html {
 
 body {
   color: var(--color-text);
-  font-family: 'FKGroteskNeue', Arial, sans-serif;
+  font-family: var(--primary-font-family);
 }
 
 #{$heading-selectors} {

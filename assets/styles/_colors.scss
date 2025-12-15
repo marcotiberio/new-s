@@ -1,0 +1,238 @@
+// Color Utility Classes
+// Text Colors
+.text-black {
+  color: var(--black) !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+.text-orange {
+  color: var(--orange) !important;
+}
+
+.text-orangeHover {
+  color: var(--orangeHover) !important;
+}
+
+.text-yellow {
+  color: var(--yellow) !important;
+}
+
+.text-green {
+  color: var(--green) !important;
+}
+
+.text-blue {
+  color: var(--blue) !important;
+}
+
+.text-lightblue {
+  color: var(--lightblue) !important;
+}
+
+.text-acqua {
+  color: var(--acqua) !important;
+}
+
+.text-beige {
+  color: var(--beige) !important;
+}
+
+.text-grey {
+  color: var(--grey) !important;
+}
+
+.text-darkgrey {
+  color: var(--darkgrey) !important;
+}
+
+.text-azulgrey {
+  color: var(--azulgrey) !important;
+}
+
+.text-blog {
+  color: var(--blog) !important;
+}
+
+.text-event {
+  color: var(--event) !important;
+}
+
+.text-lernen {
+  color: var(--lernen) !important;
+}
+
+// Background Colors
+.bg-black {
+  background-color: var(--black) !important;
+}
+
+.bg-white {
+  background-color: var(--white) !important;
+}
+
+.bg-orange {
+  background-color: var(--orange) !important;
+}
+
+.bg-orangeHover {
+  background-color: var(--orangeHover) !important;
+}
+
+.bg-yellow {
+  background-color: var(--yellow) !important;
+}
+
+.bg-green {
+  background-color: var(--green) !important;
+}
+
+.bg-blue {
+  background-color: var(--blue) !important;
+}
+
+.bg-lightblue {
+  background-color: var(--lightblue) !important;
+}
+
+.bg-acqua {
+  background-color: var(--acqua) !important;
+}
+
+.bg-beige {
+  background-color: var(--beige) !important;
+}
+
+.bg-grey {
+  background-color: var(--grey) !important;
+}
+
+.bg-darkgrey {
+  background-color: var(--darkgrey) !important;
+}
+
+.bg-azulgrey {
+  background-color: var(--azulgrey) !important;
+}
+
+.bg-blog {
+  background-color: var(--blog) !important;
+}
+
+.bg-event {
+  background-color: var(--event) !important;
+}
+
+.bg-lernen {
+  background-color: var(--lernen) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+// Border Colors
+.border-black {
+  border-color: var(--black) !important;
+}
+
+.border-white {
+  border-color: var(--white) !important;
+}
+
+.border-orange {
+  border-color: var(--orange) !important;
+}
+
+.border-orangeHover {
+  border-color: var(--orangeHover) !important;
+}
+
+.border-yellow {
+  border-color: var(--yellow) !important;
+}
+
+.border-green {
+  border-color: var(--green) !important;
+}
+
+.border-blue {
+  border-color: var(--blue) !important;
+}
+
+.border-grey {
+  border-color: var(--grey) !important;
+}
+
+.border-darkgrey {
+  border-color: var(--darkgrey) !important;
+}
+
+// Hover States
+.hover\:text-orangeHover:hover {
+  color: var(--orangeHover) !important;
+}
+
+.hover\:text-orange:hover {
+  color: var(--orange) !important;
+}
+
+.hover\:text-black:hover {
+  color: var(--black) !important;
+}
+
+.hover\:text-white:hover {
+  color: var(--white) !important;
+}
+
+.hover\:bg-orangeHover:hover {
+  background-color: var(--orangeHover) !important;
+}
+
+.hover\:bg-orange:hover {
+  background-color: var(--orange) !important;
+}
+
+.hover\:bg-black:hover {
+  background-color: var(--black) !important;
+}
+
+.hover\:bg-white:hover {
+  background-color: var(--white) !important;
+}
+
+// Semantic Color Classes
+.text-color-text {
+  color: var(--color-text) !important;
+}
+
+.text-color-text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.bg-color-background {
+  background-color: var(--color-background) !important;
+}
+
+.bg-color-background-secondary {
+  background-color: var(--color-background-secondary) !important;
+}
+
+.bg-color-accent {
+  background-color: var(--color-accent) !important;
+}
+
+.border-color-border {
+  border-color: var(--color-border) !important;
+}
+
+.border-color-accent {
+  border-color: var(--color-accent) !important;
+}
+
+.border-color-error {
+  border-color: var(--color-error) !important;
+}
+

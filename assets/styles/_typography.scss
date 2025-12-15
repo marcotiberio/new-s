@@ -1,36 +1,40 @@
 h1,
 .h1,
 .font-h1 {
-  font-family: 'FKGroteskNeue', Arial, sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  font-family: var(--primary-font-family);
+  font-size: var(--h1-size-mobile);
+  line-height: var(--h1-line-height);
+  font-weight: var(--h1-font-weight);
   // margin-bottom: 1.5rem;
   word-break: break-word;
 
   @screen lgplus {
-    font-size: 1.5rem;
+    font-size: var(--h1-size-desktop);
   }
 }
 
 h2,
 .h2,
 .font-h2 {
-  font-family: 'FKGroteskNeue', Arial, sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  font-family: var(--primary-font-family);
+  font-size: var(--h2-size-mobile);
+  line-height: var(--h2-line-height);
+  font-weight: var(--h2-font-weight);
   // margin-bottom: 1.5rem;
   word-break: break-word;
 
   @screen lgplus {
-    font-size: 1.5rem;
+    font-size: var(--h2-size-desktop);
   }
 }
 
 p,
 .paragraph,
 .font-body {
-  font-size: 1.25rem;
-  line-height: 1.2;
+  font-family: var(--primary-font-family);
+  font-size: var(--body-size-mobile);
+  line-height: var(--body-line-height);
+  font-weight: var(--body-font-weight);
   margin-block-end: 1rem;
 
   :last-child {
@@ -38,12 +42,15 @@ p,
   }
 
   @screen lgplus {
-    font-size: 1.5rem;
+    font-size: var(--body-size-desktop);
   }
 
   a {
     @apply no-underline;
-    @apply hover:text-orangeHover;
+    
+    &:hover {
+      color: var(--orangeHover);
+    }
 
     &::after {
       content: '↗';
@@ -63,14 +70,18 @@ p,
 
 .font-bodySmall,
 samp {
-  font-family: 'FKGroteskNeue', Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.2;
+  font-family: var(--primary-font-family);
+  font-size: var(--body-small-size);
+  line-height: var(--body-small-line-height);
+  font-weight: var(--body-small-font-weight);
   margin-block-end: 0.5rem;
 
   a {
     @apply no-underline;
-    @apply hover:text-orangeHover;
+    
+    &:hover {
+      color: var(--orangeHover);
+    }
 
     &::after {
       content: '↗';
@@ -91,7 +102,10 @@ samp {
 a.font-bodySmall {
   line-height: 1;
   @apply no-underline;
-  @apply hover:text-orangeHover;
+  
+  &:hover {
+    color: var(--orangeHover);
+  }
 
   &::after {
     content: '↗';
@@ -109,13 +123,10 @@ a.font-bodySmall {
 }
 
 .font-menu {
-  font-family: 'FKGroteskNeue', Arial, sans-serif;
-  font-size: 1.5rem;
-  line-height: 1;
-
-  @screen lgplus {
-    font-size: 1.5rem;
-  }
+  font-family: var(--primary-font-family);
+  font-size: var(--menu-size);
+  line-height: var(--menu-line-height);
+  font-weight: var(--menu-font-weight);
 }
 
 hr {
@@ -134,7 +145,7 @@ code {
 
 figcaption {
   color: var(--black);
-  font-size: var(--bodyFontSizeSmall);
+  font-size: var(--body-small-size);
   margin-block-start: 0.25rem;
 }
 
@@ -152,7 +163,7 @@ blockquote,
 
   footer {
     color: var(--color-text-muted);
-    font-size: var(--bodyFontSize);
+    font-size: var(--body-size-desktop);
     margin-block-start: 0.25rem;
   }
 }
