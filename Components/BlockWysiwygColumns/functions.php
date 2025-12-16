@@ -101,7 +101,16 @@ function getACFLayout()
                         'required' => 0,
                         'mime_types' => 'jpg,jpeg,png,gif',
                         'wrapper' => [
-                            'width' => 100
+                            'width' => 50
+                        ],
+                    ],
+                    [
+                        'label' => __('Video', 'flynt'),
+                        'name' => 'videoFile',
+                        'type' => 'file',
+                        'mime_types' => 'mp4,mov',
+                        'wrapper' => [
+                            'width' => 50
                         ],
                     ],
                     // [

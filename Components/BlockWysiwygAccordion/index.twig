@@ -20,6 +20,21 @@
                 onload="this.style.opacity='1'"
               />
             {% endif %}
+            {% if column.videoFile %}
+              <video 
+                class="w-full aspect-8/5 object-cover mb-xs" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                preload="auto"
+                data-video-url="{{ column.videoFile.url }}"
+                aria-label="Video"
+                role="video">
+                <source src="{{ column.videoFile.url }}" type="{{ column.videoFile.mime_type }}">
+                {{ __('Your browser does not support the video tag.', 'flynt') }}
+              </video>
+            {% endif %}
             {# Mobile #}
             {% if column.title or column.contentHtml %}
               <div class="block lg:hidden">
