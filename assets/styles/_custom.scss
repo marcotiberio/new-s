@@ -103,14 +103,42 @@ html.home {
   }
 
   flynt-component[name='NavigationMain'] {
-    .current-menu-item {
-            @apply text-white;
+    .item.current-menu-item,
+    .item.text-orangeHover.current-menu-item {
+            @apply text-white !important;
+            
+            .link {
+                @apply text-white !important;
+            }
             
             &:hover {
-                @apply text-white;
-                @apply no-underline;
+                @apply text-white !important;
+                
+                .link {
+                    @apply text-white !important;
+                }
             }
         }
+    
+    // Submenu items
+    .submenu {
+        .item.current-menu-item,
+        .item.text-orangeHover.current-menu-item {
+            @apply text-white !important;
+            
+            .link {
+                @apply text-white !important;
+            }
+            
+            &:hover {
+                @apply text-white !important;
+                
+                .link {
+                    @apply text-white !important;
+                }
+            }
+        }
+    }
     }
 
   .hamburger {

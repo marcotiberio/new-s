@@ -1,6 +1,6 @@
 {
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-ecbf5980.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -33,7 +33,7 @@
     "src": "Components/GridPostsArchive/script.js"
   },
   "Components/HeroHeaderHome/script.js": {
-    "file": "assets/script-73421430.js",
+    "file": "assets/script-3d9badd6.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -59,7 +59,7 @@
     "src": "Components/ListingJournalFeat/script.js"
   },
   "Components/ListingJournalRelated/script.js": {
-    "file": "assets/script-437ab7cd.js",
+    "file": "assets/script-0f057d49.js",
     "imports": [
       "_swiper-bundle-917ff535.js",
       "_pagination-5175372f.js",
@@ -69,7 +69,7 @@
     "src": "Components/ListingJournalRelated/script.js"
   },
   "Components/ListingProjectsRelated/script.js": {
-    "file": "assets/script-0f057d49.js",
+    "file": "assets/script-437ab7cd.js",
     "imports": [
       "_swiper-bundle-917ff535.js",
       "_pagination-5175372f.js",
@@ -88,7 +88,7 @@
     "src": "Components/NavigationBurger/script.js"
   },
   "Components/NavigationFooter/script.js": {
-    "file": "assets/script-3d9badd6.js",
+    "file": "assets/script-73421430.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -146,7 +146,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/logo.svg"
+    "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ZZZ/BlockCta/Assets/twitter.svg": {
     "file": "assets/twitter-bc2ba69f.svg",
@@ -207,7 +207,7 @@
     "src": "Components/ZZZ/HeroSliderComposite/script.js"
   },
   "Components/ZZZ/HeroVideoBackground/script.js": {
-    "file": "assets/script-ecbf5980.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -221,7 +221,7 @@
   },
   "Components/ZZZ/NavigationMainLogo/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/logo.svg"
+    "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ZZZ/ScrolltriggerComparison/script.js": {
     "file": "assets/script-b651ce5f.js",
@@ -372,7 +372,7 @@
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-5bfc927a.css",
+    "file": "assets/main-eb0f6a88.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
