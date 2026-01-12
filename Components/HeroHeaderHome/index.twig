@@ -2,7 +2,7 @@
   load:on="visible" name="HeroHeaderHome"
   class="w-full lgplus:w-screen h-screen mx-auto relative overflow-hidden">
   {% if videoIDLandscape %}
-    <div class="video hidden lgplus:block">
+    <div class="video hidden lgplus:block [@media(max-aspect-ratio:4/3)]:scale-[2] [@media(min-aspect-ratio:4/3)]:scale-100 [@media(min-aspect-ratio:16/9)]:scale-100 [@media(min-aspect-ratio:16/10)]:scale-[2.5] [@media(min-aspect-ratio:16/6)]:scale-[3.0]">
       <div data-ref="videoPlayer" class="video-player w-full mx-auto" data-state="isLoaded">
         <iframe 
           src="https://player.vimeo.com/video/{{ videoIDLandscape }}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;controls=0&amp;background=1"
