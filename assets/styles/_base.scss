@@ -29,8 +29,7 @@ html {
 }
 
 ::selection {
-  background: var(--orange);
-  color: var(--white);
+  @apply text-white bg-orange;
 }
 
 body {
