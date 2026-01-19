@@ -22,7 +22,18 @@
           </div>
           <div class="w-full md:col-span-9" style="color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};">
             <div class="w-full">
-              {% if post.featImageAlt %}
+              {% if post.featVideo %}
+                <video class="figure-video object-cover aspect-8/5"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  preload="metadata"
+                  src="{{ post.featVideo.url }}"
+                  style="width:100%;height:auto;">
+                  Your browser does not support the video tag.
+                </video>
+              {% elseif post.featImageAlt %}
                 <img 
                   class="figure-image object-cover aspect-8/5"
                   src="{{ post.featImageAlt.src }}"
