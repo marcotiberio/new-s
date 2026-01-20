@@ -355,23 +355,8 @@ add_action('acf/init', function () {
     ], 'Typography');
 });
 
-// Enqueue Google Fonts if enabled
-add_action('wp_enqueue_scripts', function () {
-    $typographyOptions = Options::getGlobal('Typography');
-    $fontLoadingMethod = !empty($typographyOptions['fontLoadingMethod']) 
-        ? $typographyOptions['fontLoadingMethod'] 
-        : 'local';
-    $googleFontsUrl = !empty($typographyOptions['googleFontsUrl']) 
-        ? esc_url($typographyOptions['googleFontsUrl']) 
-        : '';
-    
-    if ($fontLoadingMethod === 'google' && !empty($googleFontsUrl)) {
-        wp_enqueue_style('flynt-google-fonts', $googleFontsUrl, [], null);
-    }
-}, 5);
-
-// Output dynamic CSS variables based on ACF options
-add_action('wp_head', function () {
+// Helper function to get typography CSS variables
+function getTypographyCss() {
     $typographyOptions = Options::getGlobal('Typography');
     
     // Get values with fallbacks
@@ -467,6 +452,62 @@ add_action('wp_head', function () {
     $css .= "  --menu-font-weight: {$menuFontWeight};\n";
     $css .= "}\n";
     
+    return $css;
+}
+
+// Enqueue Google Fonts if enabled (frontend)
+add_action('wp_enqueue_scripts', function () {
+    $typographyOptions = Options::getGlobal('Typography');
+    $fontLoadingMethod = !empty($typographyOptions['fontLoadingMethod']) 
+        ? $typographyOptions['fontLoadingMethod'] 
+        : 'local';
+    $googleFontsUrl = !empty($typographyOptions['googleFontsUrl']) 
+        ? esc_url($typographyOptions['googleFontsUrl']) 
+        : '';
+    
+    if ($fontLoadingMethod === 'google' && !empty($googleFontsUrl)) {
+        wp_enqueue_style('flynt-google-fonts', $googleFontsUrl, [], null);
+    }
+}, 5);
+
+// Enqueue Google Fonts if enabled (admin)
+add_action('admin_enqueue_scripts', function () {
+    $typographyOptions = Options::getGlobal('Typography');
+    $fontLoadingMethod = !empty($typographyOptions['fontLoadingMethod']) 
+        ? $typographyOptions['fontLoadingMethod'] 
+        : 'local';
+    $googleFontsUrl = !empty($typographyOptions['googleFontsUrl']) 
+        ? esc_url($typographyOptions['googleFontsUrl']) 
+        : '';
+    
+    if ($fontLoadingMethod === 'google' && !empty($googleFontsUrl)) {
+        wp_enqueue_style('flynt-google-fonts-admin', $googleFontsUrl, [], null);
+    }
+}, 5);
+
+// Output dynamic CSS variables based on ACF options (frontend)
+add_action('wp_head', function () {
+    $typographyOptions = Options::getGlobal('Typography');
+    
+    // Get values with fallbacks
+    $primaryFont = !empty($typographyOptions['primaryFontFamily']) 
+        ? esc_attr($typographyOptions['primaryFontFamily']) 
+        : 'FKGroteskNeue';
+    $primaryFontFallback = !empty($typographyOptions['primaryFontFallback']) 
+        ? esc_attr($typographyOptions['primaryFontFallback']) 
+        : 'Arial, sans-serif';
+    $baseFontSizeMobile = !empty($typographyOptions['baseFontSizeMobile']) 
+        ? floatval($typographyOptions['baseFontSizeMobile']) 
+        : 14;
+    $baseFontSizeDesktop = !empty($typographyOptions['baseFontSizeDesktop']) 
+        ? floatval($typographyOptions['baseFontSizeDesktop']) 
+        : 16;
+    $css = getTypographyCss();
     echo "<style id='flynt-typography-css'>\n{$css}\n</style>\n";
 }, 100);
 
+// Output dynamic CSS variables based on ACF options (admin)
+add_action('admin_head', function () {
+    $css = getTypographyCss();
+    echo "<style id='flynt-typography-css-admin'>\n{$css}\n</style>\n";
+}, 100);
