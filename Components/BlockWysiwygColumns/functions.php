@@ -37,6 +37,15 @@ function getACFLayout()
                 'button_label' => __('Add Column', 'flynt'),
                 'sub_fields' => [
                     [
+                        'label' => __('Column Link', 'flynt'),
+                        'name' => 'columnLink',
+                        'type' => 'link',
+                        'required' => 0,
+                        'wrapper' => [
+                            'width' => 100
+                        ],
+                    ],
+                    [
                         'label' => __('Text starts in column:', 'flynt'),
                         'name' => 'colStart',
                         'type' => 'button_group',
@@ -113,15 +122,6 @@ function getACFLayout()
                             'width' => 50
                         ],
                     ],
-                    // [
-                    //     'label' => __('Button', 'flynt'),
-                    //     'name' => 'buttonLink',
-                    //     'type' => 'link',
-                    //     'required' => 0,
-                    //     'wrapper' => [
-                    //         'width' => 100
-                    //     ],
-                    // ],
                     [
                         'label' => __('Enable Newsletter Form', 'flynt'),
                         'name' => 'enableNewsletter',
