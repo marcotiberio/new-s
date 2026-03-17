@@ -12,7 +12,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-sm lg:gap-xs align-start justify-start lg:justify-between {% if options.stickyTitle %}stickyTitle{% endif %}">
       {% for column in columns %}
         <div class="column flex {{ column.colStart }} {{ column.colEnd }} lg:row-start-1 lg:row-end-2">
-          {% if column.image %}
+          {% if column.columnLink %}
             <a href="{{ column.columnLink.url }}" {% if column.columnLink.target %} target="{{ column.columnLink.target }}" rel="noreferrer noopener"{% endif %}>
           {% endif %}
           <div class="flex flex-col w-full">
@@ -68,8 +68,16 @@
                 </div>
               </div>
             {% endif %}
+            {% if column.buttonLink %}
+              <a 
+                class="mt-xs after:content-['↗'] after:text-[0.875rem] after:align-super" 
+                href="{{ column.buttonLink.url }}" 
+                {% if column.buttonLink.target %} target="{{ column.buttonLink.target }}" rel="noreferrer noopener"{% endif %}>
+                {{ column.buttonLink.title }}
+              </a>
+            {% endif %}
           </div>
-          {% if column.image %}
+          {% if column.columnLink %}
             </a>
           {% endif %}
         </div>
