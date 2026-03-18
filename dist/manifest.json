@@ -1,6 +1,6 @@
 {
   "Components/BlockGalleryMedia/script.js": {
-    "file": "assets/script-9c1467d8.js",
+    "file": "assets/script-48bc6e8a.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -8,7 +8,7 @@
     "src": "Components/BlockGalleryMedia/script.js"
   },
   "Components/BlockSliderLogos/script.js": {
-    "file": "assets/script-3d9badd6.js",
+    "file": "assets/script-8963e4f7.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -33,7 +33,7 @@
     "src": "Components/GridPostsArchive/script.js"
   },
   "Components/HeroHeaderHome/script.js": {
-    "file": "assets/script-8963e4f7.js",
+    "file": "assets/script-3d9badd6.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -49,30 +49,30 @@
     "src": "Components/ListComponents/script.js"
   },
   "Components/ListingJournalFeat/script.js": {
-    "file": "assets/script-18545b38.js",
+    "file": "assets/script-bba230d7.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ListingJournalFeat/script.js"
   },
   "Components/ListingJournalRelated/script.js": {
-    "file": "assets/script-437ab7cd.js",
+    "file": "assets/script-2beeeb13.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ListingJournalRelated/script.js"
   },
   "Components/ListingProjectsRelated/script.js": {
-    "file": "assets/script-0f057d49.js",
+    "file": "assets/script-cdfa5242.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -96,7 +96,7 @@
     "src": "Components/NavigationFooter/script.js"
   },
   "Components/NavigationMain/script.js": {
-    "file": "assets/script-cc41f6d0.js",
+    "file": "assets/script-57075717.js",
     "imports": [
       "assets/main.js"
     ],
@@ -104,29 +104,29 @@
     "src": "Components/NavigationMain/script.js"
   },
   "Components/SliderBox/script.js": {
-    "file": "assets/script-311c10c4.js",
+    "file": "assets/script-c4cfbdca.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderBox/script.js"
   },
   "Components/SliderBoxText/script.js": {
-    "file": "assets/script-c321d7ac.js",
+    "file": "assets/script-b8594b21.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderBoxText/script.js"
   },
   "Components/ZZZ/AccordionSystems/script.js": {
-    "file": "assets/script-757a4c9b.js",
+    "file": "assets/script-eb79604d.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
+      "_swiper-bundle-dc830da9.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -134,7 +134,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/facebook.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/facebook.svg"
   },
   "Components/ZZZ/BlockCta/Assets/instagram.svg": {
     "file": "assets/instagram-5bab2c82.svg",
@@ -142,7 +142,7 @@
   },
   "Components/ZZZ/BlockCta/Assets/linkedin.svg": {
     "file": "assets/facebook-8975c208.svg",
-    "src": "Components/ZZZ/BlockCta/Assets/linkedin.svg"
+    "src": "Components/ZZZ/BlockCta/Assets/facebook.svg"
   },
   "Components/ZZZ/BlockCta/Assets/logo.svg": {
     "file": "assets/logo-eeb7436e.svg",
@@ -162,16 +162,16 @@
     "src": "Components/ZZZ/BlockPostArchive/script.js"
   },
   "Components/ZZZ/BlockProductSpecs/script.js": {
-    "file": "assets/script-fca3382f.js",
+    "file": "assets/script-4e04837f.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
+      "_swiper-bundle-dc830da9.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ZZZ/BlockProductSpecs/script.js"
   },
   "Components/ZZZ/BlockVideoText/script.js": {
-    "file": "assets/script-48bc6e8a.js",
+    "file": "assets/script-9c1467d8.js",
     "imports": [
       "_helpers-0bb72b7a.js"
     ],
@@ -187,20 +187,20 @@
     "src": "Components/ZZZ/HeroImageText/script.js"
   },
   "Components/ZZZ/HeroSlider/script.js": {
-    "file": "assets/script-370c13ca.js",
+    "file": "assets/script-3306a996.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ZZZ/HeroSlider/script.js"
   },
   "Components/ZZZ/HeroSliderComposite/script.js": {
-    "file": "assets/script-4356e417.js",
+    "file": "assets/script-1e679ab3.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -224,7 +224,7 @@
     "src": "Components/ZZZ/NavigationMainLogo/Assets/logo.svg"
   },
   "Components/ZZZ/ScrolltriggerComparison/script.js": {
-    "file": "assets/script-b651ce5f.js",
+    "file": "assets/script-31cb4ea3.js",
     "imports": [
       "assets/main.js"
     ],
@@ -232,49 +232,49 @@
     "src": "Components/ZZZ/ScrolltriggerComparison/script.js"
   },
   "Components/ZZZ/SliderFeatProjects/script.js": {
-    "file": "assets/script-e9dec1a3.js",
+    "file": "assets/script-4b8e5764.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
+      "_swiper-bundle-dc830da9.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ZZZ/SliderFeatProjects/script.js"
   },
   "Components/ZZZ/SliderHorizontal/script.js": {
-    "file": "assets/script-60591ded.js",
+    "file": "assets/script-952514d6.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ZZZ/SliderHorizontal/script.js"
   },
   "Components/ZZZ/SliderImages/script.js": {
-    "file": "assets/script-1b81b39f.js",
+    "file": "assets/script-3e060f70.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ZZZ/SliderImages/script.js"
   },
   "Components/ZZZ/SliderLogos/script.js": {
-    "file": "assets/script-3dcff1f6.js",
+    "file": "assets/script-2e171072.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/ZZZ/SliderLogos/script.js"
   },
   "Components/ZZZ/SliderQuotes/script.js": {
-    "file": "assets/script-df0b320d.js",
+    "file": "assets/script-4c213304.js",
     "imports": [
-      "_swiper-bundle-917ff535.js",
-      "_pagination-5175372f.js",
+      "_swiper-bundle-dc830da9.js",
+      "_pagination-be3e6c92.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -286,21 +286,21 @@
   "_index-2a8ce3c2.js": {
     "file": "assets/index-2a8ce3c2.js"
   },
-  "_pagination-5175372f.js": {
-    "file": "assets/pagination-5175372f.js",
+  "_pagination-be3e6c92.js": {
+    "file": "assets/pagination-be3e6c92.js",
     "imports": [
-      "_swiper-bundle-917ff535.js"
+      "_swiper-bundle-dc830da9.js"
     ]
   },
   "_script-db2e204d.js": {
     "file": "assets/script-db2e204d.js",
     "isDynamicEntry": true
   },
-  "_swiper-bundle-917ff535.js": {
+  "_swiper-bundle-dc830da9.js": {
     "css": [
-      "assets/swiper-bundle-79ffb651.css"
+      "assets/swiper-bundle-19d1ede4.css"
     ],
-    "file": "assets/swiper-bundle-917ff535.js"
+    "file": "assets/swiper-bundle-dc830da9.js"
   },
   "assets/admin.js": {
     "file": "assets/admin-c4afd7fc.js",
@@ -367,7 +367,7 @@
       "Components/ZZZ/SliderLogos/script.js",
       "Components/ZZZ/SliderQuotes/script.js"
     ],
-    "file": "assets/main-a1d037a2.js",
+    "file": "assets/main-76c37222.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
@@ -392,7 +392,7 @@
     "src": "node_modules/@webreflection/custom-elements-builtin/esm/index.js"
   },
   "swiper-bundle.css": {
-    "file": "assets/swiper-bundle-79ffb651.css",
+    "file": "assets/swiper-bundle-19d1ede4.css",
     "src": "swiper-bundle.css"
   }
 }

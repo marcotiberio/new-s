@@ -45,7 +45,7 @@
     "rellax": "^1.12.1",
     "scrolltrigger": "^1.0.1",
     "scrolltween": "^0.0.8-beta",
-    "swiper": "^11.1.14"
+    "swiper": "^12.1.2"
   },
   "devDependencies": {
     "ansi-colors": "^4.1.3",
