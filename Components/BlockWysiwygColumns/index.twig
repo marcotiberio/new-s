@@ -70,7 +70,7 @@
             {% endif %}
             {% if column.columnLink %}
               <a 
-                class="mt-xs after:content-['↗'] after:text-[0.875rem] after:align-super" 
+                class="mt-xs after:content-['↗'] after:text-[0.875rem] after:align-super hover:text-orange" 
                 href="{{ column.columnLink.url }}" 
                 {% if column.columnLink.target %} target="{{ column.columnLink.target }}" rel="noreferrer noopener"{% endif %}>
                 {{ column.columnLink.title }}
