@@ -11,7 +11,7 @@
     </div> #}
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-sm lg:gap-xs align-start justify-start lg:justify-between {% if options.stickyTitle %}stickyTitle{% endif %}">
       {% for column in columns %}
-        <div class="column flex {{ column.colStart }} {{ column.colEnd }} lg:row-start-1 lg:row-end-2">
+        <div class="column flex {{ column.colStart }} {{ column.colEnd }} lg:row-start-1 lg:row-end-2 [&_.link]:hover:text-orange">
           {% if column.columnLink %}
             <a href="{{ column.columnLink.url }}" {% if column.columnLink.target %} target="{{ column.columnLink.target }}" rel="noreferrer noopener"{% endif %}>
           {% endif %}
@@ -70,7 +70,7 @@
             {% endif %}
             {% if column.columnLink %}
               <a 
-                class="mt-xs after:content-['↗'] after:text-[0.875rem] after:align-super hover:text-orange" 
+                class="link mt-xs after:content-['↗'] after:text-[0.875rem] after:align-super hover:text-orange" 
                 href="{{ column.columnLink.url }}" 
                 {% if column.columnLink.target %} target="{{ column.columnLink.target }}" rel="noreferrer noopener"{% endif %}>
                 {{ column.columnLink.title }}
