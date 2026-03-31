@@ -65,13 +65,7 @@
         {% for post in posts %}
           {% set journalCategoryTerms = post.terms('journal-category') %}
           {% set allTerms = journalCategoryTerms %}
-          {% set hardcodedCategories = {
-            'Events': 'events',
-            'Longreads': 'longreads',
-            'News': 'news',
-            'Resources': 'resources'
-          } %}
-          {% set postCategorySlugs = allTerms|map(term => hardcodedCategories[term.name]|default(term.name|lower|replace({' ' : '-'}))) %}
+          {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'})) %}
 
           <div 
             class="fade-in post w-full py-sm [&_h2]:hover:text-orangeHover border-b last:border-b-0 hover:cursor-pointer transition-opacity duration-300" 
