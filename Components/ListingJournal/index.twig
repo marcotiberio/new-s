@@ -41,7 +41,7 @@
             {'name': 'Resources', 'slug': 'resources'},
           ] %}
           {% for journalCategory in journalCategories %}
-            <div 
+            <div
               class="font-body !mb-0 cursor-pointer hover:text-orangeHover w-fit"
               :class="selectedCategory === '{{ journalCategory.slug }}' ? 'text-orangeHover' : ''"
               @click="
@@ -65,10 +65,16 @@
         {% for post in posts %}
           {% set journalCategoryTerms = post.terms('journal-category') %}
           {% set allTerms = journalCategoryTerms %}
-          {% set postCategorySlugs = allTerms|map(term => term.name|lower|replace({' ' : '-'})) %}
+          {% set hardcodedCategories = {
+            'Events': 'events',
+            'Longreads': 'longreads',
+            'News': 'news',
+            'Resources': 'resources'
+          } %}
+          {% set postCategorySlugs = allTerms|map(term => hardcodedCategories[term.name]|default(term.name|lower|replace({' ' : '-'}))) %}
 
           <div 
-            class="fade-in post w-full py-sm [&_h2]:hover:text-orangeHover border-b last:border-b-0 hover:cursor-pointer transition-opacity duration-300" 
+            class="post w-full py-sm [&_h2]:hover:text-orangeHover border-b last:border-b-0 hover:cursor-pointer transition-opacity duration-300" 
             x-show="(selectedCategory === '' || ['{{ postCategorySlugs|join("','") }}'].includes(selectedCategory)) && 
                      (searchQuery === '' || '{{ post.title|lower }}'.includes(searchQuery.toLowerCase()))"
             :class="isTransitioning ? 'opacity-0' : 'opacity-100'"
