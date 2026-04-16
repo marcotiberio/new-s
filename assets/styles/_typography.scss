@@ -68,6 +68,16 @@ p,
   }
 }
 
+pre,
+b,
+strong {
+  display: inline;
+  font-family: var(--primary-font-family);
+  font-size: inherit;
+  font-weight: 500;
+  white-space: inherit;
+}
+
 .font-bodySmall,
 samp {
   font-family: var(--primary-font-family);

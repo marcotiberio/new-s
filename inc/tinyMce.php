@@ -156,6 +156,8 @@ add_filter('tiny_mce_before_init', function ($init) {
     if ($fontLoadingMethod === 'local') {
         $fontUrl = get_template_directory_uri() . '/assets/fonts/FKGroteskNeue-Regular.woff2';
         $contentStyle .= " @font-face { font-display: swap; font-family: '{$primaryFont}'; font-style: normal; font-weight: 400; src: url('" . esc_url($fontUrl) . "') format('woff2'); }";
+        $fontMediumUrl = get_template_directory_uri() . '/assets/fonts/FKGroteskNeue-Medium.woff2';
+        $contentStyle .= " @font-face { font-display: swap; font-family: '{$primaryFont}'; font-style: normal; font-weight: 500; src: url('" . esc_url($fontMediumUrl) . "') format('woff2'); }";
     }
     
     // Add Google Fonts import if using Google Fonts

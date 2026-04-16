@@ -6,6 +6,14 @@
   src: url('../assets/fonts/FKGroteskNeue-Regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-display: swap;
+  font-family: 'FKGroteskNeue';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/FKGroteskNeue-Medium.woff2') format('woff2');
+}
+
 html {
   color: var(--black);
   font-size: var(--base-font-size-desktop);

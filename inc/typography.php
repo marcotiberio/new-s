@@ -458,17 +458,32 @@ function getTypographyCss() {
 // Enqueue Google Fonts if enabled (frontend)
 add_action('wp_enqueue_scripts', function () {
     $typographyOptions = Options::getGlobal('Typography');
-    $fontLoadingMethod = !empty($typographyOptions['fontLoadingMethod']) 
-        ? $typographyOptions['fontLoadingMethod'] 
+    $fontLoadingMethod = !empty($typographyOptions['fontLoadingMethod'])
+        ? $typographyOptions['fontLoadingMethod']
         : 'local';
-    $googleFontsUrl = !empty($typographyOptions['googleFontsUrl']) 
-        ? esc_url($typographyOptions['googleFontsUrl']) 
+    $googleFontsUrl = !empty($typographyOptions['googleFontsUrl'])
+        ? esc_url($typographyOptions['googleFontsUrl'])
         : '';
-    
+
     if ($fontLoadingMethod === 'google' && !empty($googleFontsUrl)) {
         wp_enqueue_style('flynt-google-fonts', $googleFontsUrl, [], null);
     }
 }, 5);
+
+// Preload local font files
+add_action('wp_head', function () {
+    $typographyOptions = Options::getGlobal('Typography');
+    $fontLoadingMethod = !empty($typographyOptions['fontLoadingMethod'])
+        ? $typographyOptions['fontLoadingMethod']
+        : 'local';
+
+    if ($fontLoadingMethod !== 'local') {
+        return;
+    }
+
+    $mediumUrl = get_template_directory_uri() . '/assets/fonts/FKGroteskNeue-Medium.woff2';
+    echo '<link rel="preload" href="' . esc_url($mediumUrl) . '" as="font" type="font/woff2" crossorigin>' . "\n";
+}, 1);
 
 // Enqueue Google Fonts if enabled (admin)
 add_action('admin_enqueue_scripts', function () {
