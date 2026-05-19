@@ -1,0 +1,121 @@
+// WooCommerce — single product page (body.single-product).
+
+.single-product {
+  .wcContent {
+    @apply flex flex-col gap-xs;
+  }
+
+  .singleProduct {
+    .product_title,
+    .price {
+      @apply text-body mb-0;
+    }
+
+    .woocommerce-Price-amount {
+      @apply text-body;
+    }
+
+    .woocommerce-product-gallery {
+      @apply w-full;
+
+      .wp-post-image {
+        @apply aspect-square object-cover w-full;
+      }
+    }
+
+    form.cart {
+      @apply flex flex-col w-full;
+    }
+
+    .qty-stepper {
+      @apply flex flex-row items-center justify-between w-full;
+
+      &__btn {
+        @apply font-body bg-transparent border-0 cursor-pointer text-h3 leading-none;
+        margin-block-end: 0 !important;
+
+        &:hover {
+          @apply text-orange;
+        }
+      }
+
+      .quantity {
+        @apply flex-1 m-0;
+
+        label {
+          @apply sr-only;
+        }
+
+        input.qty {
+          @apply font-body w-full text-center bg-transparent border-0 outline-none py-xs mb-0 !important;
+          margin-block-end: 0 !important;
+          appearance: textfield;
+          -moz-appearance: textfield;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .single_add_to_cart_button {
+      @apply w-full;
+    }
+
+    .woocommerce-Tabs-panel--description h2 {
+      @apply hidden;
+    }
+
+    .product_meta,
+    .woocommerce-product-details__short-description,
+    .tabs {
+      @apply hidden;
+    }
+  }
+
+  .singleProduct__media {
+    @apply w-full;
+  }
+
+  .singleProduct__extras .woocommerce-tabs ul.tabs {
+    @apply hidden;
+  }
+
+  .singleProduct__related .related {
+    @apply flex flex-col gap-sm !important;
+
+    > h2 {
+      @apply text-body mb-0;
+    }
+
+    ul {
+      @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-sm list-none p-0;
+
+      .product {
+        &:hover {
+          .woocommerce-loop-product__title,
+          .price,
+          .productLoop__shortDescription {
+            @apply text-orange;
+          }
+        }
+
+        .attachment-woocommerce_thumbnail {
+          @apply aspect-square object-cover w-full;
+        }
+
+        .woocommerce-loop-product__title,
+        .price {
+          @apply text-body mb-0;
+        }
+
+        .add_to_cart_button {
+          @apply hidden;
+        }
+      }
+    }
+  }
+}

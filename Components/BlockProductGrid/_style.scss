@@ -1,0 +1,23 @@
+flynt-component[name='BlockProductGrid'] {
+  .productGrid {
+    &[data-grid-columns='1'] {
+      @apply grid-cols-1 gap-md;
+    }
+
+    &[data-grid-columns='2'] {
+      @apply grid-cols-1 sm:grid-cols-2;
+    }
+
+    &[data-grid-columns='3'] {
+      @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+    }
+
+    &[data-grid-columns='4'] {
+      @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+    }
+
+    &[data-grid-columns='5'] {
+      @apply grid-cols-1 sm:grid-cols-3 lg:grid-cols-5;
+    }
+  }
+}

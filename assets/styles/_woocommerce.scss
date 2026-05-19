@@ -1,0 +1,11 @@
+// WooCommerce styles — index.
+// Page-scoped partials live in ./woocommerce/, one per WC page type.
+// Load order matters: _global first so per-page rules can override.
+
+@import
+  'woocommerce/global',
+  'woocommerce/shop',
+  'woocommerce/single-product',
+  'woocommerce/cart',
+  'woocommerce/checkout',
+  'woocommerce/order-received';

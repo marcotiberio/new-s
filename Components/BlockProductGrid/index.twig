@@ -1,0 +1,64 @@
+<flynt-component
+  load:on="visible"
+  name="BlockProductGrid">
+  <div class="boxed">
+    {% if headlineTitle %}
+      <div class="py-sm md:py-md flex justify-center items-center text-center font-smallTitle">
+        {{ headlineTitle }}
+      </div>
+    {% endif %}
+
+    {% if products|length == 0 %}
+      <p class="text-center py-md opacity-60">{{ __('No products to display.', 'flynt') }}</p>
+    {% else %}
+      <ul
+        class="productGrid w-full grid gap-x-xs gap-y-md list-none p-0"
+        data-grid-columns="{{ options.gridColumns|default('3') }}">
+        {% for product in products %}
+          <li class="productCard group flex flex-col">
+            <a href="{{ product.url }}" class="block">
+              {% if product.image %}
+                <figure class="figure productCard__figure overflow-hidden mb-xs">
+                  <img
+                    class="lazyload w-full h-auto object-cover aspect-3/4"
+                    src="{{ product.image.src }}"
+                    data-srcset="{{ product.image.srcset }}"
+                    data-sizes="auto"
+                    alt="{{ product.image.alt|e }}">
+                </figure>
+              {% else %}
+                <div class="productCard__placeholder aspect-square bg-beige"></div>
+              {% endif %}
+
+              <div class="w-full flex flex-row justify-between">
+                <h3 class="font-body !mb-0 group-hover:text-orange">
+                  {{ product.title }}
+                </h3>
+                {% if options.showPrice %}
+                  <div class="font-body !mb-0 group-hover:text-orange">
+                    {{ product.priceHtml|e('wp_kses_post') }}
+                  </div>
+                {% endif %}
+              </div>
+              {% if product.shortDescription %}
+                <div class="[&_*]:mb-0 group-hover:text-orange">
+                  {{ product.shortDescription|e('wp_kses_post') }}
+                </div>
+              {% endif %}
+            </a>
+
+            {# {% if options.showAddToCart and product.isPurchasable %}
+              <a
+                href="{{ product.addToCartUrl }}"
+                data-product-id="{{ product.id }}"
+                class="productCard__cta button mt-xs {% if not product.isVariable %}ajax_add_to_cart{% endif %}"
+                rel="nofollow">
+                {{ product.addToCartText }}
+              </a>
+            {% endif %} #}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</flynt-component>

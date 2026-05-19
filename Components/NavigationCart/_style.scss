@@ -1,0 +1,58 @@
+flynt-component[name='NavigationCart'] {
+  .cartToggle {
+    position: fixed;
+    font-family: inherit;
+    @apply text-body whitespace-nowrap;
+
+    &:hover {
+      @apply text-orange;
+    }
+  }
+
+  .cartToggle__label,
+  .cartToggle__counter {
+    @apply inline-block;
+  }
+
+  .miniCart__body {
+    .woocommerce-mini-cart {
+      @apply list-none p-0 m-0 flex flex-col gap-sm;
+    }
+
+    .mini_cart_item {
+      @apply flex gap-xs items-start py-xs border-b border-darkgrey/10;
+
+      img {
+        @apply w-[60px] h-auto;
+      }
+
+      a:not(.remove) {
+        @apply no-underline;
+      }
+
+      .remove {
+        @apply ml-auto text-darkgrey/60 hover:text-orange no-underline;
+      }
+    }
+
+    .total {
+      @apply mt-sm pt-sm border-t border-darkgrey;
+    }
+
+    .buttons {
+      @apply flex flex-col gap-xs mt-sm;
+
+      .button {
+        @apply w-full text-center;
+      }
+    }
+
+    .woocommerce-mini-cart__empty-message {
+      @apply text-center py-md opacity-60;
+    }
+  }
+}
+
+[x-cloak] {
+  display: none !important;
+}

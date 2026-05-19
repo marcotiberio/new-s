@@ -1,0 +1,14 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <div class="wcContent w-full max-w-screen-max mx-auto">
+    {% if wcPageType in ['cart', 'checkout', 'order-received'] %}
+      {% if post.title %}
+        <h1 class="text-h1 mb-md">{{ post.title }}</h1>
+      {% endif %}
+      {{ post.content }}
+    {% else %}
+      {{ function('woocommerce_content') }}
+    {% endif %}
+  </div>
+{% endblock %}

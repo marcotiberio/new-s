@@ -1,0 +1,48 @@
+// WooCommerce — global rules.
+// Apply everywhere WC renders markup (notices, buttons, base product card).
+
+// Notices ---------------------------------------------------------------------
+.woocommerce-notices-wrapper:empty {
+  display: none;
+}
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+  @apply px-sm py-xs my-sm border;
+}
+
+.woocommerce-message {
+  @apply bg-orange border-black m-0 flex flex-col gap-min justify-center items-center;
+}
+
+.woocommerce-info {
+  @apply bg-beige border-darkgrey;
+}
+
+.woocommerce-error {
+  @apply bg-orange/10 border-orange text-orange;
+}
+
+// Buttons ---------------------------------------------------------------------
+.button,
+.wp-element-button {
+  @apply py-[10px] px-lg text-black uppercase bg-transparent justify-center border border-black whitespace-nowrap;
+
+  &:hover {
+    @apply bg-black text-white;
+  }
+}
+
+// Product card (default WC loop markup, used in shop + related + upsells) ----
+.product {
+  @apply flex flex-col;
+
+  .woocommerce-loop-product__title {
+    @apply text-body mt-xs;
+  }
+
+  .price {
+    @apply text-body mt-2;
+  }
+}

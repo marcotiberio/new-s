@@ -1,0 +1,1 @@
+function d(){window.jQuery&&(window.jQuery(document.body).on("added_to_cart",()=>{window.dispatchEvent(new CustomEvent("cart:added"))}),window.jQuery(document.body).on("wc_fragments_refreshed wc_fragments_loaded",()=>{window.dispatchEvent(new CustomEvent("cart:updated"))}))}export{d as default};

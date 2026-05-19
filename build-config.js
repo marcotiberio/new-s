@@ -17,6 +17,7 @@ const watchFiles = [
   'templates/**/*',
   'lib/**/*',
   'inc/**/*',
+  'woocommerce/**/*',
   './Components/**/*.{php,twig}'
 ]
 

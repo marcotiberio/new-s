@@ -1,0 +1,24 @@
+// WooCommerce — shop archive (body.woocommerce-shop).
+
+.woocommerce-shop {
+  .page-title,
+  .woocommerce-result-count,
+  .woocommerce-ordering,
+  ul.products,
+  .woocommerce-pagination,
+  .woocommerce-info,
+  flynt-component[name='ListingProjectsRelated'] {
+    @apply hidden;
+  }
+
+  .mainContent .wcContent {
+    @apply mt-[30px];
+  }
+
+  .product:hover {
+    .woocommerce-loop-product__title,
+    .price {
+      @apply text-orange;
+    }
+  }
+}

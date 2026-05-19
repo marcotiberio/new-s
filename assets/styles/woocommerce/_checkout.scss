@@ -1,0 +1,14 @@
+// WooCommerce — checkout page (body.woocommerce-checkout).
+
+.woocommerce-checkout {
+  @apply text-body;
+
+  table {
+    @apply w-full;
+  }
+
+  th,
+  td {
+    @apply text-left py-xs border-b border-darkgrey/20;
+  }
+}

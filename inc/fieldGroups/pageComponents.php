@@ -69,6 +69,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockForms\getACFLayout(),
                     Components\BlockImageTest2\getACFLayout(),
                     Components\BlockGalleryMedia\getACFLayout(),
+                    Components\BlockProductGrid\getACFLayout(),
                     Components\BlockWysiwygColumns\getACFLayout(),
                     Components\BlockWysiwygAccordion\getACFLayout(),
                     Components\HeroHeaderHome\getACFLayout(),
@@ -98,6 +99,11 @@ add_action('Flynt/afterRegisterComponents', function () {
                     'param' => 'post_type',
                     'operator' => '!=',
                     'value' => 'reusable-components'
+                ],
+                [
+                    'param' => 'post_type',
+                    'operator' => '!=',
+                    'value' => 'product'
                 ],
             ],
         ],

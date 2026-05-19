@@ -1,0 +1,9 @@
+<flynt-component name="NavigationCart" class="navigationCart">
+  <a
+    href="{{ cart.url }}"
+    class="cartToggle fixed top-[-1.5px] md:top-0 right-[60px] md:right-[70px] z-[3100] h-[55px] flex items-center justify-center bg-transparent no-underline"
+    aria-label="{{ __('View cart', 'flynt') }}">
+    <span class="cartToggle__label font-body !mb-0">{{ __('Basket', 'flynt') }}</span>
+    <span class="cartToggle__counter ml-1 font-body !mb-0"><span class="js-cart-count" data-count="{{ cart.count }}">{{ cart.count }}</span></span>
+  </a>
+</flynt-component>

@@ -19,9 +19,10 @@ use Timber\Timber;
 // });
 
 add_filter('Flynt/addComponentData?name=ListingProjectsRelated', function ($data) {
-    $translatableOptions = Options::getTranslatable('SliderOptions');
+    $translatableOptions = Options::getTranslatable('SliderOptions') ?: [];
+    $componentOptions = is_array($data['options'] ?? null) ? $data['options'] : [];
     $data['jsonData'] = [
-        'options' => array_merge($translatableOptions, $data['options']),
+        'options' => array_merge($translatableOptions, $componentOptions),
     ];
     return $data;
 });

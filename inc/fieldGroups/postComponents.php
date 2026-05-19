@@ -151,6 +151,13 @@ add_action('Flynt/afterRegisterComponents', function () {
                     'value' => 'post',
                 ],
             ],
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'product',
+                ],
+            ],
         ],
     ]);
 });
