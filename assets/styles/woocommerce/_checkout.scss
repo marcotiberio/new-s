@@ -1,14 +1,262 @@
 // WooCommerce — checkout page (body.woocommerce-checkout).
+// Block-based checkout markup (`.wc-block-checkout` / `.wc-block-components-*`).
 
 .woocommerce-checkout {
-  @apply text-body;
-
-  table {
-    @apply w-full;
+  h1 {
+    @apply hidden;
   }
 
-  th,
-  td {
-    @apply text-left py-xs border-b border-darkgrey/20;
+  // `.woocommerce-checkout` lands on <body>, so anything applied at this level
+  // (e.g. `text-body`) cascades into the header navigation. Scope page-level
+  // typography to `.wcContent` instead.
+  .wcContent {
+    @apply text-body px-xs py-md pt-[10vw] md:pt-[160px];
+
+    .wc-block-components-title {
+      @apply hidden;
+    }
+  }
+
+  // The default sidebar layout is collapsed — custom.js reparents the sidebar
+  // into the fields block so all three columns (address / payment / totals)
+  // share one grid.
+  .wc-block-components-sidebar-layout {
+    @apply grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-lg w-full;
+
+    .wc-block-components-main {
+      @apply w-full p-0 m-0 !important;
+    }
+  }
+
+  // 3-column grid on desktop: address fields | payment | cart totals + Pay Now.
+  // .wp-block-woocommerce-checkout-fields-block {
+  //   @media screen and (min-width: $breakpoint-desktop) {
+  //     display: grid !important;
+  //     grid-template-columns: 1fr 1fr 1fr;
+  //     column-gap: var(--spacingSmall);
+  //     align-items: start;
+  //   }
+  // }
+
+  // .wp-block-woocommerce-checkout-contact-information-block,
+  // .wp-block-woocommerce-checkout-shipping-address-block,
+  // .wp-block-woocommerce-checkout-billing-address-block,
+  // .wp-block-woocommerce-checkout-shipping-methods-block,
+  // .wp-block-woocommerce-checkout-pickup-options-block,
+  // .wp-block-woocommerce-checkout-shipping-method-block {
+  //   @media screen and (min-width: $breakpoint-desktop) {
+  //     grid-column: 1;
+  //   }
+  // }
+
+  // .wp-block-woocommerce-checkout-payment-block,
+  // .wp-block-woocommerce-checkout-additional-information-block,
+  // .wp-block-woocommerce-checkout-order-note-block {
+  //   @media screen and (min-width: $breakpoint-desktop) {
+  //     grid-column: 2;
+  //   }
+  // }
+
+  // .wc-block-components-sidebar.wc-block-checkout__sidebar {
+  //   @media screen and (min-width: $breakpoint-desktop) {
+  //     grid-column: 3;
+  //     grid-row: 1 / span 99;
+  //   }
+  // }
+
+  // .wp-block-woocommerce-checkout-terms-block,
+  // .wp-block-woocommerce-checkout-actions-block {
+  //   @media screen and (min-width: $breakpoint-desktop) {
+  //     grid-column: 1 / 3;
+  //   }
+  // }
+
+  // Step headings ("Contact information", "Shipping address", "Payment Method") --
+  .wc-block-components-checkout-step__title,
+  .wc-block-components-title {
+    @apply text-body normal-case font-normal mb-xs !important;
+  }
+
+  .wc-block-components-checkout-step__description,
+  .wc-block-components-checkout-step__heading-content {
+    @apply text-bodySmall mb-0 !important;
+  }
+
+  .wc-block-components-checkout-step {
+    @apply p-0 mb-0 border-0 !important;
+
+    &::after {
+      display: none !important;
+    }
+  }
+
+  .wc-block-components-checkout-step__heading-container {
+    @apply mb-0 !important;
+  }
+
+  // Form fields: floating-label UI killed — labels hidden, placeholders act as
+  // the hint, inputs render as plain boxed fields.
+  .wc-block-components-text-input,
+  .wc-block-components-select,
+  .wc-block-components-country-input,
+  .wc-block-components-state-input {
+    @apply mb-xs !important;
+    padding-top: 0 !important; // WC reserves padding for its floating label
+
+    // Hide the floating label entirely. WC still toggles .has-label / .is-active
+    // on the wrapper, but with no visible label there's nothing to float.
+    > label,
+    label {
+      @apply hidden !important;
+    }
+
+    // Neutralize WC's state-based padding/transform on the input itself.
+    &.has-label input,
+    &.is-active input,
+    input,
+    select {
+      @apply bg-transparent !important;
+      border: 1px solid var(--black) !important;
+      border-radius: 0 !important;
+      @apply p-min text-bodySmall !important;
+      min-height: 0 !important;
+      transform: none !important;
+
+      &::placeholder {
+        color: var(--black) !important;
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  // Radio buttons (Payment Method: Credit Card / Paypal). --------------------
+  .wc-block-components-radio-control {
+    @apply flex flex-row flex-wrap gap-sm mb-0;
+
+    .wc-block-components-radio-control__option {
+      @apply p-0 m-0 border-0 flex flex-row items-center gap-min !important;
+      width: auto !important;
+
+      &::before,
+      &::after {
+        display: none !important;
+      }
+    }
+
+    .wc-block-components-radio-control__input {
+      position: static !important;
+      @apply m-0 !important;
+    }
+
+    .wc-block-components-radio-control__label {
+      @apply text-bodySmall !important;
+    }
+
+    .wc-block-components-radio-control__description-group {
+      @apply hidden;
+    }
+  }
+
+  // Payment method panel — strip WC's default box styling. -------------------
+  .wc-block-checkout__payment-method {
+    @apply p-0 bg-transparent border-0 !important;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Sidebar: cart summary + Pay Now.
+  // ---------------------------------------------------------------------------
+  .wc-block-components-sidebar {
+    @apply w-full p-0 m-0 !important;
+  }
+
+  .wp-block-woocommerce-checkout-order-summary-totals-block {
+    @apply border-t-0 !important;
+  }
+
+  .wp-block-woocommerce-checkout-order-summary-block {
+    @apply w-full p-0 m-0 border-0 !important;
+
+    .wc-block-components-checkout-order-summary__title-text {
+      @apply font-bodySmall m-0 pb-xs !important;
+      border-bottom: 1px solid var(--black) !important;
+      margin-block-end: 0 !important;
+    }
+
+    .wc-block-components-checkout-order-summary__title,
+    .wc-block-components-title {
+      @apply text-body normal-case font-normal m-0 !important;
+    }
+  }
+
+  .block-components-totals-coupon {
+    @apply hidden !important;
+  }
+
+  // Hide the per-item product list inside the summary — screenshot shows only
+  // subtotal / shipping / total rows.
+  .wc-block-components-order-summary,
+  .wp-block-woocommerce-checkout-order-summary-cart-items-block {
+    @apply hidden !important;
+  }
+
+  // Totals rows: stacked with horizontal rules between them. ------------------
+  .wc-block-components-totals-wrapper {
+    @apply p-0 m-0  text-body !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--black) !important;
+    padding-top: var(--spacingXSmall) !important;
+    padding-bottom: var(--spacingXSmall) !important;
+
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
+
+  .wp-block-woocommerce-checkout-order-summary-coupon-form-block {
+    @apply hidden !important;
+  }
+
+  .wc-block-components-totals-item {
+    @apply flex justify-between items-baseline w-full p-0 m-0 !important;
+
+    .wc-block-components-totals-item__label {
+      @apply text-body font-normal !important;
+    }
+
+    .wc-block-components-totals-item__value,
+    .wc-block-formatted-money-amount {
+      @apply text-body font-normal !important;
+    }
+
+    .wc-block-components-totals-item__description {
+      @apply hidden;
+    }
+  }
+
+  .wc-block-components-totals-footer-item {
+    .wc-block-components-totals-item__label,
+    .wc-block-components-totals-item__value {
+      @apply text-body font-normal !important;
+    }
+  }
+
+  // Pay Now button (lives in the actions block). -----------------------------
+  .wc-block-components-checkout-place-order-button,
+  .wc-block-components-button.contained {
+    @apply py-[10px] px-lg text-black uppercase bg-transparent border border-black w-full justify-center !important;
+    border-radius: 0 !important;
+    min-height: 0 !important;
+
+    &:hover {
+      @apply bg-black text-white !important;
+    }
+  }
+
+  // Hide Woo's "powered by" / express-payments noise.
+  .wc-block-components-express-payment,
+  .wc-block-components-express-payment-continue-rule,
+  .wp-block-woocommerce-checkout-express-payment-block {
+    @apply hidden !important;
   }
 }

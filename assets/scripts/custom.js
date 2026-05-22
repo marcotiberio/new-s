@@ -134,6 +134,81 @@ $(document).scroll(function () {
 //   })
 // })
 
+// Checkout: move the sticky sidebar (totals + Pay Now) inside the main fields
+// block so it can sit as the rightmost column alongside the address/payment
+// columns instead of in WC's default 2-col sidebar layout.
+if (document.body.classList.contains('woocommerce-checkout')) {
+  const moveCheckoutSidebar = () => {
+    const sidebar = document.querySelector('.wc-block-components-sidebar.wc-block-checkout__sidebar')
+    const fields = document.querySelector('.wc-block-components-main.wc-block-checkout__main .wp-block-woocommerce-checkout-fields-block')
+      || document.querySelector('.wp-block-woocommerce-checkout-fields-block')
+    if (sidebar && fields && !fields.contains(sidebar)) {
+      fields.appendChild(sidebar)
+      return true
+    }
+    return false
+  }
+
+  if (!moveCheckoutSidebar()) {
+    const observer = new MutationObserver(() => {
+      if (moveCheckoutSidebar()) observer.disconnect()
+    })
+    observer.observe(document.body, { childList: true, subtree: true })
+  }
+
+  // Wrap the shipping-method / payment / order-notes / terms / actions blocks
+  // in a single container so they can be styled as one grouped column.
+  // The blocks mount across multiple React render passes, so this runs on every
+  // mutation and is idempotent — newly-arrived blocks get pulled into the
+  // existing wrapper.
+  const GROUP_SELECTORS = [
+    '.wp-block-woocommerce-checkout-shipping-methods-block',
+    '.wp-block-woocommerce-checkout-payment-block',
+    '.wp-block-woocommerce-checkout-order-note-block',
+    '.wp-block-woocommerce-checkout-terms-block',
+    '.wp-block-woocommerce-checkout-actions-block',
+  ]
+  const groupCheckoutBlocks = () => {
+    const nodes = GROUP_SELECTORS
+      .map((sel) => document.querySelector(sel))
+      .filter(Boolean)
+    if (!nodes.length) return
+    let wrapper = document.querySelector('.flyntCheckoutGroup')
+    if (!wrapper) {
+      wrapper = Object.assign(document.createElement('div'), { className: 'flyntCheckoutGroup' })
+      nodes[0].parentNode.insertBefore(wrapper, nodes[0])
+    }
+    nodes.forEach((n) => {
+      if (n.parentNode !== wrapper) wrapper.appendChild(n)
+    })
+  }
+
+  groupCheckoutBlocks()
+  new MutationObserver(groupCheckoutBlocks).observe(document.body, { childList: true, subtree: true })
+
+  // Stamp placeholders onto block-checkout inputs. WC Blocks doesn't render
+  // the PHP-side `placeholder` config as an HTML attribute (it uses floating
+  // labels), so we apply them client-side. Re-runs on DOM mutations because
+  // React may re-render and strip the attribute.
+  const placeholders = (window.FlyntCheckoutFields && window.FlyntCheckoutFields.placeholders) || {}
+  const placeholderKeys = Object.keys(placeholders)
+  if (placeholderKeys.length) {
+    const applyPlaceholders = () => {
+      placeholderKeys.forEach((key) => {
+        const value = placeholders[key]
+        document.querySelectorAll(`#shipping-${key}, #billing-${key}`).forEach((input) => {
+          if (input.getAttribute('placeholder') !== value) {
+            input.setAttribute('placeholder', value)
+          }
+        })
+      })
+    }
+    applyPlaceholders()
+    const phObserver = new MutationObserver(applyPlaceholders)
+    phObserver.observe(document.body, { childList: true, subtree: true })
+  }
+}
+
 // Reload page on viewport resize
 let resizeTimer;
 let currentWidth = window.innerWidth;
