@@ -43,7 +43,9 @@
                 </div>
               {% endif %}
               {{ renderComponent('NavigationBurger') }}
-              {{ renderComponent('NavigationCart') }}
+              {% if not fn('get_field', 'global_Woocommerce_hideNavigationCart', 'options') %}
+                {{ renderComponent('NavigationCart') }}
+              {% endif %}
             </div>
           {% endblock %}
         </header>

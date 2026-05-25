@@ -127,6 +127,13 @@
         opacity: 1 !important;
       }
     }
+
+    .wc-blocks-components-select__expand {
+      fill: var(--black) !important;
+      right: 7.5px !important;
+      top: 25px !important;
+      width: auto !important;
+    }
   }
 
   // Radio buttons (Payment Method: Credit Card / Paypal). --------------------
