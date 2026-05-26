@@ -100,7 +100,7 @@
   .wc-block-components-select,
   .wc-block-components-country-input,
   .wc-block-components-state-input {
-    @apply mb-xs !important;
+    @apply mt-0 mb-xs !important;
     padding-top: 0 !important; // WC reserves padding for its floating label
 
     // Hide the floating label entirely. WC still toggles .has-label / .is-active
@@ -121,6 +121,7 @@
       @apply p-min text-bodySmall !important;
       min-height: 0 !important;
       transform: none !important;
+      @apply m-0 !important;
 
       &::placeholder {
         color: var(--black) !important;
@@ -134,6 +135,23 @@
       top: 25px !important;
       width: auto !important;
     }
+  }
+
+  .wc-block-components-address-form__state {
+    @apply mt-0 mb-0 !important;
+    
+    .wc-blocks-components-select {
+      @apply mt-0 mb-xs !important;
+    }
+  }
+
+  .wc-block-components-address-form__address_2-toggle {
+    @apply hidden !important;
+  }
+
+  .wc-block-checkout__shipping-option,
+  .wc-block-checkout__payment-method  {
+    @apply my-xs !important;
   }
 
   // Radio buttons (Payment Method: Credit Card / Paypal). --------------------
@@ -167,6 +185,20 @@
   // Payment method panel — strip WC's default box styling. -------------------
   .wc-block-checkout__payment-method {
     @apply p-0 bg-transparent border-0 !important;
+  }
+
+  .wc-block-components-radio-control {
+    .wc-block-components-radio-control__option {
+      @apply w-full p-0 m-0 border-0 !important;
+    }
+    @apply w-fit p-0 m-0 border-0 !important;
+  }
+
+  .wc-block-components-radio-control--highlight-checked .wc-block-components-radio-control-accordion-option--checked-option-highlighted,
+  .wc-block-components-radio-control--highlight-checked label.wc-block-components-radio-control__option--checked-option-highlighted  {
+    border: 1px solid var(--black) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
   // ---------------------------------------------------------------------------
@@ -250,13 +282,30 @@
 
   // Pay Now button (lives in the actions block). -----------------------------
   .wc-block-components-checkout-place-order-button,
-  .wc-block-components-button.contained {
-    @apply py-[10px] px-lg text-black uppercase bg-transparent border border-black w-full justify-center !important;
+  .wc-block-components-button.contained,
+  .wc-block-components-checkout-return-to-cart-button {
+    @apply py-[10px] px-xs text-black uppercase bg-transparent border border-black w-full text-center justify-center !important;
     border-radius: 0 !important;
     min-height: 0 !important;
 
     &:hover {
       @apply bg-black text-white !important;
+    }
+  }
+
+  .wc-block-checkout__actions_row {
+    @apply grid grid-cols-2 gap-sm !important;
+
+    .wc-block-components-checkout-return-to-cart-button {
+      svg {
+        @apply hidden !important;
+      }
+
+      @apply w-full !important;
+    }
+
+    .wc-block-components-checkout-place-order-button {
+      @apply bg-orange text-black border-orange hover:bg-black hover:text-white hover:border-black !important;
     }
   }
 

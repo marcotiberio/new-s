@@ -162,11 +162,11 @@ if (document.body.classList.contains('woocommerce-checkout')) {
   // mutation and is idempotent — newly-arrived blocks get pulled into the
   // existing wrapper.
   const GROUP_SELECTORS = [
-    '.wp-block-woocommerce-checkout-shipping-methods-block',
-    '.wp-block-woocommerce-checkout-payment-block',
-    '.wp-block-woocommerce-checkout-order-note-block',
-    '.wp-block-woocommerce-checkout-terms-block',
-    '.wp-block-woocommerce-checkout-actions-block',
+    '.wc-block-checkout__shipping-option',
+    '.wc-block-checkout__payment-method',
+    '.wc-block-checkout__order-notes',
+    '.wc-block-checkout__terms',
+    '.wc-block-checkout__actions',
   ]
   const groupCheckoutBlocks = () => {
     const nodes = GROUP_SELECTORS
