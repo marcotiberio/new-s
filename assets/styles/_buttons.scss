@@ -41,6 +41,14 @@ button {
     }
   }
 
+  // Outline button that fills its grid cell and wraps long labels (handbook entries).
+  &--outline#{&}--block {
+    @apply w-full;
+    @apply h-full;
+    @apply px-xs;
+    @apply whitespace-normal;
+  }
+
   &--link {
     background-color: transparent;
     border: 0;

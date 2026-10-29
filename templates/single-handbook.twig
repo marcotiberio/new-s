@@ -1,0 +1,112 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  {% set reviewed = post.meta('handbookReviewed') %}
+  {% set faq = post.meta('handbookFaq') %}
+  {% set takeaways = post.meta('handbookTakeaways') %}
+  {% set cta = post.meta('handbookCta') %}
+  <article class="handbook boxed !pt-[10vw] md:!pt-[182.5px] !pb-xl">
+    <div class="grid md:grid-cols-12 gap-xs">
+      <header class="md:col-span-3 flex flex-col gap-xs h-fit md:sticky md:top-[91px]">
+        <nav aria-label="{{ __('Breadcrumb', 'flynt') }}">
+          <ol class="font-bodySmall flex flex-wrap gap-x-[0.4em] !mb-0 !pl-0 list-none">
+            {% for crumb in handbook.breadcrumbs %}
+              <li>
+                {% if loop.last %}
+                  <span aria-current="page">{{ crumb.title }}</span>
+                {% else %}
+                  <a class="link-NoArrow" href="{{ crumb.url }}">{{ crumb.title }}</a> /
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ol>
+        </nav>
+        <h1 class="font-h2 pb-sm">{{ post.title }}</h1>
+        <div class="font-bodySmall flex flex-col">
+          {% if post.meta('handbookAuthor') %}
+            <span>{{ __('By', 'flynt') }} {{ post.meta('handbookAuthor') }}</span>
+          {% endif %}
+          <span>
+            {{ __('Last reviewed', 'flynt') }}
+            <time datetime="{{ reviewed ?: post.modified_date('Y-m-d') }}">{{ (reviewed ?: post.modified_date('Y-m-d'))|date('d.m.y') }}</time>
+          </span>
+        </div>
+      </header>
+
+      <div class="md:col-span-9 flex flex-col gap-md">
+        {% if post.meta('handbookDefinition') %}
+          <p class="font-h3 !mb-0">{{ post.meta('handbookDefinition')|e }}</p>
+        {% endif %}
+
+        {% if takeaways %}
+          <section aria-labelledby="handbook-takeaways" class="border-t border-black pt-xs">
+            <h2 id="handbook-takeaways" class="font-bodySmall !mb-xs">{{ __('Key takeaways', 'flynt') }}</h2>
+            <ul class="wysiwyg">
+              {% for item in takeaways %}
+                <li>{{ item.text|e }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+
+        {% if post.meta('handbookContent') %}
+          <div class="wysiwyg">{{ post.meta('handbookContent')|e('wp_kses_post') }}</div>
+        {% endif %}
+
+        {% if handbook.topics %}
+          <section aria-labelledby="handbook-topics">
+            <h2 id="handbook-topics" class="font-h3 pb-xs border-b border-black">{{ __('Topics in', 'flynt') }} {{ post.title }}</h2>
+            <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-xs pt-xs">
+              {% for topic in handbook.topics %}
+                <li>
+                  <a class="button button--outline button--block" href="{{ topic.link }}">{{ topic.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+
+        {% if faq %}
+          <section aria-labelledby="handbook-faq">
+            <h2 id="handbook-faq" class="font-h3 pb-xs border-b border-black">{{ __('Frequently asked questions', 'flynt') }}</h2>
+            {% for item in faq %}
+              <details class="group w-full border-b border-black">
+                <summary class="w-full flex justify-between items-center gap-xs py-xs cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <h3 class="font-body !mb-0">{{ item.question|e }}</h3>
+                  <svg class="shrink-0" style="width:17px;height:17px;" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true">
+                    <path d="M0 8.49438H17" stroke="currentColor" stroke-width="1.5"/>
+                    <path class="group-open:opacity-0 transition-opacity" d="M8.50562 0L8.50561 17" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                </summary>
+                <div class="wysiwyg pb-sm"><p>{{ item.answer|e('wp_kses_post') }}</p></div>
+              </details>
+            {% endfor %}
+          </section>
+        {% endif %}
+
+        {% set more = handbook.related ?: handbook.siblings %}
+        {% if more %}
+          <section aria-labelledby="handbook-related">
+            <h2 id="handbook-related" class="font-h3 pb-xs border-b border-black">{{ __('Related entries', 'flynt') }}</h2>
+            <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-xs pt-xs">
+              {% for entry in more %}
+                <li>
+                  <a class="button button--outline button--block" href="{{ entry.link }}">{{ entry.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+
+        <aside class="flex flex-wrap gap-xs pt-sm">
+          {% if cta %}
+            <a class="button" href="{{ cta.url }}" {% if cta.target %} target="{{ cta.target }}" rel="noreferrer noopener"{% endif %}>{{ cta.title }}</a>
+          {% elseif handbook.options.ctaLink %}
+            <a class="button" href="{{ handbook.options.ctaLink.url }}" {% if handbook.options.ctaLink.target %} target="{{ handbook.options.ctaLink.target }}" rel="noreferrer noopener"{% endif %}>{{ handbook.options.ctaLink.title }}</a>
+          {% endif %}
+          <a class="button button--outline" href="{{ handbook.hub.url }}">{{ __('All entries in the', 'flynt') }} {{ handbook.hub.title }}</a>
+        </aside>
+      </div>
+    </div>
+  </article>
+{% endblock %}

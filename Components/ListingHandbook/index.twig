@@ -1,0 +1,54 @@
+<flynt-component
+  load:on="visible"
+  name="ListingHandbook"
+  style="
+    color: {% if options.colorText %}{{ options.colorText }}{% else %}var(--black){% endif %};
+    background-color: {% if options.colorBackground %}{{ options.colorBackground }}{% else %}transparent{% endif %};">
+  <div class="boxed !pt-[10vw] md:!pt-[182.5px] !pb-xl">
+    <div class="grid md:grid-cols-12 gap-xs">
+      <header class="md:col-span-3 flex flex-col gap-xs h-fit md:sticky md:top-[91px]">
+        <h1 class="font-h2 pb-sm">{{ title ?: post.title }}</h1>
+        {% if intro %}
+          <p class="font-bodySmall">{{ intro|e }}</p>
+        {% endif %}
+      </header>
+      <div class="md:col-span-9 flex flex-col gap-lg">
+        {% for category in tree %}
+          <section aria-labelledby="handbook-{{ category.post.slug }}">
+            <h2 id="handbook-{{ category.post.slug }}" class="font-h2 pb-xs border-b border-current">
+              <a href="{{ category.post.link }}">{{ category.post.title }}</a>
+            </h2>
+            {% if category.post.meta('handbookDefinition') %}
+              <p class="font-bodySmall pt-xs md:w-2/3">{{ category.post.meta('handbookDefinition')|e }}</p>
+            {% endif %}
+            <ul class="grid sm:grid-cols-2 lg:grid-cols-2 gap-xs pt-xs">
+              <li>
+                <a class="button button--outline button--block" href="{{ category.post.link }}">{{ category.post.title }} {{ __('Overview', 'flynt') }}</a>
+              </li>
+              {% for topic in category.topics %}
+                <li>
+                  <a class="button button--outline button--block" href="{{ topic.link }}">
+                    {{ topic.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% else %}
+          <p class="font-bodySmall">{{ __('No entries published yet.', 'flynt') }}</p>
+        {% endfor %}
+        {% if cta.ctaTitle and cta.ctaLink %}
+          <aside class="flex flex-col items-start gap-sm pt-lg">
+            <h2 class="font-h2">{{ cta.ctaTitle }}</h2>
+            <a
+              class="button button--outline"
+              href="{{ cta.ctaLink.url }}"
+              {% if cta.ctaLink.target %} target="{{ cta.ctaLink.target }}" rel="noreferrer noopener"{% endif %}>
+              {{ cta.ctaLink.title }}
+            </a>
+          </aside>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</flynt-component>

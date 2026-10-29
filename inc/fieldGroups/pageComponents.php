@@ -73,6 +73,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockWysiwygColumns\getACFLayout(),
                     Components\BlockWysiwygAccordion\getACFLayout(),
                     Components\HeroHeaderHome\getACFLayout(),
+                    Components\ListingHandbook\getACFLayout(),
                     Components\ListingJournal\getACFLayout(),
                     Components\ListingJournalFeat\getACFLayout(),
                     Components\ListingProjects\getACFLayout(),
@@ -104,6 +105,11 @@ add_action('Flynt/afterRegisterComponents', function () {
                     'param' => 'post_type',
                     'operator' => '!=',
                     'value' => 'product'
+                ],
+                [
+                    'param' => 'post_type',
+                    'operator' => '!=',
+                    'value' => 'handbook'
                 ],
             ],
         ],

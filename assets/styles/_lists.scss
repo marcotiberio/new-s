@@ -31,6 +31,19 @@
         content: '-';
         @apply mr-[8px];
       }
+
+      // Size set on the inner span instead of the li: match the dash to it.
+      &:has(> span.font-body)::before {
+        font-size: var(--body-size-mobile);
+
+        @screen lgplus {
+          font-size: var(--body-size-desktop);
+        }
+      }
+
+      &:has(> span.font-bodySmall)::before {
+        font-size: var(--body-small-size);
+      }
     }
   }
 
