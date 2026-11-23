@@ -1,0 +1,36 @@
+{# Brevo newsletter sign-up. Settings: Global Options → Newsletter. #}
+{% set newsletter = newsletter_options() %}
+{% if newsletter.formUrl %}
+  <div class="newsletter {{ class|default('') }}"
+    x-data="{
+      status: '',
+      async submit(e) {
+        this.status = 'sending'
+        try {
+          const res = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target) })
+          const data = await res.json().catch(() => ({}))
+          if (res.ok && data.success && data.redirect) return window.location.assign(data.redirect)
+          this.status = res.ok && data.success !== false ? 'success' : 'error'
+          if (this.status === 'success') e.target.reset()
+        } catch (err) {
+          this.status = 'error'
+        }
+      }
+    }">
+    <form action="{{ newsletter.formUrl|e('esc_url') }}" method="post" @submit.prevent="submit" x-show="status !== 'success'">
+      <div>
+        <input type="email" name="EMAIL" required autocomplete="email" placeholder="{{ newsletter.placeholder|e }}" aria-label="{{ newsletter.placeholder|e }}">
+      </div>
+      {# Honeypot: real people leave this empty. Do not remove. #}
+      <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -5000px;">
+      <input type="hidden" name="locale" value="{{ newsletter.locale|e }}">
+      <div>
+        <input type="submit" class="btn btn--outline" value="{{ newsletter.buttonLabel|e }}" :disabled="status === 'sending'">
+      </div>
+    </form>
+    <p class="response font-bodySmall" role="status" aria-live="polite">
+      <span x-show="status === 'success'" x-cloak>{{ newsletter.successMessage|e }}</span>
+      <span x-show="status === 'error'" x-cloak>{{ newsletter.errorMessage|e }}</span>
+    </p>
+  </div>
+{% endif %}
